@@ -2,10 +2,6 @@
 
 *.out
 
-#input files
+#file i/o
 
-*.in
-
-#test files
-
-test*
+*.txt
