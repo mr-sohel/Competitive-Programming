@@ -1,0 +1,11 @@
+#binary files
+
+*.out
+
+#input files
+
+*.in
+
+#test files
+
+test*
