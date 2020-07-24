@@ -1,0 +1,22 @@
+{
+    "editor.fontFamily": "'Monaco','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 15,
+    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontSize": 15,
+    "editor.autoIndent": "full",
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "bitset": "cpp",
+        "random": "cpp",
+        "ostream": "cpp"
+    },
+    "editor.quickSuggestions": null,
+    "editor.suggest.showIssues": false,
+    "editor.suggest.showStructs": false,
+    "editor.suggest.showValues": false,
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showConstructors": false
+}
