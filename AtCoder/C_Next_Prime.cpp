@@ -48,16 +48,11 @@ int main()
     sieve(100003);
     int n;
     cin >> n;
-    if(isPrime(n))
-        cout << n << endl;
-    else {
-        for (int i = 0; i <= 100003; i++) {
-            if(primes[i] > n) {
-                cout << primes[i]<<endl;
-                break;
-            }
-        }
-    }
+    int t;
+    t = n;
+    while(!isPrime(t))
+        t++;
+    cout << t << endl;
 
     return 0;
 }
