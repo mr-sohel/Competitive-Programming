@@ -19,6 +19,6 @@ using namespace std;
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    
+    cout<<"Hello World"<<endl;
     return 0;
 }
