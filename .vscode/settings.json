@@ -20,5 +20,7 @@
     "editor.suggest.showConstants": false,
     "editor.suggest.showConstructors": false,
     "cph.defaultLanguage": "cpp",
-    "cph.saveLocation": "/home/taalpatar_shepai/Documents/Extra Files"
+    "cph.saveLocation": "/home/taalpatar_shepai/Documents/Extra Files",
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false
 }
