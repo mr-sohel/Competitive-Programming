@@ -14,12 +14,32 @@
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 
-
 using namespace std;
 
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    
+    unsyncIO;
+    int n, res = 0;
+    cin >> n;
+    int a[n], p[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i] >> p[i];
+    }
+        res += a[0] * p[0];
+        int temp;
+        temp = p[0];
+        for (int j = 1; j < n; j++)
+        {
+            if(temp <= p[j]) {
+                res += temp * a[j];
+            }
+            else {
+                temp = p[j];
+                res += a[j] * temp;
+            }
+        }
+        cout << res << endl;
+
     return 0;
 }
