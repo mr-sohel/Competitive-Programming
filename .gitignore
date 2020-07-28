@@ -10,3 +10,4 @@ Json Code.txt
 *.prob
 *.o
 test
+*.gitignore
