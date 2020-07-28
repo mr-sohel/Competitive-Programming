@@ -12,6 +12,7 @@
 #define gcd(a, b)   __gcd(a, b)
 #define lcm(a, b)   ((a/gcd(a,b)) * b) 
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#define error(x) cerr << #x << " = " << (x) <<endl
 
 
 using namespace std;
@@ -26,20 +27,19 @@ int main()
     for (int i = 0; i < n; i++) {
         cin >> a[i] >> p[i];
     }
-        res += a[0] * p[0];
-        int temp;
-        temp = p[0];
-        for (int j = 1; j < n; j++)
-        {
-            if(temp <= p[j]) {
-                res += temp * a[j];
-            }
-            else {
-                temp = p[j];
-                res += a[j] * temp;
-            }
+    res += a[0] * p[0];
+    int temp;
+    temp = p[0];
+    for (int j = 1; j < n; j++)
+    {
+        if(temp <= p[j]) {
+            res += temp * a[j];
         }
-        cout << res << endl;
-
+        else {
+            temp = p[j];
+            res += a[j] * temp;
+        }
+    }
+    cout << res << endl;
     return 0;
 }
