@@ -4,7 +4,7 @@
     "terminal.integrated.fontFamily": "Hack",
     "terminal.integrated.fontSize": 15,
     "editor.autoIndent": "full",
-    "editor.formatOnPaste": false,
+    "editor.formatOnPaste": true,
     "editor.formatOnType": true,
     "files.associations": {
         "iostream": "cpp",
@@ -16,7 +16,7 @@
     "editor.suggest.showVariables": true,
     "editor.suggest.showKeywords": true,
     "editor.quickSuggestions": true,
-    "editor.suggest.showClasses": false,
+    "editor.suggest.showClasses": true,
     "cph.defaultLanguage": "cpp",
     "cph.saveLocation": "/home/taalpatar_shepai/Documents/Extra Files",
     "editor.wordWrap": "on",
@@ -33,5 +33,7 @@
     "C_Cpp.default.cStandard": "c18",
     "editor.suggest.localityBonus": true,
     "editor.suggest.shareSuggestSelections": true,
-    "editor.suggest.statusBar.visible": true
+    "editor.suggest.statusBar.visible": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
 }
