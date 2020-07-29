@@ -16,18 +16,12 @@
     "editor.suggest.showVariables": true,
     "editor.suggest.showKeywords": true,
     "editor.quickSuggestions": true,
-    "editor.suggest.showIssues": false,
-    "editor.suggest.showStructs": false,
-    "editor.suggest.showValues": false,
     "editor.suggest.showClasses": false,
-    "editor.suggest.showConstants": false,
-    "editor.suggest.showConstructors": false,
     "cph.defaultLanguage": "cpp",
     "cph.saveLocation": "/home/taalpatar_shepai/Documents/Extra Files",
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
     "editor.suggest.showFunctions": true,
-    "editor.suggest.showMethods": true,
     "editor.suggest.showFiles": true,
     "editor.suggest.showReferences": true,
     "editor.suggest.showFolders": true,
@@ -36,5 +30,8 @@
     "editor.quickSuggestionsDelay": 15,
     "cph.argsCpp": "-Wmaybe-uninitialized -std=c++17",
     "C_Cpp.default.cppStandard": "c++20",
-    "C_Cpp.default.cStandard": "c18"
+    "C_Cpp.default.cStandard": "c18",
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.shareSuggestSelections": true,
+    "editor.suggest.statusBar.visible": true
 }
