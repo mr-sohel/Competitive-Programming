@@ -20,6 +20,11 @@ using namespace std;
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    
+    unsyncIO;
+    string s;
+    cin >> s;
+    if(islower(s[0]))
+        s[0] =  (s[0]) - 32;
+    cout << s;
     return 0;
 }

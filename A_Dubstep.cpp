@@ -11,21 +11,31 @@
 #define sqr(x)      (x) * (x)
 #define gcd(a, b)   __gcd(a, b)
 #define lcm(a, b)   ((a/gcd(a,b)) * b)
-#define error(x) 	cerr << #x << " = " << (x) <<endl
+#define debug(x) 	cerr << #x << " = " << (x) <<endl
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
-
 
 using namespace std;
 
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    ll n, b, d;
-    cin >> n >> b >> d;
-    ll a[n] = {0};
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
+    unsyncIO;
+    string s, ans;
+    cin >> s;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B')
+        {
+            i += 2;
+            continue;
+        }
+        else
+        {
+            cout << s[i];
+            if (s[i + 1] == 'W' && s[i + 2] == 'U' && s[i + 3] == 'B')
+                cout << ' ';
+        }
     }
-
+    puts("");
     return 0;
 }

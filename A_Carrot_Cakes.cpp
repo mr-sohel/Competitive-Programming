@@ -20,6 +20,16 @@ using namespace std;
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    
+    int n, t, k, d;
+    cin >> n >> t >> k >> d;
+    double one_oven = 0.0, two_oven = 0.0;
+    one_oven = (n / k) * t;
+    two_oven = d + (n / k) * (t / 2.0);
+    // if(two_oven < one_oven)
+    //     cout << "YES" << endl;
+    // else
+    //     cout << "NO" << endl;
+    debug(one_oven);
+    debug(two_oven);
     return 0;
 }

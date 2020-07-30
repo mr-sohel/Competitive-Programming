@@ -10,7 +10,8 @@
         "iostream": "cpp",
         "bitset": "cpp",
         "random": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "string": "cpp"
     },
     
     "editor.suggest.showVariables": true,
