@@ -11,7 +11,8 @@
         "bitset": "cpp",
         "random": "cpp",
         "ostream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "cmath": "cpp"
     },
     
     "editor.suggest.showVariables": true,

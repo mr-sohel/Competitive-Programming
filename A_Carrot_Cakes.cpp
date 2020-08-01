@@ -20,16 +20,14 @@ using namespace std;
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    int n, t, k, d;
+    unsyncIO;
+    //this is not my solution. i had to see editorial. :(
+    int i, n, t, k, d;
     cin >> n >> t >> k >> d;
-    double one_oven = 0.0, two_oven = 0.0;
-    one_oven = (n / k) * t;
-    two_oven = d + (n / k) * (t / 2.0);
-    // if(two_oven < one_oven)
-    //     cout << "YES" << endl;
-    // else
-    //     cout << "NO" << endl;
-    debug(one_oven);
-    debug(two_oven);
+    int v = ((n + k - 1) / k) * t;
+    if (v <= d + t)
+        cout << "NO" << endl;
+    else
+        cout << "YES" << endl;
     return 0;
 }
