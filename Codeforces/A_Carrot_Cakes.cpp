@@ -11,7 +11,7 @@
 #define sqr(x)      (x) * (x)
 #define gcd(a, b)   __gcd(a, b)
 #define lcm(a, b)   ((a/gcd(a,b)) * b)
-#define error(x) 	cerr << #x << " = " << (x) <<endl
+#define debug(x) 	cerr << #x << " = " << (x) <<endl
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 
@@ -21,23 +21,13 @@ int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
     unsyncIO;
-    ll n, b, d;
-    int cnt = 0;
-    ll sum = 0;
-    cin >> n >> b >> d;
-    ll a[n] = {0};
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-    for (int i = 0; i < n; i++) {
-        if(a[i] <= b)
-            sum += a[i];
-        if(sum > d) {
-            cnt++;
-            sum = 0;
-        }
-    }
-    cout << cnt << endl;
-    
+    //this is not my solution. i had to see editorial. :(
+    int i, n, t, k, d;
+    cin >> n >> t >> k >> d;
+    int v = ((n + k - 1) / k) * t;
+    if (v <= d + t)
+        cout << "NO" << endl;
+    else
+        cout << "YES" << endl;
     return 0;
 }

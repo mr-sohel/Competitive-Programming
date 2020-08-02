@@ -4,7 +4,8 @@
 
 #file i/o
 *.txt
-
+input
+output
 _config.yml
 Json Code.txt
 *.prob

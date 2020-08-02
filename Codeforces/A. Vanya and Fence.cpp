@@ -20,7 +20,7 @@ int main()
         if(arr[i] <= h)
             cnt += 1;
         else
-            cnt += 2;`
+            cnt += 2;
     }
 
     cout<<cnt<<endl;
