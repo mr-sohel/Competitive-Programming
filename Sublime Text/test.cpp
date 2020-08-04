@@ -11,17 +11,15 @@
 #define sqr(x)      (x) * (x)
 #define gcd(a, b)   __gcd(a, b)
 #define lcm(a, b)   ((a/gcd(a,b)) * b)
+#define debug(x) 	cerr << #x << " = " << (x) <<endl
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+
 
 using namespace std;
 
-
 int main()
 {
-
-	int n;
-	cin >> n;
-	cout << n;
-
-	return 0;
+    //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
+    
+    return 0;
 }
