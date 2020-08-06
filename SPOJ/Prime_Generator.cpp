@@ -32,6 +32,17 @@ void sieve() {
             primes.push_back(i);
     }
 }
+/* void sieve(){
+    prime.push_back(2);
+    for(int i = 3; i <= M; i += 2){
+        if(marked[i] == false){
+            prime.push_back(i);
+            for(int j = i * i; j <= M; j += i+i){
+                marked[j] = true;
+            }
+        }
+    }
+} */
  
 void segSieve(ll l, ll r) {
     if(l == 1)
