@@ -12,7 +12,8 @@
         "random": "cpp",
         "ostream": "cpp",
         "string": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "array": "cpp"
     },
     
     "editor.suggest.showVariables": true,
