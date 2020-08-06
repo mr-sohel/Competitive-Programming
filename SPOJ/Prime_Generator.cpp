@@ -34,10 +34,10 @@ void sieve() {
 }
 /* void sieve(){
     prime.push_back(2);
-    for(int i = 3; i <= M; i += 2){
+    for(int i = 3; i <= MAX; i += 2){
         if(marked[i] == false){
             prime.push_back(i);
-            for(int j = i * i; j <= M; j += i+i){
+            for(int j = i * i; j <= MAX; j += i+i){
                 marked[j] = true;
             }
         }
