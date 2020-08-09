@@ -1,7 +1,7 @@
 {
     "editor.fontFamily": "'Monaco','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 15,
-    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontFamily": "monospace",
     "terminal.integrated.fontSize": 15,
     "editor.autoIndent": "full",
     "editor.formatOnPaste": true,
