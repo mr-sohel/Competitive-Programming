@@ -20,6 +20,5 @@ using namespace std;
 int main()
 {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    
     return 0;
 }

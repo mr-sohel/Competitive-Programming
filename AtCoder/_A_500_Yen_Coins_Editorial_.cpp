@@ -20,7 +20,13 @@ using namespace std;
 
 int main()
 {
-     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-     cout << "Hello World" << endl;
-     return 0;
+    //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    int k, x;
+    cin >> k >> x;
+    if((k*500) >= x)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
+
+    return 0;
 }

@@ -20,7 +20,16 @@ using namespace std;
 
 int main()
 {
-     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-     cout << "Hello World" << endl;
-     return 0;
+    //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    int n;
+    string s;
+    int cnt = 0;
+    cin >> n;
+    cin >> s;
+    for (int i = 0; i < n; i++) {
+        if(s[i] == 'A' && s[i+1] == 'B' && s[i+2] == 'C')
+            cnt++;
+    }
+    cout << cnt << endl;
+    return 0;
 }
