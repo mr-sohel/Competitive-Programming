@@ -21,16 +21,26 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    int n;
     string s;
-    int cnt = 0;
-    cin >> n;
-    cin >> s;
-    for (int i = 0; i < n; i++) {
-        if(s[i] == 'A' && s[i+1] == 'B' && s[i+2] == 'C')
-            cnt++;
+    vector<int> v (26);
+    cin>>s;
+    for (int i = 0; i < s.length(); i++) {
+        int temp;
+        temp = count(all(s), s[i]);
+        v[s[i] - 'a'] = temp;
     }
-    cout << cnt << endl;
-    
+    bool check = false;
+    for (int i = 0; i < v.size(); i++) {
+        if(v[i] != 0) {
+            if(v[i] % 2 != 0) {
+                check = true;
+                break;
+            }
+        }
+    }
+    if(!check)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
     return 0;
 }

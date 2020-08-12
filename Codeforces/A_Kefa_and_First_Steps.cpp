@@ -21,16 +21,24 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    int n;
-    string s;
-    int cnt = 0;
+    unsyncIO;
+    int n, cnt = 1, ans = 1;
     cin >> n;
-    cin >> s;
+    vector<int> v(n);
     for (int i = 0; i < n; i++) {
-        if(s[i] == 'A' && s[i+1] == 'B' && s[i+2] == 'C')
-            cnt++;
+        cin >> v[i];
     }
-    cout << cnt << endl;
-    
+    for (int i = 0; i < n - 1; i++) {
+        if(v[i] <= v[i+1]) {
+            cnt++;
+        }
+        else {
+            cnt = 1;
+        }
+        if(cnt > ans)
+            ans = cnt;
+    }
+    cout << ans << endl;
+
     return 0;
 }
