@@ -18,14 +18,20 @@
 
 using namespace std;
 
+
+ull f(ull n, ull d) {
+    if(n == -1)
+        return 0;
+    return n / d + 1;
+}
+
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    ull a, b, x, cnt = 0;
+    unsyncIO;
+    ull a, b, x;
     cin >> a >> b >> x;
-    
-    
-    cout << cnt << endl;
+    cout << (f(b,x)) - f((a-1), x ) << endl;
 
     return 0;
 }
