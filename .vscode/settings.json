@@ -13,7 +13,13 @@
         "ostream": "cpp",
         "string": "cpp",
         "cmath": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp"
     },
     
     "editor.suggest.showVariables": true,
