@@ -38,11 +38,17 @@
     "editor.suggest.showTypeParameters": true,
     "editor.quickSuggestionsDelay": 15,
     "cph.argsCpp": "-Wmaybe-uninitialized -std=gnu++17",
-    "C_Cpp.default.cppStandard": "gnu++17",
-    "C_Cpp.default.cStandard": "gnu11",
+    "C_Cpp.default.cppStandard": "gnu++20",
+    "C_Cpp.default.cStandard": "gnu18",
     "editor.suggest.localityBonus": true,
     "editor.suggest.shareSuggestSelections": true,
     "editor.suggest.statusBar.visible": true,
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.preferredDarkColorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons-mac"
 }

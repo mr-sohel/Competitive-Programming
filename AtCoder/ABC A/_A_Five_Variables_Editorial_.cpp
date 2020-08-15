@@ -17,15 +17,21 @@
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 const ld PI = acos((ld)-1);
-const int MOD = 1e9+7; // 998244353;
-const int MX = 2e5+5; 
+const int MOD = 1e9+7;
 const ll INF = 1e18; 
 
 using namespace std;
 
 int main()
 {
-	//freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-
-	return 0;
+    //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    for (int  i = 1; i <= 5; i++) {
+        int t;
+        cin >> t;
+        if (t == 0) {
+            cout << i << endl;
+            break;
+        }
+    }
+    return 0;
 }
