@@ -25,5 +25,13 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    unsyncIO;
+    string s, t;
+    cin >> s >> t;
+    reverse(all(s));
+    if(s == t)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
     return 0;
 }

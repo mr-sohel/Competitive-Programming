@@ -25,5 +25,12 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    return 0;
+    unsyncIO;
+    string s;
+    set<char> st;
+    cin >> s;
+    for (int i = 0; i < s.length(); i++) {
+        st.insert(s[i]);
+    }
+    cout << 26 - st.size() << endl;
 }
