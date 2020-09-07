@@ -4,10 +4,10 @@ void recurse(int count)
 {
     if (count == 5)
         return;
-    printf("Hurray, I am Learning Recursion!\n");
+    printf("Hurray, I am Learning Recursion! %d\n", count);
 
     recurse(count+1);
-    //return;
+    printf("Resursion is easy %d\n", count);
 }
 int main()
 {

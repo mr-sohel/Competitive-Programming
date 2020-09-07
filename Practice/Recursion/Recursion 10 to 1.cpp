@@ -14,7 +14,7 @@
 #define rall(x) 	(x).rbegin(), (x).rend()
 #define sz(x) 		(int)x.size()
 #define debug(x) 	cerr << #x << " = " << (x) <<endl
-#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0)
+#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
@@ -22,8 +22,17 @@ const ll INF = 1e18;
 
 using namespace std;
 
+void func(int n) {
+    if(n == 0) return;
+    //cout << n << endl;
+    
+    func(n-1);
+    cout << n << endl;
+}
+
 int main()
 {
-    //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    func(10);
     return 0;
 }

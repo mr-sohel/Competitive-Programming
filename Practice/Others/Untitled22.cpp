@@ -26,7 +26,7 @@ for (size_t i = 0; i < examples; i++)
         cout << numbers[n / 2 - 1];
     }
     else
-        cout << numbers[n / 2];s
+        cout << numbers[n / 2];
 }
 
 system("pause");
