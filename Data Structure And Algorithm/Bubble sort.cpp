@@ -15,7 +15,7 @@ int main()
     {
         for(j = 0; j < n-1; j++)
         {
-            if(array[j] < array[j+1]) // just change the operator > to sort ascending orders 
+            if(array[j] > array[j+1]) // just change the operator > to sort ascending orders 
             {
                 int temp = array[j];
                 array[j] = array[j+1];
@@ -23,7 +23,7 @@ int main()
             }
         }
     }
-    cout<<"Sorted Array In Dscending Order"<<endl;
+    cout<<"Sorted Array In Accending Order"<<endl;
     for(i = 0; i < n; i++)
         cout<<array[i]<<' ';
 }

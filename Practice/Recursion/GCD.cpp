@@ -13,8 +13,8 @@
 #define all(x)      (x).begin(), (x).end()
 #define rall(x) 	(x).rbegin(), (x).rend()
 #define sz(x) 		(int)x.size()
-#define debug(x) 	cerr << #x << " = " << (x) << endl
-#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#define debug(x) 	cerr << #x << " = " << (x) <<endl
+#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0)
 
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
@@ -22,8 +22,16 @@ const ll INF = 1e18;
 
 using namespace std;
 
+int GCD(int a,int b) {
+    if(!b) return a;
+    return GCD(b, a % b);
+}
+
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    int a, b;
+    cin >> a >> b;
+    cout << GCD(a, b) << endl;
     return 0;
 }
