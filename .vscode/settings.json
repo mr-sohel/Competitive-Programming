@@ -4,7 +4,6 @@
     "terminal.integrated.fontFamily": "monospace",
     "terminal.integrated.fontSize": 15,
     "editor.autoIndent": "full",
-    "editor.formatOnPaste": true,
     "editor.formatOnType": true,
     "files.associations": {
         "iostream": "cpp",
@@ -45,10 +44,12 @@
     "editor.suggest.statusBar.visible": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.defaultFormatter": "DivyanshuAgrawal.competitive-programming-helper",
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": true,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
-    "workbench.iconTheme": "vscode-icons-mac"
+    "workbench.iconTheme": "vscode-icons-mac",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications"
 }
