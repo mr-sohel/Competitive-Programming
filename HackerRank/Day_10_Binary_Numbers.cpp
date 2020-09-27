@@ -22,19 +22,33 @@ const ll INF = 1e18;
 
 using namespace std;
 
-void binary(int n)
-{
+vector<int> ans;
+
+void binary(int n) {
+    int cnt = 0;
     int a[1000];
     int i = 0;
-    while(n > 0)
-    {
+    while(n > 0) {
         a[i] = n % 2;
         n = n / 2;
         i++;
     }
-    
+    //debug(i);
+    for (int j = 0; j < i; j++){
+        if(a[j] == 1) {
+            while(1) {
+                if(a[j] == 1)
+                    cnt++;
+                else if (a[j] == 0 || j >= i) {
+                    ans.pb(cnt);
+                    cnt = 0;
+                    break;
+                }
+                j++;
+            }
+        }
+    }
 }
-
 
 int main()
 {
@@ -42,6 +56,6 @@ int main()
     int n;
     cin >> n;
     binary(n);
-
+    cout << *max_element(all(ans)) << endl;
     return 0;
 }
