@@ -39,7 +39,7 @@ int main()
         v.eb(temp);
     }
     sort(all(v)); // sorting inputs
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n-1; i++) {
         int temp;
         temp = abs(v[i] - v[i + 1]); // calculating the diff of pairs
         ans.eb(temp); // and push them to ans 
@@ -49,7 +49,7 @@ int main()
     //     cout << ans[i] << ' ';
     // }
     min = ans[0]; 
-    for (int i = 0; i < n; i++) { // find the cloasest pair in sorted input them. it will print the pair in accending order as we sorted the vector in accending order before.
+    for (int i = 0; i < n-1; i++) { // find the cloasest pair in sorted input them. it will print the pair in accending order as we sorted the vector in accending order before.
         if((abs(v[i] - v[i + 1])) == min) {
             cout << v[i] << " " << v[i + 1]<<' ';
         }
