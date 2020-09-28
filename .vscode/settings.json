@@ -50,7 +50,7 @@
     "workbench.colorTheme": "One Dark Pro",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons-mac",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnSaveMode": "modifications",
     "insertDateString.format": "DD-MM-YYYY",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
