@@ -1,6 +1,6 @@
 /**
  *    Author:  Sohel Rana 
- *    Date:    28-09-2020   
+ *    Date:    28-09-2020
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -29,5 +29,7 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    unsyncIO;
+    
     return 0;
 }
