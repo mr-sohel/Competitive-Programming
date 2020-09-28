@@ -29,8 +29,5 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    for (int i = 0; i < n; i++) {
-        i++;
-    }
-        return 0;
+    return 0;
 }
