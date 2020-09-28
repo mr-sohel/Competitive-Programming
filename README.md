@@ -1,3 +1,1 @@
-# my_codes
-Taalaptar_Shepai's Repo
-#CP Codes
+This is a repository for uploading my source codes of my solved or unsolved problems.
