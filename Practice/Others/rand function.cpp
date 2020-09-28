@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-    int v[22];
-    for(int i = 0; i < 22; i++)
-        v[i] = rand() ;
-    for(int i = 0; i < 22; i++)
+    vector<int> v;
+    for(int i = 0; i < 20; i++)
+        v.push_back(rand());
+    for(int i = 0; i < 20; i++)
         cout<<v[i]<<" ";
     return 0;
 }
