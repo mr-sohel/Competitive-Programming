@@ -1,6 +1,5 @@
 /**
- *    Author:  Sohel Rana 
- *    Date:    28-09-2020   
+ *    Author:  Sohel Rana  
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -26,11 +25,34 @@ const ll INF = 1e18;
 
 using namespace std;
 
+int func(string s) {
+    int cnt = 0;
+    for (int i = 0; i < s.length(); ) {
+        if(s[i] == 'S' && s[i+1] == 'O' && s[i+2] == 'S') {
+            i += 3;
+        }
+        else{
+            if(s[i] != 'S')
+                cnt++;
+            if(s[i+1] != 'O')
+                cnt++;
+            if(s[i+2] != 'S')
+                cnt++;
+            i += 3;
+        }
+    }
+    return cnt;
+}
+
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    for (int i = 0; i < n; i++) {
-        i++;
-    }
-        return 0;
+    unsyncIO;
+    string s;
+    cin >> s;
+    // int temp;
+    // temp = s.length() / 3;
+    cout << func(s) << endl;
+
+    return 0;
 }

@@ -18,7 +18,8 @@
         "list": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "numeric": "cpp"
     },
     
     "editor.suggest.showVariables": true,
@@ -44,12 +45,14 @@
     "editor.suggest.statusBar.visible": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "editor.defaultFormatter": "DivyanshuAgrawal.competitive-programming-helper",
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": true,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons-mac",
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications"
+    "editor.formatOnSaveMode": "modifications",
+    "insertDateString.format": "DD-MM-YYYY",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+    "C_Cpp.suggestSnippets": false
 }

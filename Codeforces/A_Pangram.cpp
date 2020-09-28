@@ -1,6 +1,5 @@
 /**
- *    Author:  Sohel Rana 
- *    Date:    28-09-2020   
+ *    Author:  Sohel Rana  
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -29,8 +28,29 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
-    for (int i = 0; i < n; i++) {
-        i++;
-    }
+    unsyncIO;
+    int n;
+    cin >> n;
+    string s;
+    set<char> st;
+    cin >> s;
+    if(n < 26) {
+        cout << "NO" << endl;
         return 0;
+
+    }
+    else  {
+        for (int i = 0; i < n; i++) {
+            if(isupper(s[i])) {
+                st.insert(tolower(s[i]));
+            }
+            else
+                st.insert(s[i]);
+        }
+    }
+    if(st.size() == 26)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+    return 0;
 }
