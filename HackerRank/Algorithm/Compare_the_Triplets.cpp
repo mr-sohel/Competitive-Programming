@@ -1,6 +1,6 @@
 /**
  *    Author:  Sohel Rana 
- *    Date:    03-10-2020
+ *    Date:    02-10-2020
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -26,35 +26,41 @@ const ll INF = 1e18;
 
 using namespace std;
 
+vector<int> compareTriplets(vector<int> a, vector<int> b) {
+    vector<int> ans(2);
+    if (a[0] > b[0])
+        ans[0]++;
+    else if (a[0] < b[0])
+        ans[1]++;
+    if (a[1] > b[1])
+        ans[0]++;
+    else if (a[1] < b[1])
+        ans[1]++;
+    if (a[2] > b[2])
+        ans[0]++;
+    else if (a[2] < b[2])
+        ans[1]++;
+    return ans;
+}
+
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     unsyncIO;
-    int left, right, ans,cnt;
-    while(cin >> left >> right) {
-        int templ, tempr;
-        templ = left, tempr = right;
-        if(left > right)
-            swap(left, right);
-        ans = 0;
-        for (int i = left; i <= right; i++) {
-            cnt = 0;
-            int n = i;
-            while (true) {
-                cnt++;
-                if (n == 1)
-                    break;
-                else {
-                    if(n % 2 ==  1)
-                        n = n*3 + 1;
-                    else
-                        n = n/2;
-                }
-            }
-            if(ans < cnt)
-                ans = cnt;
-        }
-        cout <<templ<<" "<<tempr<<" "<<ans<< endl;
+    vector<int> a;
+    vector<int> b;
+    vector<int> ans;
+    for (int i = 0; i < 3; i++) {
+        int temp;
+        cin >> temp;
+        a.eb(temp);
     }
+    for (int i = 0; i < 3; i++) {
+        int temp;
+        cin >> temp;
+        b.eb(temp);
+    }
+    ans = compareTriplets(a, b);
+    cout << ans[0] << " " << ans[1] << endl;
     return 0;
 }
