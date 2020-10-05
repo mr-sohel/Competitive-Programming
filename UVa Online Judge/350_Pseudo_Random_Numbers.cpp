@@ -34,7 +34,7 @@ int main()
     while( cin >> z >> i >> m >> l) {
         if(z == 0 && i == 0 && m == 0 && l == 0)
             break;
-        
+            
         l = (z * l + i) % m;
         temp = l;
         for (res = 1;; res++) {
