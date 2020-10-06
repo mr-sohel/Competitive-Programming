@@ -13,35 +13,33 @@
 #define lcm(a, b)   ((a/gcd(a,b)) * b) 
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-
 using namespace std;
-int bin(int n)
-{
-    int a = 1, ans = 0;
-    while (n > 0)
-    {
-        ans += n % 2 * a;
-        a *= 10;
+
+int convert(int n) {
+    int bin = 0;
+    int rem, i = 1, step = 1;
+    while (n != 0) {
+        rem = n % 2;
         n /= 2;
+        bin += rem * i;
+        i *= 10;
     }
-    return ans;
+    return bin;
 }
 
-int main()
-{
+int main() {
     //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
     //unsyncIO;
     int t;
     cin >> t;
-    for (int k = 1; k <= t; k++)
-    {
+    for (int k = 1; k <= t; k++) {
         int a[4], a1[4], t1, t2, t3, t4;
         scanf("%d.%d.%d.%d", &a[0], &a[1], &a[2], &a[3]);
         scanf("%d.%d.%d.%d", &a1[0], &a1[1], &a1[2], &a1[3]);
-        t1 = bin(a[0]);
-        t2 = bin(a[1]);
-        t3 = bin(a[2]);
-        t4 = bin(a[3]);
+        t1 = convert(a[0]);
+        t2 = convert(a[1]);
+        t3 = convert(a[2]);
+        t4 = convert(a[3]);
         if (t1 == a1[0] && t2 == a1[1] && t3 == a1[2] && t4 == a1[3])
             printf("Case %d: Yes\n", k);
         else
