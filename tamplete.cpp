@@ -30,5 +30,6 @@ int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     unsyncIO;
+    
     return 0;
 }
