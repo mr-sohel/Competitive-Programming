@@ -1,7 +1,6 @@
 /**
- *    Author:  Sohel Rana
- *    Date:    2020-10-07 23:41:02
- *	  Link:    link
+ *    Author:  Sohel Rana 
+ *    Date:    07-10-2020
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -27,10 +26,26 @@ const ll INF = 1e18;
 
 using namespace std;
 
+struct Node {
+    int data;
+    Node* link;
+};
+
+Node* head;
+
+
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     //unsyncIO;
-    
+    head = NULL;
+    head = (Node*) malloc(sizeof(Node));
+    head->data = 20;
+    head->link = (Node*)malloc(sizeof(Node));
+    head->link->data = 30;
+    head->link->link = NULL;
+    cout << head->data << endl;
+    cout << head->link->data << endl;
+    cout << head->link->link << endl;
     return 0;
 }
