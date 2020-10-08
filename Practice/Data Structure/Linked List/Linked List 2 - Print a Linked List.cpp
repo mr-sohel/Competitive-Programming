@@ -1,6 +1,7 @@
 /**
- *    Author:  Sohel Rana 
- *    Date:    07-10-2020
+ *    Author:  Sohel Rana
+ *    Date:    2020-10-08 18:51:41
+ *	  Link:    link
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -33,18 +34,24 @@ struct Node {
 
 Node* head;
 
+void print() {
+    Node* temp;
+    temp = head;
+    while(temp != NULL) {
+        cout << temp->data << endl;
+        temp = temp->link;
+    }
+}
 
-int main()
-{
+int main() {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     //unsyncIO;
     head = NULL;
-    head = (Node*) malloc(sizeof(Node));
+    head = (Node*)malloc(sizeof(Node));
     head->data = 20;
-    head->link = (Node*)malloc(sizeof(Node));
+    head->link =(Node*)malloc(sizeof(Node));
     head->link->data = 30;
     head->link->link = NULL;
-    cout << head->data << endl;
-    cout << head->link->data << endl;
+    print();
     return 0;
-}
+}strcase
