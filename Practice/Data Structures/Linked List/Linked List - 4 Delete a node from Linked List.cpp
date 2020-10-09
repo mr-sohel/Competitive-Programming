@@ -94,6 +94,5 @@ int main()
     print();
     DeleteNode(4);
     print();
-
     return 0;
 }
