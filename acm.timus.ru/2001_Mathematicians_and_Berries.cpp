@@ -30,6 +30,7 @@ using namespace std;
 int main()
 {
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    // note: basket has it's own weight. keep it in mind.
     unsyncIO;
     int a[3];
     int b[3];
