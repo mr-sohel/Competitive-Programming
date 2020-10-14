@@ -18,7 +18,7 @@ int main()
         n *= 235;
         n /= 47;
         n -= 498;
-        cout<<n<<endl;
+        //cout<<n<<endl;
         cout<<abs((n/10) % 10)<<endl;
     }
     return 0;
