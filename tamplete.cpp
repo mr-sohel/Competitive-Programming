@@ -19,7 +19,7 @@
 #define rall(x) 	(x).rbegin(), (x).rend()
 #define sz(x) 		(int)x.size()
 #define debug(x) 	cerr << #x << " = " << (x) <<endl
-#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0)
+#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
