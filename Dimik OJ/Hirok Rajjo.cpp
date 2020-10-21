@@ -4,26 +4,33 @@ using namespace std;
 
 int main()
 {
-    int i,j,n,m,t;
+    //freopen("out.txt", "w", stdout);
+    int n, m, t;
     cin>>t;
     while(t--)
     {
-        cin>>n>>m;
-        for( i = 0; i < n; i++)
+        int i, j;
+        cin >> n >> m;
+        for(i = 1; i <= n; i++)
         {
-            for(j = 0; j < i; j++)
-                cout<<m;
+            for(j = 1; j <= i; j++) {
+                if(i != j)
+                    cout << m << " ";
+                else
+                    cout << m;
+            }
             cout<<endl;
         }
-        for( int l = i - 1; l >= 0; l--)
-        {
-            for(int k = l; k >= 0; k--)
-                cout<<m;
-            cout<<endl;
-        
+        for (i = n - 1; i >= 1; i--) {
+            for (j = 1; j <= i; j++) {
+                if (j == i)
+                    cout << m;
+                else
+                    cout << m <<" ";
+            }
+            printf("\n");
         }
+        printf("\n");
     }
-    
-     
 	return 0;
 }

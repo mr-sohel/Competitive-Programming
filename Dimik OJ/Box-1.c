@@ -2,9 +2,10 @@
 
 int main()
 {
-    int T,N,i,j,k;
+    //freopen("out.txt", "w", stdout);
+    int T, N, i, j, k;
     scanf("%d", &T);
-    for (i = 0; i < T; i++)
+    while(T--)
     {
         scanf("%d", &N);
         for (j = 0; j < N;j++)
@@ -15,7 +16,8 @@ int main()
             }
             printf("\n");
         }
-        printf("\n");
+        if(T != 0)
+            printf("\n");
     }
     return 0;
 }

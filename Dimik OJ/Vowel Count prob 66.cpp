@@ -1,22 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    int count = 0, i,t;
-    char ch[100];
-    cin>>t;
-
-    while(t--)
-    {
-        getchar();
-        scanf("%[^\n]", ch);
-        for(i = 0; i < strlen(ch); i++)
-        {
-            if(ch[i] == 'a' || ch[i] == 'i' || ch[i] == 'o' || ch[i] == 'u'|| ch[i] == 'e')
+int main() {
+    //freopen("out.txt", "w", stdout);
+    int count = 0, t;
+    string s;
+    cin >> t;
+    //cin.ignore();
+    getchar();
+    while (t--) {
+                //scanf("%[^\n]", ch);
+        getline(cin, s);
+        
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U') {
                 count++;
+            }
         }
-        cout<<"Number of Vowels"<<" = "<<count<<endl;
+        cout << "Number of vowels" << ' ' << '=' << ' ' << count << endl;
         count = 0;
     }
     return 0;

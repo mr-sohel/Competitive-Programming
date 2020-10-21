@@ -16,5 +16,5 @@ int main()
         printf("%lld\n", fect);
         fect = 1;
     }
-
+    return 0;
 }

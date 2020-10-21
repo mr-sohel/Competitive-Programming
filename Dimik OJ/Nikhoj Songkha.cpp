@@ -1,6 +1,6 @@
 /**
  *    Author:  Sohel Rana
- *    Date:    2020-10-20 14:28:29
+ *    Date:    2020-10-21 19:24:07
  *	  Link:    link
 **/
 #include <bits/stdc++.h>
@@ -29,7 +29,31 @@ using namespace std;
 
 int main()
 {
+    //freopen("/home/taalpatar_shepai/Documents/my_codes/in.txt", "r", stdin);
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     //unsyncIO;
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        cin >> n;
+        vector<int> vec(n-1);
+        for (int i = 0; i < n - 1; i++) {
+            cin >> vec[i];
+        }
+        sort(all(vec));
+        int temp = 0;
+        for (int i = 1; i <= n; i++) {
+            if(i > vec.size()) {
+                temp = i;
+                break;
+            }
+            else if(vec[i-1] != i) {
+                temp = i;
+                break;
+            }
+        }
+        cout << temp << endl;
+    }
     return 0;
 }
