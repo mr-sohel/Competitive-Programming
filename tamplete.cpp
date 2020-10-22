@@ -1,6 +1,6 @@
 /**
  *    Author:  Sohel Rana
- *    Date:    2020-10-22 10:28:07
+ *    Date:    2020-10-22 10:42:57
  *	  Link:    link
 **/
 #include <bits/stdc++.h>
@@ -18,7 +18,8 @@
 #define all(x)      (x).begin(), (x).end()
 #define rall(x) 	(x).rbegin(), (x).rend()
 #define sz(x) 		(int)x.size()
-#define debug(x) 	cerr << #x << " = " << (x) <<endl
+#define debug(x) 	cerr << #x << " = " << (x) << endl
+#define debug2(x,y) cerr << #x << " = " << (x)<< "," << #y << " = " <<(y)<< endl
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 const ld PI = acos((ld)-1);
