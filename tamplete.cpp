@@ -1,6 +1,6 @@
 /**
  *    Author:  Sohel Rana
- *    Date:    2020-10-20 14:28:29
+ *    Date:    2020-10-22 10:28:07
  *	  Link:    link
 **/
 #include <bits/stdc++.h>
@@ -29,7 +29,9 @@ using namespace std;
 
 int main()
 {
-    //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
     //unsyncIO;
+    
     return 0;
 }
