@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-10-23 23:09:50
- *	Task:    tamplete 
+ *	Date:    2020-10-23 23:15:11
+ *	Task:    tamplate 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
