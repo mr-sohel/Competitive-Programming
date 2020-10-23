@@ -1,7 +1,7 @@
 /**
- *	Author:  Sohel Rana
- *	Date:    2020-10-23 23:09:50
- *	Task:    tamplete 
+ *	Author:  ${1:Sohel Rana}
+ *	Date:    ${date}
+ *	Task:    ${TM_FILENAME_BASE} 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -30,9 +30,9 @@ using namespace std;
 
 int main()
 {
-    //freopen("in.txt", "r", stdin);
-    //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-    
+	//freopen("in.txt", "r", stdin);
+	//freopen("out.txt", "w", stdout);
+	//unsyncIO;
+	
     return 0;
 }

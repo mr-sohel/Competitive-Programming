@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-10-23 23:09:50
- *	Task:    tamplete 
+ *	Date:    2020-10-23 22:30:04
+ *	Task:    Task Name
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -33,6 +33,12 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    int v;
+    cin >> v;
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    cout << lower_bound(all(arr), v) - arr.begin();
     return 0;
 }
