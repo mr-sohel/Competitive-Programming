@@ -1,6 +1,6 @@
 // In the name of Allah.
 // We're nothing and you're everything.
-// Ya Ali!
+
  
 #include <bits/stdc++.h>
 using namespace std;
