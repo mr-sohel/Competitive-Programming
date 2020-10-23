@@ -1,7 +1,7 @@
 {
-    "editor.fontFamily": "'Monaco','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Monaco'",
     "editor.fontSize": 15,
-    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontFamily": "Hack",
     "terminal.integrated.fontSize": 15,
     "editor.autoIndent": "full",
     "editor.formatOnType": true,
@@ -118,9 +118,8 @@
     "workbench.colorTheme": "One Dark Pro",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons-mac",
-    "insertDateString.format": "DD-MM-YYYY",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
     "C_Cpp.suggestSnippets": false,
     "C_Cpp.formatting": "clangFormat",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64"
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
 }
