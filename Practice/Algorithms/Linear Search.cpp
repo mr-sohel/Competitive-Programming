@@ -1,5 +1,5 @@
 #include <cstdio>
- 
+
 // Linear Search complexity is O(n);
 // Thanks Tamim Shahriar Subeen
 
@@ -22,6 +22,5 @@ int main()
     if(result == -1) 
         printf("%d is not found in the array\n", n);
     else
-       printf("%d is found in location %d\n", n, result+1);
+        printf("%d is found in location %d\n", n, result+1);
 }
- 

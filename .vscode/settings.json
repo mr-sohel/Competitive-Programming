@@ -122,4 +122,5 @@
     "C_Cpp.suggestSnippets": false,
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "indentRainbow.updateDelay": 10
 }
