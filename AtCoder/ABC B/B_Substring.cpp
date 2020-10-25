@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-10-25 13:07:05
- *	Task:    tamplate 
+ *	Date:    2020-10-25 18:48:29
+ *	Task:    B_Substring 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -29,11 +29,30 @@ const ld eps = 1.0E-14;
 
 using namespace std;
 
-int main()
-{
+int main() {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    string s, t;
+    cin >> s >> t;
+    int ans = sz(t);
+    int minMove = 0;
+    if (s.find(t) != string::npos) {
+        cout << 0 << endl;
+    } else {
+        int k;
+        for (int i = 0; i < (s.length() - t.length())+1; i++) {
+            for (int j = 0 , k = i; j < t.length(); k++, j++) {
+                //debug2(s[k], t[j]);
+                if (s[k] != t[j]) {
+                    minMove++;
+                }
+            }
+            ans = min(ans, minMove);
+            minMove = 0;
+        }
+        cout << ans << endl;
+    }
+
     return 0;
 }

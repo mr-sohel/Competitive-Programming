@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-10-25 13:07:05
- *	Task:    tamplate 
+ *	Date:    2020-10-25 20:25:48
+ *	Task:    C_Sum_of_product_of_pairs 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -33,7 +33,26 @@ int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-    
+    unsyncIO;
+    ll n;
+    cin >> n;
+    ll sum = 0;
+    vector<int> A(n);
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
+        sum += A[i];
+        sum %= MOD;
+    }
+   // debug(sum);
+    ll ans = 0;
+    for (int i = 0; i < n; i++) {
+        // debug2(sum, ans);
+        // debug(A[i]);
+        sum -= A[i];
+        if (sum < 0) sum += MOD;
+        ans += A[i] * sum;
+        ans %= MOD;
+    }
+    cout << ans<< endl;
     return 0;
 }

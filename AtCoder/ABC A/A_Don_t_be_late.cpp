@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-10-25 13:07:05
- *	Task:    tamplate 
+ *	Date:    2020-10-25 18:17:14
+ *	Task:    A_Don_t_be_late 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -33,7 +33,13 @@ int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-    
+    unsyncIO;
+    ull d, t, s;
+    cin >> d >> t >> s;
+
+    if((t*s) >= d)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
     return 0;
 }
