@@ -25,21 +25,20 @@ bool isPrime(long long int n) {
 	return marked[n] == false;
 }
 void sieve(long long int n) {
-	for (int i = 3; i * i <= n; i += 2) {
-		if (marked[i] == false) { // i is a prime
-			for (int j = i * i; j <= n; j += 2 * i) {
-				marked[j] = true;
-			}
-		}
-	}
-// 	if you need to store the primes then ->
-	primes.push_back(2);
- 	for (int i = 3; i < n; i += 2) {
-         if (marked[i] == false)  // i is a prime
-             primes.push_back(i);
- 	}
+    for (int i = 3; i * i <= n; i += 2) {
+        if (marked[i] == false) {  // i is a prime
+            for (int j = i * i; j <= n; j += 2 * i) {
+                marked[j] = true;
+            }
+        }
+    }
+    // 	if you need to store the primes then ->
+    primes.push_back(2);
+    for (int i = 3; i < n; i += 2) {
+        if (marked[i] == false)  // i is a prime
+            primes.push_back(i);
+    }
 }
-
 
 /* not so optimized
 int countDivisor (int n) {
