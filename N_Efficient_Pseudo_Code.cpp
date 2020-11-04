@@ -56,35 +56,65 @@ void sieve() {
             primes.push_back(i);
     }
 }
-//optimized algo is
+// //optimized algo is
+// ll divisorSum(ll n) {
+//     ll total = 1;
+//     for (ll i = 0; i < primes.size(); i++) {
+//         ll cnt = 1;
+//         while (n % primes[i] == 0) {
+//             n /= primes[i];
+//             cnt++;
+//         }
+//         total *= (pow(primes[i], cnt) - 1) / (primes[i] - 1);
+//     }
+//     return total;
+// }
 ll divisorSum(ll n) {
-    ll total = 1;
-    for (ll i = 0; i < primes.size(); i++) {
-        ll cnt = 1;
-        while (n % primes[i] == 0) {
-            n /= primes[i];
-            cnt++;
+    ll sum = 0;
+    set<int> st;
+    set<int>::iterator it;
+    int cnt = 0;
+    for (int i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            st.insert(i);
+            st.insert(n / i);
         }
-        total *= (pow(primes[i], cnt) - 1) / (primes[i] - 1);
     }
-    return total;
+    for (it = st.begin(); it != st.end(); it++) {
+        sum += *it % MOD;
+    }
+    return sum;
+}
+
+ll power(ll x, ll y, ll p) {
+    ll res = 1;
+    if (x == 0 and y == 0)
+        return 0LL;
+    x = x % p;
+    while (y > 0) {
+        if (y % 2)
+            res = (res * x) % p;
+        y = y / 2;
+        x = (x * x) % p;
+    }
+    return res;
 }
 
 int main() {
     // freopen("in.txt", "r", stdin);
-    // freopen("out.txt", "w", stdout);
+    //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    sieve();
+    //sieve();
     ll t;
     cin >> t;
     ll tc = 1;
     while (t--) {
         ll n, m;
         cin >> n >> m;
-        ll p = pow(n, m);
+        ll p = power(n, m, MOD); //.. bigmod
         ll sum = divisorSum(p);
         //debug(sum);
-        sum %= MOD;
+        //sum %= MOD;
         if (sum < 0) sum += MOD;
 
         cout << "Case " << tc++ << ": " << sum << endl;
