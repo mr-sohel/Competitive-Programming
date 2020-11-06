@@ -34,7 +34,6 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
     int size, operation;
     int t;
     cin >> t;
