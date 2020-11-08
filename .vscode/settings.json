@@ -115,7 +115,7 @@
     "C_Cpp.default.cStandard": "gnu17",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+    "workbench.colorTheme": "One Monokai",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-icons-mac",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
