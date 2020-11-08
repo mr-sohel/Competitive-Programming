@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2020-11-08 18:03:07
+ *	Task:    A_twiblr 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -32,11 +32,14 @@ using namespace std;
 
 int main()
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	//ld stime = gett();
-	
-	//cerr << "Time: " << gett() - stime << endl;
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    //ld stime = gett();
+    int a, b;
+    cin >> a >> b;
+    int atmost = 2 * a + 100;
+    cout << atmost - b << endl;
+    //cerr << "Time: " << gett() - stime << endl;
     return 0;
 }

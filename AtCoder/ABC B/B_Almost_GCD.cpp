@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2020-11-08 18:22:00
+ *	Task:    B_Almost_GCD 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -30,13 +30,30 @@ inline ld gett() { return clock() / ld (CLOCKS_PER_SEC); }
 
 using namespace std;
 
-int main()
-{
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	//ld stime = gett();
-	
-	//cerr << "Time: " << gett() - stime << endl;
+int main() {
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    //ld stime = gett();
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    ll cnt = 0;
+    vector<pair<ll, ll> > vs;
+    for (int i = 0; i < n; i++) cin >> v[i];
+    int mx = *max_element(all(v));
+    for (int i = 2; i <= mx; i++) {
+        for (int j = 0; j < n; j++) {
+            if (v[j] % i == 0)
+                cnt++;
+        }
+        vs.pb(make_pair(cnt, i));
+        cnt = 0;
+    }
+    sort(rall(vs));
+    // for (int i = 0; i < vs.size(); i++)
+    //     debug2(vs[i].first, vs[i].second);
+    cout << vs[0].second << endl;
+    //cerr << "Time: " << gett() - stime << endl;
     return 0;
 }

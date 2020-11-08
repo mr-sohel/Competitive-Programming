@@ -108,9 +108,10 @@
         "typeinfo": "cpp",
         "variant": "cpp"
     },
-    "cph.defaultLanguage": "cpp",
-    "cph.saveLocation": "/home/taalpatar_shepai/Documents/Extra Files",
-    "cph.argsCpp": "-Wmaybe-uninitialized -std=gnu++17",
+    "cph.general.defaultLanguage": "cpp",
+    "cph.language.cpp.SubmissionCompiler": "GNU G++17 7.3.0",
+    "cph.general.saveLocation": "/home/taalpatar_shepai/Documents/Extra Files",
+    "cph.language.cpp.Args": "-Wmaybe-uninitialized -std=gnu++17",
     "C_Cpp.default.cppStandard": "gnu++17",
     "C_Cpp.default.cStandard": "gnu17",
     "telemetry.enableCrashReporter": false,
@@ -122,5 +123,6 @@
     "C_Cpp.suggestSnippets": false,
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "indentRainbow.updateDelay": 10
+    "indentRainbow.updateDelay": 10,
+    
 }
