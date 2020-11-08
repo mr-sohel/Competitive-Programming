@@ -1,6 +1,6 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-04 23:19:36
+ *	Date:    2020-11-08 17:51:06
  *	Task:    tamplate 
 **/
 #include <bits/stdc++.h>
@@ -20,6 +20,7 @@
 
 typedef double 			   db;
 typedef long double 	   ld;
+typedef long long 		   ll;
 typedef unsigned long long ull;
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
