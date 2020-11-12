@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-08 18:22:00
- *	Task:    B_Almost_GCD 
+ *	Date:    2020-11-12 21:12:48
+ *	Task:    Digits_Count 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -26,39 +26,32 @@ const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
 const ld eps = 1.0E-14;
-inline ld gett() { return clock() / ld (CLOCKS_PER_SEC); }
 
 using namespace std;
 
-int main() {
+int main()
+{
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    //ld stime = gett();
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    ll cnt = 0;
-    //vector<pair<ll, ll> > vs;
-    for (int i = 0; i < n; i++) cin >> v[i];
-    int maxx = -1, res;
-    for (int i = 2; i <= 1000; i++) {
-        for (int j = 0; j < n; j++) {
-            if (v[j] % i == 0)
-                cnt++;
+    int a, b;
+    while(cin>>a>>b) {
+        int cnt[10] = {0};
+        if (a == 0 and b == 0)
+            break;
+        else {
+            for (int i = a; i <= b; i++) {
+                int temp = i;
+                while(temp) {
+                    cnt[temp % 10]++;
+                    temp /= 10;
+                };
+//                cnt[i]++;
+            }
         }
-        if(cnt > maxx){
-            maxx = cnt;
-            res = i;
-            cnt = 0;
-        }
-            // vs.pb(make_pair(cnt, i));
-            // cnt = 0;
+        for(auto x: cnt)
+            cout << x << ' ';
+        cout<<endl;
     }
-    // sort(rall(vs));
-    // // for (int i = 0; i < vs.size(); i++)
-    // //     debug2(vs[i].first, vs[i].second);
-    cout << res << endl;
-    //cerr << "Time: " << gett() - stime << endl;
     return 0;
 }

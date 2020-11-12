@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-08 18:22:00
- *	Task:    B_Almost_GCD 
+ *	Date:    2020-11-12 19:54:49
+ *	Task:    Is_it_divisible_by_3_6_and_9_ 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -26,39 +26,44 @@ const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
 const ld eps = 1.0E-14;
-inline ld gett() { return clock() / ld (CLOCKS_PER_SEC); }
 
 using namespace std;
 
-int main() {
+ll sol(string s) {
+    ll sum = 0;
+    for(int i = 0;i < sz(s); i++)
+        sum += s[i]-'0';
+    return sum;
+}
+void div3(ll sum ) {
+    if(sum % 3 == 0)
+        cout << "Yes" << endl;
+    else 
+        cout << "No" << endl;
+}
+void div9(ll sum ) {
+    if(sum % 9 == 0)
+        cout << "Yes" << endl;
+    else 
+        cout << "No" << endl;
+}
+void div6(string s, ll sum) {
+    if((s[sz(s)-1]-'0') % 2 == 0 and sum % 3 == 0)
+        cout << "Yes" << endl;
+    else 
+        cout << "No" << endl;
+}
+
+int main()
+{
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    //ld stime = gett();
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    ll cnt = 0;
-    //vector<pair<ll, ll> > vs;
-    for (int i = 0; i < n; i++) cin >> v[i];
-    int maxx = -1, res;
-    for (int i = 2; i <= 1000; i++) {
-        for (int j = 0; j < n; j++) {
-            if (v[j] % i == 0)
-                cnt++;
-        }
-        if(cnt > maxx){
-            maxx = cnt;
-            res = i;
-            cnt = 0;
-        }
-            // vs.pb(make_pair(cnt, i));
-            // cnt = 0;
-    }
-    // sort(rall(vs));
-    // // for (int i = 0; i < vs.size(); i++)
-    // //     debug2(vs[i].first, vs[i].second);
-    cout << res << endl;
-    //cerr << "Time: " << gett() - stime << endl;
+    string s;
+    cin>>s;
+    ll sum = sol(s);
+    div3(sum);
+    div6(s, sum);
+    div9(sum);
     return 0;
 }
