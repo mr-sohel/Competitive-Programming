@@ -56,6 +56,5 @@ int main()
     string s;
     cin >> s;
     func(s);
-   
     return 0;
 }
