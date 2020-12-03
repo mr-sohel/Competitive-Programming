@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-23 21:10:05
- *	Task:    tamplate 
+ *	Date:    2020-12-03 19:12:51
+ *	Task:    Alayna_and_Vowels 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -33,7 +33,14 @@ int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-
+    unsyncIO;
+    string s;
+    cin >> s;
+    int cnt = 0;
+    for (int i = 0; i < sz(s); i++) {
+        if(s[i] == 'a' || s[i] == 'A' || s[i] == 'e' || s[i] == 'E' || s[i] == 'I' || s[i] == 'i' || s[i] == 'o' || s[i] == 'O' || s[i] == 'u' || s[i] == 'U')
+            cnt++;
+    }
+    cout << cnt << endl;
     return 0;
 }

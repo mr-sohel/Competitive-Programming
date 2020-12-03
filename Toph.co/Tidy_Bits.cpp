@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-23 21:10:05
- *	Task:    tamplate 
+ *	Date:    2020-12-03 20:03:33
+ *	Task:    Tidy_Bits 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -33,7 +33,14 @@ int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-
+    unsyncIO;
+    int a, ans = 0;
+    cin >> a;
+    int cnt = __builtin_popcount(a);
+    for (int i = 0; i < cnt; i++) {
+        ans += 1 << i;
+        debug(ans);
+    }
+    cout << ans << endl;
     return 0;
 }
