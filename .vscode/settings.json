@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "'Monaco'",
-    "editor.fontSize": 15,
+    "editor.fontSize": 18,
     "terminal.integrated.fontFamily": "Hack",
     "terminal.integrated.fontSize": 15,
     "editor.autoIndent": "full",

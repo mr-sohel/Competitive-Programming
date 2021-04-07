@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-23 21:10:05
- *	Task:    tamplate 
+ *	Date:    2021-04-07 23:06:37
+ *	Task:    test 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -34,10 +34,13 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    long long int n = 1, i,j;
-    for(i = 1; i <= 2; i++) 
-    for(j = 1; j <= 5;j++)
-    debug(n=n*i+j); 
-    //cout<<n<<endl;
+    int i = 5;
+    for(i = 2; i < 100; i++);
+    {   
+        cout<<i<<endl;
+        i--;
+    }
+    if(i < 5) printf("Good Job");
+    printf("Hello World!");
     return 0;
 }
