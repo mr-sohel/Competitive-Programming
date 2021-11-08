@@ -114,7 +114,6 @@
     "cph.language.cpp.Args": "-Wmaybe-uninitialized -std=gnu++17",
     "C_Cpp.default.cppStandard": "gnu++17",
     "C_Cpp.default.cStandard": "gnu17",
-    "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "One Monokai",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
