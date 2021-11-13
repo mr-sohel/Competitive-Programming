@@ -1,6 +1,6 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2020-11-23 21:10:05
+ *	Date:    2021-11-13 19:59:33
  *	Task:    tamplate 
 **/
 #include <bits/stdc++.h>
@@ -19,9 +19,9 @@
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 typedef double 			   db;
-typedef long double 	   ld;
+typedef long double 	   	   ld;
 typedef long long 		   ll;
-typedef unsigned long long ull;
+typedef unsigned long long 	   ull;
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
@@ -34,10 +34,6 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    long long int n = 1, i,j;
-    for(i = 1; i <= 2; i++) 
-    for(j = 1; j <= 5;j++)
-    debug(n=n*i+j); 
-    //cout<<n<<endl;
+    
     return 0;
 }
