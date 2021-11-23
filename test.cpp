@@ -1,6 +1,6 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-04-07 23:06:37
+ *	Date:    2021-11-22 17:22:24
  *	Task:    test 
 **/
 #include <bits/stdc++.h>
@@ -19,9 +19,9 @@
 #define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
 typedef double 			   db;
-typedef long double 	   ld;
+typedef long double 	   	   ld;
 typedef long long 		   ll;
-typedef unsigned long long ull;
+typedef unsigned long long 	   ull;
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
@@ -34,13 +34,11 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    int i = 5;
-    for(i = 2; i < 100; i++);
-    {   
-        cout<<i<<endl;
-        i--;
+    int cnt = 0;
+    for(int i = 1; i <= 100; i++) {
+        if(i % 5 != 0 and i % 7 != 0 and i % 3 != 0)
+            cnt++; 
     }
-    if(i < 5) printf("Good Job");
-    printf("Hello World!");
+    cout<<cnt<<endl;
     return 0;
 }

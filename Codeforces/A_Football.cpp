@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-11-23 23:22:11
+ *	Task:    A_Football 
 **/
 #include <bits/stdc++.h>
 #define endl        '\n'
@@ -29,11 +29,45 @@ const ld eps = 1.0E-14;
 
 using namespace std;
 
+bool count_z(string s) {
+    int cnt = 0;
+    for(int i = 0; i < s.length(); i++) {
+       
+        if(s[i] == '0') {
+            cnt++;
+            if(cnt >= 7)
+                return true;
+        } else 
+            cnt = 0;
+    }
+    return false;
+}
+bool count_o(string s) {
+   int cnt = 0;
+    for(int i = 0; i < s.length(); i++) {
+       
+        if(s[i] == '1') {
+            cnt++;
+            if(cnt >= 7)
+                return true;
+        }
+        else 
+            cnt = 0;
+    }
+    return false;
+}
+
 int main()
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    string s;
+    cin>>s;
+   
+    if(count_z(s) or count_o(s)) {
+        cout<<"YES"<<endl;
+    } else 
+        cout<<"NO"<<endl;
     return 0;
 }
