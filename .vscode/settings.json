@@ -4,8 +4,6 @@
     "terminal.integrated.fontFamily": "Hack",
     "terminal.integrated.fontSize": 15,
     "editor.autoIndent": "full",
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
     "editor.suggest.showVariables": true,
     "editor.suggest.showKeywords": true,
     "editor.quickSuggestions": true,
@@ -21,9 +19,10 @@
     "editor.quickSuggestionsDelay": 15,
     "editor.suggest.localityBonus": true,
     "editor.suggest.shareSuggestSelections": true,
-    "editor.suggest.statusBar.visible": true,
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": true,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnSaveMode": "modifications",
     "files.associations": {
@@ -108,14 +107,15 @@
         "typeinfo": "cpp",
         "variant": "cpp"
     },
-    "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Atom One Dark",
-    "workbench.preferredDarkColorTheme": "One Dark Pro",
+    "workbench.preferredDarkColorTheme": "Atom One Dark",
     "workbench.iconTheme": "vscode-icons-mac",
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
-    "C_Cpp.suggestSnippets": false,
+    "cph.general.defaultLanguage": "cpp",
     "C_Cpp.formatting": "clangFormat",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "indentRainbow.updateDelay": 10,
-    
+    "C_Cpp.default.cStandard": "gnu17",
+    "C_Cpp.default.cppStandard": "gnu++17",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_style": "Google",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+
 }
