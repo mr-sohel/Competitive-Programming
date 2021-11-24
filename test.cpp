@@ -36,5 +36,5 @@ int main()
   //freopen("out.txt", "w", stdout);
   //unsyncIO;
   
-    return 0;
+  return 0;
 }

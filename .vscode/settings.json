@@ -111,11 +111,13 @@
     "workbench.preferredDarkColorTheme": "Atom One Dark",
     "workbench.iconTheme": "vscode-icons-mac",
     "cph.general.defaultLanguage": "cpp",
-    "C_Cpp.formatting": "clangFormat",
     "C_Cpp.default.cStandard": "gnu17",
     "C_Cpp.default.cppStandard": "gnu++17",
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "C_Cpp.clang_format_style": "Google",
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "C_Cpp.formatting": "vcFormat",
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "C_Cpp.vcFormat.space.beforeBlockOpenBrace": false,
 
 }

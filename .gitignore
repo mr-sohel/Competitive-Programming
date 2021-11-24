@@ -7,7 +7,6 @@
 input
 output
 _config.yml
-Json Code.txt
 *.prob
 *.o
-test.cpp
+test
