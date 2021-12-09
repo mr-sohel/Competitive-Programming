@@ -39,15 +39,23 @@ int main()
     ll t; 
     cin >> t;
     while (t--) {
-        ll n, l, r, k, cnt = 0;
+        ll i, n, l, r, k;
+        ull sum = 0;
         cin >> n >> l >> r >> k;
-        vector<ll> a(n);
+        vector<ll> a;
         for (int i = 0;i < n; i++) {
-            cin >> a[i];
+            ll temp;
+            cin >> temp;
+            if (temp >= l and temp <= r)
+                a.pb(temp);
         }
         sort(all(a));
-        for(int i = 0; k <=)
-
+        for (i = 0; i < sz(a); i++) {
+            if (k < a[i])
+                break;
+            k = k - a[i];
+        }
+        cout << i << endl;
     }
     return 0;
 }

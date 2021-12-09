@@ -1,46 +1,58 @@
+/**
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-02 20:47:51
+ *	Task:    A_Team_Olympiad 
+**/
 #include <bits/stdc++.h>
-#define endl        '\n'
-#define pi          2*acos(0.0)
-#define pb(a)       push_back(a)
-#define db          double
-#define ld          long double
-#define ll          long long
-#define ull         unsigned long long
-#define mod         1000000007
-#define inf         1000000000000000001
-#define sqr(x)      (x) * (x)
-#define gcd(a, b)   __gcd(a, b)
-#define lcm(a, b)   ((a/gcd(a,b)) * b)
-#define debug(x) 	cerr << #x << " = " << (x) <<endl
-#define unsyncIO    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#define endl			'\n'
+#define sqr(x)			(x) * (x)
+#define gcd(x, y)		__gcd(x, y)
+#define lcm(x, y)		((x/gcd(x,y)) * y)
+#define pf(x) 	  		push_front(x)
+#define pb(x)			push_back(x)
+#define eb(x)			emplace_back(x)
+#define all(x)      	(x).begin(), (x).end()
+#define rall(x)			(x).rbegin(), (x).rend()
+#define sz(x)			(int)x.size()
+#define debug(x)		cerr << #x << " = " << (x) << endl
+#define debug2(x,y) 	cerr << #x << " = " << (x)<< "," << #y << " = " <<(y)<< endl
+#define unsyncIO    	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
+typedef double			    db;
+typedef long double		    ld;
+typedef long long 		    ll;
+typedef unsigned long long	ull;
+
+const ld PI = acos((ld)-1);
+const int MOD = 1e9+7;
+const long long INF = 1e18;
+const ld eps = 1.0e-14;
 
 using namespace std;
 
 int main()
 {
-    //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    unsyncIO;
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
     int n;
     cin >> n;
-    vector<int> p, m, s;
-    for (int i = 0; i < n; i++) {
+    vector<int> p, m, e;
+    for (int i = 0;i < n; i++) {
         int temp;
         cin >> temp;
         if (temp == 1)
             p.pb(i+1);
         else if (temp == 2)
             m.pb(i+1);
-        else if (temp == 3)
-            s.pb(i+1);
+        else
+            e.pb(i+1);
     }
-        
-    int n_team;
-    n_team = min(size(p), min(size(m), size(s)));
-    cout << n_team << endl;
-    if(n_team) {
-        for (int i = 0; i < n_team; i++) {
-            cout << p[i] << " " << m[i] << " " << s[i] << endl;
+    int mx = min(sz(p), min(sz(m), sz(e)));
+    cout << mx << endl;
+    if (mx > 0) {
+        for (int i = 0;i < mx; i++) {
+            cout << p[i] << " " << m[i] << " " << e[i] << endl;
         }
     }
     return 0;
