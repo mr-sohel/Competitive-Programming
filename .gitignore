@@ -1,12 +1,7 @@
 #binary files
-
+*.o
 *.out
 
 #file i/o
 *.txt
-input
-output
-_config.yml
 *.prob
-*.o
-test

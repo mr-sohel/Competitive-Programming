@@ -105,7 +105,8 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "coroutine": "cpp"
     },
     "workbench.colorTheme": "Atom One Dark",
     "workbench.preferredDarkColorTheme": "Atom One Dark",
@@ -119,5 +120,6 @@
     "C_Cpp.formatting": "vcFormat",
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "C_Cpp.vcFormat.space.beforeBlockOpenBrace": false,
+    "diffEditor.ignoreTrimWhitespace": false,
 
 }
