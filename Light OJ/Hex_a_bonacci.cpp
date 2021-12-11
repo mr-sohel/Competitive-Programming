@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-12-10 22:15:43
- *	Task:    1011 Conductors 
+ *	Date:    2021-12-09 14:55:05
+ *	Task:    Hex_a_bonacci 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -24,18 +24,28 @@ typedef long long 		    ll;
 typedef unsigned long long	ull;
 
 const ld PI = acos((ld)-1);
-const int MOD = 1e9+7;
+const ll MOD = 10000007LL;
 const long long INF = 1e18;
 const ld eps = 1.0e-14;
 
 using namespace std;
 
-int main() {
-    int res = 0, a1, a2;
-    double p, q;
-    scanf("%lf%lf", &p, &q);
-    do {
-        res++, a1 = (int)(p * (double)res) / 100, a2 = (int)(q * (double)res - (0.000000001)) / 100;
-    } while (a1 == a2);
-    printf("%d\n", res);
+int main() 
+{
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    ll n, cases;
+    ll v [10000];
+    cin >> cases;
+    for (int caseno = 1; caseno <= cases; ++caseno) {
+        
+        cin >> v[0] >> v[1] >> v[2] >> v[3] >> v[4] >> v[5] >> n;
+        for (int i = 6; i <= n; i++) {
+            v[i] = (v[i - 1] + v[i - 2] + v[i - 3] + v[i - 4] + v[i - 5] + v[i - 6]) % MOD;
+        
+        }
+        cout << "Case " << caseno << ": " << v[n] % MOD<< endl;
+    }
+    return 0;
 }

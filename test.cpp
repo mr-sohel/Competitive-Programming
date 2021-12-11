@@ -35,6 +35,12 @@ int main()
   //freopen("in.txt", "r", stdin);
   //freopen("out.txt", "w", stdout);
   //unsyncIO;
-  
+  int x = 1;
+  while (x * 2 < 1000) {
+    x *= 2;
+  }
+  cout << x << endl;
+  for (x = 1; x * 2 < 1000; x *= 2);
+  cout << x << endl;
   return 0;
 }

@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-12-10 22:15:43
- *	Task:    1011 Conductors 
+ *	Date:    2021-12-11 00:02:05
+ *	Task:    1014_Product_of_Digits 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -30,12 +30,41 @@ const ld eps = 1.0e-14;
 
 using namespace std;
 
-int main() {
-    int res = 0, a1, a2;
-    double p, q;
-    scanf("%lf%lf", &p, &q);
-    do {
-        res++, a1 = (int)(p * (double)res) / 100, a2 = (int)(q * (double)res - (0.000000001)) / 100;
-    } while (a1 == a2);
-    printf("%d\n", res);
+
+int main() 
+{
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    ll n;
+    cin >> n;
+    int counter = 13;
+    vector<int> a(counter + 1, 0);
+    if (n == 0) {
+        cout << 10 << endl;
+        return 0;
+    }
+    if (n == 1) {
+        cout << 1 << endl;
+        return 0;
+    }
+    while (n > 1) {
+        for (int j = 9; j >= 0; j--) {
+            if (j == 1) {
+                cout << -1 << endl;
+                return 0;
+            }
+            if(n % j == 0) {
+                a[counter] = j;
+                counter--;
+                n /= j;
+                break;
+            }
+        }
+    }
+    for (int i = counter + 1; i < 14; i++)
+        cout << a[i];
+    cout << endl;
+
+    return 0;
 }

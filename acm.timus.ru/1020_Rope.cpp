@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-11-27 23:30:12
- *	Task:    B_Sort_the_Array 
+ *	Date:    2021-12-11 13:29:06
+ *	Task:    1020_Rope 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -31,47 +31,23 @@ const ld eps = 1.0e-14;
 using namespace std;
 
 
-
-
-
-int main()
+int main() 
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-    int n, p, q;
-    cin >> n;
-    vector<int> v(n);
+    unsyncIO;
+    int n;
+    double r, d = 0;
+    cin >> n >> r;
+    db x[n], y[n];
     for (int i = 0; i < n; i++) {
-        cin >> v[i];
+        cin >> x[i]>> y[i];
     }
-    if (is_sorted(v.begin(), v.end())) {
-        cout << "yes" << endl;
-        cout << v[0] << " " << v[0] << endl;
-        return 0;
+    for (int i = 0;i < n - 1; i++) {
+        d += sqrt(sqr(x[i] - x[i + 1]) + sqr(y[i] - y[i + 1]));
     }
-    for (int i = 0; i < n;i++) {
-        for (int j = i + 1; j < n; j++) {
-
-            swap(v[i], v[j]);
-            
-            if (is_sorted(v.begin(), v.end())) {
-                cout << "yes" << endl;
-                cout << v[i] << " " << v[j] << endl;
-                return 0;
-            }
-            else {
-                swap(v[j], v[i]);
-               // debug2(v[i], v[j]);
-                if (is_sorted(v.begin(), v.end())) {
-                    cout << "yes" << endl;
-                    cout << v[j] << " " << v[i] << endl;
-                    return 0;
-                }
-            }
-        }
-    }
-    cout << "no" << endl;
-
+    d += sqrt(sqr(x[0] - x[n - 1]) + sqr(y[0] - y[n - 1]));
+    d += 2 * PI * r;
+    printf("%.2lf\n", d);
     return 0;
 }
