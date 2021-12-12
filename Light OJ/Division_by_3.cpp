@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-12 20:59:35
+ *	Task:    Division_by_3 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -31,12 +31,28 @@ const ld EPS = 1.0e-14;
 
 using namespace std;
 
+ll numbers_divisible_by_3_from_1_to_n(int n) {
+    if (n == 0) return 0;
+    int subs;
+    if (n % 3 == 0)
+        subs = n / 3;
+    else
+        subs = (n / 3) + 1;
+    return n - subs;
+}
 
-int main() 
+
+int main()
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++) {
+        ll a, b;
+        cin >> a >> b;
+        cout << "Case " << i << ": " << numbers_divisible_by_3_from_1_to_n(b) - numbers_divisible_by_3_from_1_to_n(a - 1) << endl;
+    }
     return 0;
 }
