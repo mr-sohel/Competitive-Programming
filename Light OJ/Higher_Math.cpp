@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-12-13 21:20:12
- *	Task:    test 
+ *	Date:    2021-12-12 23:21:26
+ *	Task:    Higher_Math 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -37,6 +37,17 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++) {
+        vector<int> a(3);
+        cin >> a[0] >> a[1] >> a[2];
+        sort(all(a));
+        if (sqr(a[2]) == (sqr(a[0]) + sqr(a[1]))) {
+            cout << "Case " << i << ": " << "yes" << endl;
+        }
+        else
+            cout << "Case " << i << ": " << "no" << endl;
+    }
     return 0;
 }

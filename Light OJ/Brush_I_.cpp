@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-12-13 21:20:12
- *	Task:    test 
+ *	Date:    2021-12-12 23:00:38
+ *	Task:    Brush_I_ 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -37,6 +37,20 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++) {
+        int sum = 0, n, x;
+        //getchar();
+        cin >> n;
+        for (int j = 1; j <= n; j++) {
+            cin >> x;
+            if (x < 0)
+                continue;
+            else
+                sum += x;
+        }
+        cout << "Case " << i << ": " << sum << endl;
+    }
     return 0;
 }

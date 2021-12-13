@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-12-13 21:20:12
- *	Task:    test 
+ *	Date:    2021-12-12 22:33:57
+ *	Task:    Parity 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -37,6 +37,17 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    int t;
+    cin >> t;
+    for (int i = 1; i <= t; i++) {
+        int n;
+        cin >> n;
+        int ones = __builtin_popcount(n);
+        if (ones % 2 == 1)
+            cout << "Case " << i << ": " << "odd" << endl;
+        else
+            cout << "Case " << i << ": " << "even" << endl;
+            
+    }
     return 0;
 }
