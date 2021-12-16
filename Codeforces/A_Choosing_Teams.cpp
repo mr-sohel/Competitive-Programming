@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-16 22:42:46
+ *	Task:    A_Choosing_Teams 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -34,9 +34,20 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    unsyncIO;
+    int n, k;
+    cin >> n >> k;
+    vector<int> v;
+    for (int i = 0;i < n; i++) {
+        int temp;
+        cin >> temp;
+        if (temp <= (5 - k)) {
+           // cout << temp << endl;
+            v.pb(temp);
+        }
+    }
+    cout << sz(v) / 3 << endl;
     return 0;
 }

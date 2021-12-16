@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-16 23:41:10
+ *	Task:    B_Taxi 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -34,9 +34,42 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    unsyncIO;
+    int n, cnt = 0;
+    cin >> n;
+    int one = 0, two = 0, three = 0;
+    for (int i = 0;i < n; i++) {
+        int temp;
+        cin >> temp;
+        if (temp == 4)
+            cnt++;
+        else if (temp == 3) {
+            three++;
+            cnt++;
+        }
+        else if (temp == 2)
+            two++;
+        else if (temp == 1)
+            one++;
+
+    }
+    one = one - three;
+    if (two % 2 == 0) {
+        cnt += two / 2;
+    }
+    else {
+        cnt += two / 2 + 1;
+        one -= 2;
+    }
+    if (one > 0) {
+        if (one % 4 == 0) {
+            cnt += one / 4;
+        }
+        else
+            cnt+=one/4+1;
+    }
+    cout << cnt << endl;
     return 0;
 }

@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-17 01:20:37
+ *	Task:    A_Chat_room 
 **/
 #include <bits/stdc++.h>
 #define endl				'\n'
@@ -31,12 +31,29 @@ const ld EPS = 1.0e-14;
 
 using namespace std;
 
+bool ismatch(string s1, string s2) {
+    int j = 0;
+    for (int i = 0;i < sz(s2); i++) {
+        if (s2[i] == s1[j])
+            j++;
+    }
+    if (j == 5)
+        return true;
+    return false;
+
+}
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    string s;
+    cin >> s;
+    if (ismatch("hello", s)) {
+        cout<<"YES"<<endl;
+    }
+    else cout <<"NO"<<endl;
+
     return 0;
 }

@@ -1,6 +1,6 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2021-12-13 21:20:12
+ *	Date:    2021-12-16 22:58:39
  *	Task:    test 
 **/
 #include <bits/stdc++.h>
@@ -17,7 +17,7 @@
 #define make_unique(x) 		(x).resize(unique(all((x)))-(x).begin())
 #define debug(x)			cerr<<#x<<" = "<<(x)<< endl
 #define debug2(x,y) 		cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
-#define unsyncIO    		ios_base::sync_with_stdio(0); cin.tie(0)
+#define unsyncIO    		ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using ll = long long;
 using db = double;
