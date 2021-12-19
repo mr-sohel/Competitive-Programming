@@ -33,6 +33,6 @@ int main()
     //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     int n;
     cin >> n;
-    cout << fib(n) << endl; /nth fibonacci number
+    cout << fib(n) << endl; //nth fibonacci number
     return 0;
 }

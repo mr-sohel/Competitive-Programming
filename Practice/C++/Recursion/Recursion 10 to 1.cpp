@@ -32,7 +32,7 @@ void func(int n) {
 
 int main()
 {
-    freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
+    //freopen("/home/taalpatar_shepai/Documents/my_codes/out.txt", "w", stdout);
     func(10);
     return 0;
 }
