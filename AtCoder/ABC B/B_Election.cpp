@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-20 18:31:21
+ *	Task:    B_Election 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -14,6 +14,7 @@
 #define all(x)      	(x).begin(), (x).end()
 #define rall(x)			(x).rbegin(), (x).rend()
 #define sz(x)			(int)x.size()
+#define make_unique(x) 	(x).resize(unique(all((x)))-(x).begin())
 #define debug(x)		cerr<<#x<<" = "<<(x)<< endl
 #define debug2(x,y) 	cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
 #define unsyncIO    	ios_base::sync_with_stdio(false); cin.tie(nullptr)
@@ -33,9 +34,26 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    int n, mx = 0;
+    string winner;
+    cin >> n;
+    vector<string> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    for (int i = 0;i < n; i++) {
+        string s = v[i];
+        int temp = 0;
+        for (int j = 0; j < n; j++) {
+            if (s == v[j])
+                temp++;
+        }
+        if (temp > mx) {
+            mx = temp;
+            winner = s;
+        }
+    }
+    cout << winner << endl;
     return 0;
 }
