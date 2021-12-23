@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2021-12-23 14:54:04
+ *	Task:    tamplate 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -26,7 +26,7 @@ using ull = unsigned long long;
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
-const ld EPS = 1.0e-14;
+const ld EPS = 1e-9;
 
 using namespace std;
 
@@ -37,5 +37,5 @@ int main()
 	//freopen("out.txt", "w", stdout);
 	//unsyncIO;
 	
-    return 0;
+	return 0;
 }
