@@ -1,7 +1,9 @@
 #binary files
+*
+!/**/
+!*.*
 *.o
 *.out
-
 #file i/o
 *.txt
 *.prob
