@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2022-02-11 18:38:16
+ *	Task:    A_Lineland Mail 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -33,9 +33,25 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    ll n, mn = 0, mx = 0;
+    cin >> n;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    for (int i = 0;i < n; i++) {
+        int x = v[i];
+        mx = max((v[n - 1] - x), (x - v[0]));
+        if (i == 0) {
+            mn = v[i + 1] - x;
+        }
+        else if (i == n - 1) {
+            mn = x - v[i - 1];
+        }
+        else
+            mn = min((v[i + 1] - x), (x - v[i - 1]));
+        cout << mn << " " << mx << endl;
+    }
     return 0;
 }

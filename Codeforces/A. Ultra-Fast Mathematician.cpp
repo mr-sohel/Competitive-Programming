@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2022-02-04 18:36:40
+ *	Task:    A. Ultra-Fast Mathematician 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -33,9 +33,14 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
-    return 0;
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    string a,b;
+    cin>>a>>b;
+    for(int i = 0; i < sz(a); i++) {
+		int x = (a[i]-'0') ^ (b[i]-'0');
+		cout<<x;
+	}
+	return 0;
 }

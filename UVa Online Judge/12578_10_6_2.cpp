@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2022-01-30 20:22:42
+ *	Task:    12578_10_6_2 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -26,16 +26,26 @@ using ull = unsigned long long;
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
-const ld EPS = 1e-9;
+const ld EPS = 1e9;
 
 using namespace std;
 
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    int t;
+    cin >> t;
+    while (t--) {
+        int l;
+        double red,redius, green;
+        cin >> l;
+        redius = l * (1.0 / 5.0);
+        red = PI * redius * redius;
+        green = l * (l * 0.6);
+        printf("%.2lf %.2lf\n", red, green - red);
+    }
     return 0;
 }

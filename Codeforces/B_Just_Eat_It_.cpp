@@ -1,7 +1,7 @@
 /**
- *	Author:  ${1:Sohel Rana}
- *	Date:    ${date}
- *	Task:    ${TM_FILENAME_BASE} 
+ *	Author:  Sohel Rana
+ *	Date:    2022-02-04 14:03:56
+ *	Task:    B_Just_Eat_It_ 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -30,12 +30,41 @@ const ld EPS = 1e-9;
 
 using namespace std;
 
+bool solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    ll all = 0;
+    for (int i = 0;i < n; i++)
+        all += a[i];
+    ll sum = 0;
+    for (int i = 0; i < n - 1; i++){
+        sum += a[i];
+        if (sum >= all)
+            return false;
+    }
+    sum = 0;
+    for (int i = n - 1; i > 0; i--) {
+        sum += a[i];
+        if (sum >= all)
+            return false;
+    }
+    return true;
+}
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    int t;
+    cin >> t;
+    while (t--) {
+        if (solve())
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
     return 0;
 }
