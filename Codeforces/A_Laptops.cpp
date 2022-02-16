@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-02-16 19:14:54
- *	Task:    test 
+ *	Date:    2022-02-15 14:21:23
+ *	Task:    A_Laptops 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -31,11 +31,31 @@ const ld EPS = 1e-9;
 using namespace std;
 
 
-int main() 
+int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    int n;
+    cin >> n;
+    vector< pair<int, int> > v;
+    for (int i = 0;i < n; i++) {
+        int x, y;
+        cin >> x >> y;
+        v.pb(make_pair(x, y));
+    }
+    sort(all(v));
+    bool flag = false;
+    for (int i = 0; i < n-1;i++) {
+        if (v[i].second > v[i + 1].second) {
+            flag = true;
+            break;
+        }
+    }
+    if (flag)
+        cout << "Happy Alex" << endl;
+    else
+        cout << "Poor Alex" << endl;
+
     return 0;
 }

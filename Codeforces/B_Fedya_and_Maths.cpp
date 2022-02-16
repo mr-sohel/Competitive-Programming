@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-02-16 19:14:54
- *	Task:    test 
+ *	Date:    2022-02-15 15:33:26
+ *	Task:    B_Fedya_and_Maths 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -31,11 +31,28 @@ const ld EPS = 1e-9;
 using namespace std;
 
 
-int main() 
+int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    string s;
+    int a[] = { 0,12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96 };
+    cin >> s;
+    if (s.length() < 2) {
+        int x = s[0] - '0';
+        if (x == 0 or x == 4 or x == 8)
+            cout << 4 << endl;
+        else
+            cout << 0 << endl;
+    }
+    else if (s.length() >= 2) {
+        int y = ( s[s.length() - 1] - '0' )+ (s[s.length() - 2] - '0') * 10;
+        if (binary_search(a, a + 23, y)) {
+            cout << 4 << endl;
+        }
+        else
+            cout << 0 << endl;
+    }
     return 0;
 }

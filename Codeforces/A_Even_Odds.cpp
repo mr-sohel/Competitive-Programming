@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-02-16 19:14:54
- *	Task:    test 
+ *	Date:    2022-02-16 17:13:22
+ *	Task:    A_Even_Odds 
 **/
 #include <bits/stdc++.h>
 #define endl			'\n'
@@ -36,6 +36,23 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    ll n, k;
+    cin >> n >> k;
+    if (n % 2 == 0) {
+        if (k <= (n / 2)) {
+            cout << 2 * k - 1 << endl;
+        }
+        else {
+            cout << (2 * k) - n << endl;
+        }
+    }
+    else {
+        if (k <= (n / 2) + 1){
+            cout << 2 * k - 1;
+        }
+        else {
+            cout << (2 * k) - (n+1) << endl;
+        }
+    }
     return 0;
 }
