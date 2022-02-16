@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "'Monaco'",
-    "editor.fontSize": 15,
+    "editor.fontSize": 18,
     "editor.autoIndent": "full",
     "editor.suggest.showVariables": true,
     "editor.suggest.showKeywords": true,
