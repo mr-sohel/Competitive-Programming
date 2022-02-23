@@ -1,6 +1,6 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-02-20 20:04:36
+ *	Date:    2022-02-23 18:51:41
  *	Task:    test 
 **/
 #include <bits/stdc++.h>
@@ -16,7 +16,7 @@
 #define sz(x)		(int)x.size()
 #define prec(x) 	fixed<<setprecision(x)
 #define debug(x)	cerr<<#x<<" = "<<(x)<< endl
-#define debug(x,y)	cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
+#define debug2(x,y)	cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
 #define unsyncIO	ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using ll = long long;
