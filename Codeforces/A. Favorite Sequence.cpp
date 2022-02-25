@@ -1,14 +1,14 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-02-23 18:51:41
- *	Task:    test 
+ *	Date:    2022-02-23 20:26:59
+ *	Task:    A. Favorite Sequence 
 **/
 #include <bits/stdc++.h>
-#include <bit>
 #define endl		'\n'
 #define sqr(x)		(x) * (x)
 #define gcd(x,y)	__gcd(x, y)
 #define lcm(x,y)	((x/gcd(x,y)) * y)
+#define pf(x)		push_front(x)
 #define pb(x)		push_back(x)
 #define eb(x)		emplace_back(x)
 #define all(x)		(x).begin(), (x).end()
@@ -24,7 +24,7 @@ using db = double;
 using ld = long double;
 using ull = unsigned long long;
 
-//const ld pi = acos((ld)-1);
+const ld pi = acos((ld)-1);
 const int mod = 1e9+7;
 const ll inf = 1e18;
 const ld eps = 1e-9;
@@ -33,13 +33,24 @@ const int mx = 1e5;
 using namespace std;
 
 
-int main() 
+int main()
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	int n = 4343;
-	
-	cout << pi;
-	return 0;
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    unsyncIO;
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        int a[n];
+        for (int i = 0;i < n; i++) cin >> a[i];
+        for (int i = 0, j = n - 1; i < n / 2; j--, i++) {
+            cout << a[i] << ' ' << a[j] << ' ';
+        }
+        if (n % 2)
+            cout << a[n / 2];
+        cout << endl;
+    }
+    return 0;
 }
