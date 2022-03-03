@@ -1,7 +1,7 @@
 /**
- *	Author:  e
- *	Date:    2022-03-04 00:28:45
- *	Task:    test 
+ *	Author:  Sohel Rana
+ *	Date:    2022-03-03 22:22:47
+ *	Task:    11231_-_Black_and_white_painting 
 **/
 #include <bits/stdc++.h>
 #define endl		'\n'
@@ -35,9 +35,12 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
-	return 0;
+    // freopen("in.txt", "r", stdin);
+    // freopen("out.txt", "w", stdout);
+    // unsyncIO;
+    int row, col, c;
+    while (cin >> row >> col >> c and row != 0) {
+        cout << ((row - 7) * (col - 7)+c) / 2 << endl;
+    }    
+    return 0;
 }
