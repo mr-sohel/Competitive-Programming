@@ -1,6 +1,6 @@
 /**
- *	Author:  e
- *	Date:    2022-03-04 00:28:45
+ *	Author:  Sohel Rana
+ *	Date:    2022-03-08 21:17:28
  *	Task:    test 
 **/
 #include <bits/stdc++.h>
@@ -35,9 +35,9 @@ using namespace std;
 
 int main() 
 {
-	//freopen("in.txt", "r", stdin);
-	//freopen("out.txt", "w", stdout);
-	//unsyncIO;
-	
-	return 0;
+    //freopen("in.txt", "r", stdin);
+    //freopen("out.txt", "w", stdout);
+    //unsyncIO;
+    
+    return 0;
 }

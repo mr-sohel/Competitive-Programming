@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-03-08 20:23:59
- *	Task:    A_Buy_a_Shovel 
+ *	Date:    2022-03-06 14:17:48
+ *	Task:    B_-_log_2_N 
 **/
 #include <bits/stdc++.h>
 #define endl		'\n'
@@ -38,14 +38,11 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    int k, r;
-    cin >> k >> r;
-    for (int i = 1; i <= 10; i++) {
-        int temp = ((k * i) % 10);
-        if (temp == r or temp == 0) {
-            cout << i << endl;
-            break;
-        }
-    }
+    ll n ,k = 1;
+    cin >> n;
+    ll cnt = 0;
+    for (int i = 1;(k << i) <= n; i++)
+        cnt++;
+    cout << cnt << endl;
     return 0;
 }
