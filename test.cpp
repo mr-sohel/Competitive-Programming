@@ -38,6 +38,9 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    
+    string s;
+    cin >> s;
+    reverse(all(s));
+    cout << s;
     return 0;
 }

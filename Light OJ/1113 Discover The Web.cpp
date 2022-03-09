@@ -26,7 +26,6 @@ const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const long long INF = 1e18;
 const ld eps = 1.0E-14;
-inline ld gett() { return clock() / ld (CLOCKS_PER_SEC); }
 
 using namespace std;
 
@@ -34,11 +33,10 @@ int main() {
     // freopen("in.txt", "r", stdin);
     // freopen("out.txt", "w", stdout);
     //unsyncIO;
-    //ld stime = gett();
     int t;
     cin >> t;
     int tc = 1;
-    //cin.ignore();
+
     while (t--) {
         cout << "Case " << tc++ << ":" << endl;
         stack<string> backward, forward;
@@ -78,6 +76,5 @@ int main() {
             }
         }
     }
-    //cerr << "Time: " << gett() - stime << endl;
     return 0;
 }

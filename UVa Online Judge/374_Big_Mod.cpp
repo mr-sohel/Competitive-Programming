@@ -29,28 +29,22 @@ const ld eps = 1.0E-14;
 
 using namespace std;
 
-ll power(ll x, ll y, ll p) {
-    ll res = 1;
-    if(x == 0 and y == 0)
-        return 0LL;
-    x = x % p;
-    while (y > 0) {
-        if (y % 2)
-            res = (res * x) % p;
-        y = y / 2;
-        x = (x * x) % p;
+ll BigMod(ll b, ll p, ll m) {
+    if (p == 0) return 1;
+    if (p % 2 == 0) {
+        ll ret = BigMod(b, p / 2, m);
+        return ((ret % m) * (ret % m)) % m;
     }
-    return res;
+    return ((b % m) * (BigMod(b, p - 1, m) % m)) % m;
 }
 
 int main() {
     // freopen("in.txt", "r", stdin);
     // freopen("out.txt", "w", stdout);
     unsyncIO;
-
     ll b, p, m;
     while(cin >> b >> p >> m) {
-        cout << power(b,p,m)<< endl;
+        cout << BigMod(b,p,m)<< endl;
     }
     return 0;
 }

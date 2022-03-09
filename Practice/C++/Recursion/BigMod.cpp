@@ -31,8 +31,8 @@ const ld EPS = 1.0e-14;
 using namespace std;
 
 long long BigMod(int a, int b, int m) {
-    if (b == 1)
-        return a % m;
+    if (b == 0)
+        return 1;
     if (b % 2 == 1)
         return (BigMod(a, b - 1, m) * a) % m;
     return sqr(BigMod(a, b / 2, m)) % m;
