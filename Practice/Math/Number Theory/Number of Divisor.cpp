@@ -12,7 +12,7 @@ const ld PI = acos((ld)-1);
 using namespace std;
 
 #define MAX 1000001  // limit is 10^6-1
-//vector<long long int> primes;
+vector<long long int> primes;
 bitset<MAX> marked; //for memory efficient ,
 
 bool isPrime(long long int n) {
@@ -55,7 +55,7 @@ int countDivisor (int n) {
 
 //optimized algo is using prime factorization
 
-vector<int> primes; // we'll preload primes once at the beginning
+//vector<ll> primes; // we'll preload primes once at the beginning
 ll countDivisor(ll n) {
 	ll divisor = 1;
 	int root = sqrt(n);
