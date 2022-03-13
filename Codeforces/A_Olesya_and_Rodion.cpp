@@ -1,7 +1,7 @@
 /**
  *	Author:  Sohel Rana
- *	Date:    2022-02-27 16:09:08
- *	Task:    test
+ *	Date:    2022-03-13 23:33:10
+ *	Task:    A_Olesya_and_Rodion 
 **/
 #include <bits/stdc++.h>
 #define endl		'\n'
@@ -25,50 +25,31 @@ using ld = long double;
 using ull = unsigned long long;
 
 const ld pi = acos((ld)-1);
-const int MOD = 1000003;
+const int mod = 1e9+7;
 const ll inf = 1e18;
 const ld eps = 1e-9;
-const int mx = 1e6+2;
+const int mx = 1e5;
 
 using namespace std;
 
 
-set<ll> memo;
-
-void nod(ll n) {
-    int sq = sqrt(n);
-    for (int i = 1; i <= sq; i++) {
-        if (i * i == n) {
-            memo.insert(i);
-        } else if (n % i == 0) {
-            memo.insert(n / i);
-            memo.insert(i);
-        }
-    }
-}
-
-int main()
+int main() 
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    ll n, k;
-    cin >> n >> k;
-    nod(n);
-    //for(auto x: memo) {
-    //cout<<x<<" ";
-    //}
-    //puts("");
-    int x = 1;
-    if (sz(memo) < k)
-        cout << "-1" << endl;
+    int digit, k;
+    cin >> digit >> k;
+    if (digit == 1 and k == 10) 
+        cout << -1 << endl;
     else {
-        for (auto it = memo.begin(); it != memo.end(); x++, it++){
-            if (x == k) {
-                cout << *it << endl;
-                break;
-            }
-        }
+        if (k == 10)
+            cout << 1;
+        else
+            cout << k;
+        for (int i = 2; i <= digit; i++)
+            cout << 0;
+         puts("");
     }
     return 0;
 }
