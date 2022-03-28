@@ -3,7 +3,8 @@
 #define pb push_back
 typedef long long ll;
 typedef long double ld;
-const int MOD = 1e9+7; 
+#define debug(x)	cerr<<#x<<" = "<<(x)<< endl
+const int MOD = 1e9 + 7;
 const int MX = 2e5+5; 
 const ll INF = 1e18; 
 const ld PI = acos((ld)-1);
@@ -11,7 +12,7 @@ const ld PI = acos((ld)-1);
 
 using namespace std;
 
-#define MAX 1000001  // limit is 10^6-1
+#define MAX 10000001  // limit is 10^6-1
 vector<long long int> primes;
 bitset<MAX> marked; //for memory efficient ,
 
@@ -95,4 +96,3 @@ int main()
     
     return 0;
 }
-
