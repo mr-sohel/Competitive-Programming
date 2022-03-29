@@ -27,48 +27,57 @@ const int mx = 1e5;
 
 using namespace std;
 
+int x, y;
+
+void check(ll a, ll b, ll c, ll d) {
+    if ((a + b) % 2 == 0) {
+        ll t1 = (a + b) / 2;
+        //ll t2 = abs(a - t1);
+        ll t2 = abs(a - b) / 2;
+        if (t1 <= 0 or t1 > (ll)1e4 or t2 <= 0 or t2 > (ll)1e4) {
+            x = -1;
+            y = -1;
+           return;
+        }
+        if ((t1 * t2 == c and t1 / t2 == d) or (t1 * t2 == d and t1 / t2 == c)) {
+            x = t1;
+            y = t2;
+        } else {
+            x = -1;
+            y = -1;
+        }
+
+    } else{
+        x = -1;
+        y = -1;
+    }
+}
 
 int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    // WA Solution. 
+    // Editorial Solution
     int t;
     cin >> t;
-    while (t--)
-    {
-       vector<ll> vec(4);
-       for (int i = 0;i < 4;i++) {
-           cin >> vec[i];
-       }
-       sort(all(vec));
-       bool flag = false;
-       vector<ll> v(4);
-       for (ll i = 0; i < 4; i++) {
-           for(ll j = 0; j < 4; j++) {
-               if(i == j) continue;
-               ll d = vec[i] + v[j];
-               ll a = d/2;
-               ll b = vec[j] - a;
-               if(1<=a and a<=1e4 and 1<=b and b<=1e4) {
-                   v.pb(a+b);
-                   v.pb(a-b);
-                   v.pb(a*b);
-                   v.pb(a/b);
-                   sort(all(v));
-                   if (v == vec) {
-                       cout << a << " " << b << endl;
-                       flag = true;
-                       break;
-                   }
-                   v.clear();
-                }
-           }
-           if(flag) break;
-       }
-       if (!flag)
-           cout << "-1 -1" << endl;
+    while (t--) {
+        ll a, b, c, d;
+        cin >> a >> b >> c >> d;
+        
+        check(a, b, c, d);
+        if (x == -1 and y == -1)
+            check(a, c, b, d);
+        if (x == -1 and y == -1)
+            check(a, d, b, c);
+        if (x == -1 and y == -1)
+            check(b, c, a, d);
+        if (x == -1 and y == -1)
+            check(b, d, a, c);
+        if (x == -1 and y == -1)
+            check(c, d, a, b);
+        cout << x << " " << y << endl;
+
     }
     return 0;
 }
