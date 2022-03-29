@@ -58,7 +58,7 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    // Editorial Solution
+    // Editorial Solution Upsolve
     int t;
     cin >> t;
     while (t--) {
