@@ -1,8 +1,3 @@
-/**
- *	Author:  Sohel Rana
- *	Date:    2022-03-08 21:17:28
- *	Task:    test 
-**/
 #include <bits/stdc++.h>
 #define endl		'\n'
 #define sqr(x)		(x) * (x)
@@ -38,17 +33,8 @@ int main()
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    string str, word;
-    getline(cin, str);
-    getline(cin, word);
-
-    stringstream ss(str);
-    int cnt = 0;
-    while (ss >> str)
-    {
-        if (str == word)
-            cnt++;
-    }
-    cout << cnt << "\n";
+    ll n;
+    cin>>n;
+    cout<<n+1<<endl;
     return 0;
 }
