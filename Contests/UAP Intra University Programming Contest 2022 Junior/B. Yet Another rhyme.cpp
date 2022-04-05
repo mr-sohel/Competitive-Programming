@@ -32,12 +32,57 @@ const int mx = 1e5;
 
 using namespace std;
 
+bool check(string x, string y) {
+	if(sz(x) >= 3 and sz(y) >= 3) {
+		if((x[sz(x)-1] == y[sz(y)-1]) and ((x[sz(x)-2] == y[sz(y)-2])) and ((x[sz(x)-3] == y[sz(y)-3])))
+			return true;
+		else 
+			return false;
+	}
+	return false;
+}
 
 int main()
 {
-    //freopen("in.txt", "r", stdin);
+	//freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-   
-    return 0;
+	vector<string> vec(14);
+	for(int i = 0; i < 14; i++) cin>> vec[i];
+	string x,y;
+	bool flag = false;
+	for(int i = 0;i < 14; i++) {
+		for(int j = 0; j < 14; j++) {
+			if(i == j)
+				continue;
+			x = vec[i], y = vec[j];
+			if(check(x,y)) {
+				flag = true;
+				break;				
+			} 
+		}
+		if(flag)
+			break;
+	}
+	//debug(flag);
+	//debug2(x,y);
+	if(flag) {
+		cout<<"yes"<<endl;
+		auto it = find(all(vec), x);
+		vec.erase(it);
+		it = find(all(vec), y);
+		vec.erase(it);
+		for(int i = 0; i < 6; i++) {
+			cout<<vec[i]<<" ";
+		}
+		cout<<x<<endl;
+		for(int i = 6; i < sz(vec); i++) {
+			cout<<vec[i]<<" ";
+		}
+		cout<<y<<endl;
+		
+	} else {
+		cout<<"no"<<endl;
+	}
+	return 0;
 }
