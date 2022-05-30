@@ -8,15 +8,17 @@
 #define sqr(x)		(x) * (x)
 #define gcd(x,y)	__gcd(x, y)
 #define lcm(x,y)	((x/gcd(x,y)) * y)
-#define pf(x)		push_front(x)
-#define pb(x)		push_back(x)
-#define eb(x)		emplace_back(x)
+#define pf		    push_front
+#define pb		    push_back
+#define fi          first
+#define se          second
+#define mp          make_pair
 #define all(x)		(x).begin(), (x).end()
 #define rall(x)		(x).rbegin(), (x).rend()
-#define sz(x)		(int)x.size()
+#define sz(x)		(long long)x.size()
 #define prec(x) 	fixed<<setprecision(x)
 #define debug(x)	cerr<<#x<<" = "<<(x)<< endl
-#define debug(x,y)	cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
+#define debug2(x,y)	cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
 #define unsyncIO	ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using ll = long long;
