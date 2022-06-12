@@ -4,7 +4,11 @@
     "editor.autoIndent": "full",
     "editor.suggest.showVariables": true,
     "editor.suggest.showKeywords": true,
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
     "editor.suggest.showClasses": true,
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
