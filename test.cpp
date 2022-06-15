@@ -1,25 +1,26 @@
 /**
- *	Author:  Sohel Rana
- *	Date:    2022-05-30 12:44:13
- *	Task:    test 
+ *  Author:  Sohel Rana
+ *  Date:    2022-06-15 11:10:32
+ *  Task:    test
 **/
 #include <bits/stdc++.h>
-#define endl		'\n'
-#define sqr(x)		(x) * (x)
-#define gcd(x,y)	__gcd(x, y)
-#define lcm(x,y)	((x/gcd(x,y)) * y)
-#define pf		    push_front
-#define pb		    push_back
-#define fi          first
-#define se          second
-#define mp          make_pair
-#define all(x)		(x).begin(), (x).end()
-#define rall(x)		(x).rbegin(), (x).rend()
-#define sz(x)		(long long)x.size()
-#define prec(x) 	fixed<<setprecision(x)
-#define debug(x)	cerr<<#x<<" = "<<(x)<< endl
-#define debug2(x,y)	cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
-#define unsyncIO	ios_base::sync_with_stdio(false); cin.tie(nullptr)
+
+#define endl          '\n'
+#define sqr(x)        (x) * (x)
+#define gcd(x,y)      __gcd(x,y)
+#define lcm(x,y)      ((x/gcd(x,y)) * y)
+#define pb            push_back
+#define pf            push_front
+#define mp            make_pair
+#define fi            first
+#define se            second
+#define sz(x)         (long long)x.size()
+#define all(x)        (x).begin(),(x).end()
+#define rall(x)       (x).rbegin(),(x).rend()
+#define prec(x)       fixed<<setprecision(x)
+#define debug(x)      cerr<<#x<<" = "<<(x)<<endl
+#define debug2(x,y)   cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<<endl
+#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using ll = long long;
 using db = double;
@@ -33,7 +34,6 @@ const ld eps = 1e-9;
 const int mx = 1e5;
 
 using namespace std;
-
 
 int main() 
 {
