@@ -24,54 +24,55 @@ const ld pi = acos((ld) - 1);
 const int mod = 1e9 + 7;
 const ll inf = 1e18;
 const ld eps = 1e-9;
-const int mx = 1e5;
+const int mx = 1e8;
+
 
 using namespace std;
+
 
 #ifndef ONLINE_JUDGE
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
-	cout << name << " = " << arg1 << endl;
+    cout << name << " = " << arg1 << endl;
 }
 template < typename Arg1, typename... Args>
 void __f(const char* names, Arg1&& arg1, Args&&... args) {
-	const char* comma = strchr(names + 1, ',');
-	cout.write(names, comma - names) << " = " << arg1 << " | ";
-	__f(comma + 1, args...);
+    const char* comma = strchr(names + 1, ',');
+    cout.write(names, comma - names) << " = " << arg1 << " | ";
+    __f(comma + 1, args...);
 }
 #else
 #define debug(...)
 #endif
 
-int nod(int n) {
-	int cnt = 0;
-	for (int i = 1; i * i <= n; i++) {
-		if (i * i == n)
-			cnt++;
-		else if (n % i == 0)
-			cnt += 2;
-	}
-	return cnt;
+int divisorSum(int n) {
+    if (n < 2) return 0;
+    int sum = 1;
+    for (int i = 2; i * i <= n; i++) {
+        if (i * i == n)
+            sum += i;
+        else if (n % i == 0)
+            sum += i, sum += (n / i);
+    }
+    return sum;
 }
 
-
 int main() {
+#ifndef ONLINE_JUDGE
+    clock_t tStart = clock();
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+    unsyncIO;
+    int t; cin >> t;
+    while (t--) {
+        int n; cin >> n;
+        cout << divisorSum(n) << endl;
+    }
 
 #ifndef ONLINE_JUDGE
-	clock_t tStart = clock();
-	freopen("in.txt", "r", stdin);
-	freopen("out.txt", "w", stdout);
+    fprintf(stderr, "\n>> Runtime: %.10Lf\n", (ld) (clock() - tStart) / CLOCKS_PER_SEC);
 #endif
-	unsyncIO;
-	int tt; cin >> tt;
-	while (tt--) {
-		int a, b;
-		cin >> a >> b;
-		cout << nod(gcd(a, b)) << endl;
-	}
-#ifndef ONLINE_JUDGE
-	fprintf(stderr, "\n>> Runtime: %.10Lf\n", (ld) (clock() - tStart) / CLOCKS_PER_SEC);
-#endif
-	return 0;
+    return 0;
 }
