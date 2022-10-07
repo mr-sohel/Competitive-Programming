@@ -1,7 +1,7 @@
 /**
  *  Author:  Sohel Rana
- *  Date:    2022-10-07 15:58:14
- *  Task:    Test B
+ *  Date:    2022-08-23 19:52:00
+ *  Task:    B_-_Light_It_Up
 **/
 #include <bits/stdc++.h>
 
@@ -29,19 +29,36 @@ using ull = unsigned long long;
 
 const ld pi = acos((ld)-1);
 const int mod = 1e9+7;
-const ll inf = 1e18;
-const ld eps = 1e-9;
+const ll inf = 8e18;
+const ld eps = 1e-14;
 const int mx = 1e5;
 
 using namespace std;
 
-int main() 
+int main()
 {
     //freopen("in.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
     //unsyncIO;
-    int a[5];
-    cout << (1LL << 32) << endl;
-    cout << a[52] << endl;
+    int n, k;
+    cin >> n >> k;
+    vector<int> a(k);
+    vector<ll> x(n), y(n);
+    for (int i = 0; i < k; i++){
+        cin >> a[i];
+        a[i]--;
+    }
+    for (int i = 0; i < n; i++)
+        cin >> x[i] >> y[i];
+    ll res = 0;
+    for (int i = 0; i < n; i++) {
+        ll tres = inf;
+        for (int j = 0; j < k; j++){
+            tres = min(tres, sqr(x[i] - x[a[j]])  + sqr(y[i] - y[a[j]]) );
+        }
+        res = max(res, tres);
+    }
+    printf("%.12lf\n", sqrt((double)res));
+
     return 0;
 }
