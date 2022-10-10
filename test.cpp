@@ -55,7 +55,7 @@ int main() {
 
 
 #ifdef LOCAL
-    cerr << "Runtime: " << prec(10) << (ld) (clock() - tStart) / CLOCKS_PER_SEC << endl;
+    cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;
 #endif
     return 0;
 }

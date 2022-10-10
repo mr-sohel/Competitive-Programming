@@ -24,62 +24,59 @@ const ld pi = acos((ld) - 1);
 const int mod = 1e9 + 7;
 const ll inf = 1e18;
 const ld eps = 1e-9;
-const int mx = 2e5;
+const int mx = 2e5 + 5;
+
 
 using namespace std;
+
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
-	cout << name << " = " << arg1 << endl;
+	cerr << name << " = " << arg1 << endl;
 }
 template < typename Arg1, typename... Args>
 void __f(const char* names, Arg1&& arg1, Args&&... args) {
 	const char* comma = strchr(names + 1, ',');
-	cout.write(names, comma - names) << " = " << arg1 << " | ";
+	cerr.write(names, comma - names) << " = " << arg1 << " | ";
 	__f(comma + 1, args...);
 }
 #else
 #define debug(...)
 #endif
 
-int main() {
+int a[mx];
+int pref[mx];
 
+int main() {
 #ifdef LOCAL
 	clock_t tStart = clock();
 	freopen("in.txt", "r", stdin);
 	freopen("out.txt", "w", stdout);
 #endif
+
 	unsyncIO;
-	int n, x;
-	cin >> n >> x;
-	vector<pair<int, int>> list;
+	int n, q;
+	cin >> n >> q;
+	while (q--) {
+		int l, r, v;
+		cin >> l >> r >> v;
+		a[l] += v;
+		a[r + 1] += -v;
+	}
+
+	// pref[0] = a[0] = 0;
+
 	for (int i = 1; i <= n; i++) {
-		int tmp; cin >> tmp;
-		list.pb(mp(tmp, i));
+		pref[i] = pref[i - 1] + a[i];
 	}
-	sort(all(list));
-	int i = 0, j = n - 1;
-	bool flag = false;
-	while (i < j) {
-		if (list[i].fi + list[j].fi > x) {
-			j--;
-		} else if (list[i].fi + list[j].fi < x) {
-			i++;
-		} else {
-			cout << list[i].se << " " << list[j].se << endl;
-			flag = true;
-			break;
-		}
+
+	for (int i = 1; i <= n; ++i) {
+		cout << pref[i] << " ";
 	}
-	if (!flag)
-		cout << "IMPOSSIBLE" << endl;
-
-
 #ifdef LOCAL
-	cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;
+	cerr << "Runtime: " << prec(10) << (ld) (clock() - tStart) / CLOCKS_PER_SEC << endl;
 #endif
 	return 0;
 }
-
