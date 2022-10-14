@@ -57,21 +57,25 @@ int main() {
 	unsyncIO;
 	int t; cin >> t;
 	while (t--) {
-		int n, tmp; cin >> n;
-		unordered_map<int, int> m;
+		int n, q;
+		cin >> n >> q;
+		vector<int> a(n + 1);
+		for (int i = 1; i <= n; i++) cin >> a[i];
+		vector<ll> p(n + 1);
+		a[0] = p[0] = 0;
 		for (int i = 1; i <= n; i++) {
-			cin >> tmp;
-			m[tmp] = i;
+			p[i] = p[i - 1] + a[i];
 		}
-		int ans = -1;
-		for (auto x : m) {
-			for (auto y : m) {
-				if (gcd(x.fi, y.fi) == 1) {
-					ans = max(ans, x.se + y.se);
-				}
-			}
+		for (int i = 1; i <= n; i++) {
+			a[i] = max(a[i], a[i - 1]);
 		}
-		cout << ans << endl;
+		int k;
+		for (int i = 1; i <= q; ++i) {
+			cin >> k;
+			ll x = upper_bound(all(a), k) - a.begin() - 1;
+			cout << p[x] << " ";
+		}
+		cout << endl;
 	}
 
 #ifdef LOCAL

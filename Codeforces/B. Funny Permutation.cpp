@@ -24,13 +24,11 @@ const ld pi = acos((ld) - 1);
 const int mod = 1e9 + 7;
 const ll inf = 1e18;
 const ld eps = 1e-9;
-const int mx = 2e5 + 5;
-
+const int mx = 2e5;
 
 using namespace std;
 
-
-#ifndef LOCAL
+#ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
@@ -46,36 +44,42 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-
 int main() {
+
 #ifdef LOCAL
 	clock_t tStart = clock();
 	freopen("in.txt", "r", stdin);
 	freopen("out.txt", "w", stdout);
 #endif
-
 	unsyncIO;
 	int t; cin >> t;
 	while (t--) {
-		int n, tmp; cin >> n;
-		unordered_map<int, int> m;
-		for (int i = 1; i <= n; i++) {
-			cin >> tmp;
-			m[tmp] = i;
-		}
-		int ans = -1;
-		for (auto x : m) {
-			for (auto y : m) {
-				if (gcd(x.fi, y.fi) == 1) {
-					ans = max(ans, x.se + y.se);
+		int n; cin >> n;
+		/// thing about n = 3
+		int j = 1;
+		if (n == 3) {
+			cout << -1 << endl;
+		} else {
+			if (n % 2 == 0) {
+				for (int i = n; i >= 1; i--, j++)
+					cout << i << " ";
+				cout << endl;
+			} else {
+				int point = (int)ceil(n / 2.0);
+				for (int i = n; i > point; i--, j++)
+					cout << i << " ";
+				j = point;
+				for (int i = 1; i <= point; i++) {
+					cout << i << " ";
 				}
+				cout << endl;
 			}
 		}
-		cout << ans << endl;
 	}
 
 #ifdef LOCAL
-	cerr << "Runtime: " << prec(10) << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " ms" << endl;
+	cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;
 #endif
 	return 0;
 }
+
