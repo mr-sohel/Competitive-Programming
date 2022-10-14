@@ -57,21 +57,7 @@ int main() {
 	unsyncIO;
 	int t; cin >> t;
 	while (t--) {
-		int n, tmp; cin >> n;
-		unordered_map<int, int> m;
-		for (int i = 1; i <= n; i++) {
-			cin >> tmp;
-			m[tmp] = i;
-		}
-		int ans = -1;
-		for (auto x : m) {
-			for (auto y : m) {
-				if (gcd(x.fi, y.fi) == 1) {
-					ans = max(ans, x.se + y.se);
-				}
-			}
-		}
-		cout << ans << endl;
+
 	}
 
 #ifdef LOCAL
