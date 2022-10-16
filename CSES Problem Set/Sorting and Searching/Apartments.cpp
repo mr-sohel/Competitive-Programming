@@ -52,16 +52,30 @@ int main() {
     freopen("out.txt", "w", stdout);
 #endif
     unsyncIO;
-    ll n, mid, cost = 0;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
-    sort(all(v));
-    mid = v[n / 2];
-    for (int i = 0; i < n; i++) {
-        cost += abs(v[i] - mid);
+    int n, x;
+    cin >> n >> x;
+    int w[n];
+    // bool havegondala[n] = {false};
+    for (int i = 0; i < n; i++) cin >> w[i];
+    sort(w, w + n);
+    int i = 0, j = n - 1, cnt = 0;
+    while (true) {
+        if (i > j) break;
+        if (i == j) {
+            cnt++;
+            break;
+        } else if (w[i] + w[j] <= x) {
+            cnt++;
+            i++, j--;
+        } else {
+            j--;
+            cnt++;
+        }
     }
-    cout << cost << endl;
+    // for (auto x : havegondala) {
+    //     if (!x) cnt++;
+    // }
+    cout << cnt << endl;
 
 #ifdef LOCAL
     cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;

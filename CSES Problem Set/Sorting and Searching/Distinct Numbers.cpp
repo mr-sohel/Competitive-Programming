@@ -52,16 +52,27 @@ int main() {
     freopen("out.txt", "w", stdout);
 #endif
     unsyncIO;
-    ll n, mid, cost = 0;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
-    sort(all(v));
-    mid = v[n / 2];
-    for (int i = 0; i < n; i++) {
-        cost += abs(v[i] - mid);
+    int n, m, k; cin >> n >> m >> k;
+    int desired[n], available[m];
+
+    for (int i = 0; i < n; i++) cin >> desired[i];
+    for (int i = 0; i < m; i++) cin >> available[i];
+    sort(desired, desired + n);
+    sort(available, available + m);
+
+    int i = 0, j = 0 , ans = 0;
+    while (i < n and j < m) {
+        if (abs(desired[i] - available[j]) <= k) {
+            i++, j++, ans++;
+        } else {
+            if (desired[i] - available[j] > k ) {
+                j++;
+            } else {
+                i++;
+            }
+        }
     }
-    cout << cost << endl;
+    cout << ans << endl;
 
 #ifdef LOCAL
     cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;

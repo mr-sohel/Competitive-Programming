@@ -52,16 +52,23 @@ int main() {
     freopen("out.txt", "w", stdout);
 #endif
     unsyncIO;
-    ll n, mid, cost = 0;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
-    sort(all(v));
-    mid = v[n / 2];
+    int n, m; cin >> n >> m;
+    multiset<int> a;
     for (int i = 0; i < n; i++) {
-        cost += abs(v[i] - mid);
+        int x; cin >> x;
+        a.insert(x);
     }
-    cout << cost << endl;
+    for (int i = 0; i < m; i++) {
+        int x; cin >> x;
+        auto index = a.upper_bound(x);
+        if (index == a.begin()) {
+            cout << -1 << endl;
+        } else {
+            cout << *(--index) << endl;
+            a.erase(index);
+        }
+    }
+
 
 #ifdef LOCAL
     cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;

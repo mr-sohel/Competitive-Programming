@@ -32,13 +32,13 @@ using namespace std;
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
-    cout << name << " = " << arg1 << endl;
+	cout << name << " = " << arg1 << endl;
 }
 template < typename Arg1, typename... Args>
 void __f(const char* names, Arg1&& arg1, Args&&... args) {
-    const char* comma = strchr(names + 1, ',');
-    cout.write(names, comma - names) << " = " << arg1 << " | ";
-    __f(comma + 1, args...);
+	const char* comma = strchr(names + 1, ',');
+	cout.write(names, comma - names) << " = " << arg1 << " | ";
+	__f(comma + 1, args...);
 }
 #else
 #define debug(...)
@@ -47,24 +47,26 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 
 int main() {
 #ifdef LOCAL
-    clock_t tStart = clock();
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+	clock_t tStart = clock();
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
 #endif
-    unsyncIO;
-    ll n, mid, cost = 0;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
-    sort(all(v));
-    mid = v[n / 2];
-    for (int i = 0; i < n; i++) {
-        cost += abs(v[i] - mid);
-    }
-    cout << cost << endl;
+	unsyncIO;
+	ll n, mid, cost = 0;
+	cin >> n;
+	vector<int> v(n);
+	for (int i = 0; i < n; i++) cin >> v[i];
+	sort(all(v));
+	mid = v[n / 2];
+	for (int i = 0; i < n; i++) {
+		cost += abs(v[i] - mid);
+	}
+	cout << cost << endl;
+
+
 
 #ifdef LOCAL
-    cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;
+	cerr << "Runtime: " << (clock() - tStart) / 1000 << " milliseconds" << endl;
 #endif
-    return 0;
+	return 0;
 }
