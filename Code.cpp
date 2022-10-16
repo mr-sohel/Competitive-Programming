@@ -28,7 +28,6 @@ const int mx = 2e5;
 
 using namespace std;
 
-
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
@@ -48,29 +47,17 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 int main() {
 
 #ifdef LOCAL
-	auto tStart = clock();
+	clock_t tStart = clock();
 	freopen("in.txt", "r", stdin);
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	int n; cin >> n;
-	int a[n + 1];
-	for (int i = 1; i <= n; ++i) {
-		cin >> a[i];
-	}
-	ll pref[n + 1];
-	pref[0] = a[0] = 0;
-	for (int i = 1; i <= n; i++) {
-		pref[i] = pref[i - 1] + a[i];
-	}
-	ll ans = INT_MIN, mn = 0;
-	for (int r = 1; r <= n; r++) {
-		ans = max(ans, pref[r] - mn);
-		mn = min(mn, pref[r]);
-	}
-	cout << ans << endl;
+
+
 #ifdef LOCAL
 	cerr << "Runtime: " << (clock() - tStart) / 1000 << " miliseconds" << endl;
+	seconds" << endl;
+
 #endif
 	return 0;
 }
