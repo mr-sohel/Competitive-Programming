@@ -52,8 +52,38 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
-
+	int t; cin >> t;
+	while (t--) {
+		int n, q; cin >> n >> q;
+		int a[n];
+		ll sum = 0, cntodd = 0, cnteven = 0;
+		for (int i = 0; i < n; i++) {
+			cin >> a[i];
+			if (a[i] % 2 == 0)
+				cnteven++;
+			else
+				cntodd++;
+			sum += a[i];
+		}
+		for (int i = 0; i < q; i++) {
+			int type, x;
+			cin >> type >> x;
+			if (type == 0) {
+				sum += cnteven * x;
+				if (x % 2 != 0) {
+					cntodd += cnteven;
+					cnteven = 0;
+				}
+			} else {
+				sum += cntodd * x;
+				if (x % 2 != 0) {
+					cnteven += cntodd;
+					cntodd = 0;
+				}
+			}
+			cout << sum << endl;
+		}
+	}
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (clock() - tStart) / 1000 << " miliseconds" << endl;
 #endif

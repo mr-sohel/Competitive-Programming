@@ -52,7 +52,38 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
+	int t; cin >> t;
+	while (t--) {
+		int n; cin >> n;
+		int a[n + 1];
+		char ch[n + 1];
+		string s = "";
+		for (int i = 1; i <= n; ++i) {
+			cin >> a[i];
+		}
+		for (int i = 1; i <= n; ++i) {
+			cin >> ch[i];
+			s += ch[i];
+		}
+		for (int i = 1; i <= n; ++i) {
+			int ax;
+			char cx;
+			ax = a[i];
+			cx = ch[i];
+			for (int j = i; j <= n; j++) {
+				if (a[j] == ax) {
+					ch[j] = cx;
+				}
+			}
+		}
+		string sx = "";
+		for (int i = 1; i <= n; i++)
+			sx += ch[i];
+		if (s == sx)
+			cout << "YES" << endl;
+		else
+			cout << "NO" << endl;
+	}
 
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (clock() - tStart) / 1000 << " miliseconds" << endl;
