@@ -5,6 +5,7 @@
 *.o
 *.out
 #file i/o
+*.vscode
 *.txt
 *.prob
 *.code-workspace
