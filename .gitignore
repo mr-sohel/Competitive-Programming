@@ -10,5 +10,4 @@
 *.prob
 *.code-workspace
 *.sublime-workspace
-*.cpp:tests
 *.tests
