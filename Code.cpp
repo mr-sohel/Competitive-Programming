@@ -53,40 +53,13 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	int n, m; cin >> n >> m;
-	int xy, rounds = 1;
-	vector<int> v(n);
-	vector<int> a(n);
-	for (int i = 1; i <= n; i++) {
-		cin >> xy;
-		a[i] = xy;
-		v[xy] = i;
-	}
-	for (int i = 1; i <= n - 1; i++) {
-		if (v[i] > v[i + 1])
-			rounds++;
-	}
-	int x, y;
-	// debug(rounds);
-	while (m--) {
-		cin >> x >> y;
+	set <int, greater<int>> s; // descending order
+	s.insert(10);
+	s.insert(20);
+	s.insert(50);
+	s.insert(40);
 
-		if (a[x] < a[y]) {
-			int tmp = a[x];
-			a[x] = a[y];
-			a[y] = tmp;
-			rounds++;
-		} else {
-			int tmp = a[x];
-			a[x] = a[y];
-			a[y] = tmp;
-			rounds--;
-		}
-		cout << rounds << endl;
-		// for (int i = 1; i <= n; i++) cout << a[i] << " ";
-		// cout << endl;
-	}
-
+	for (auto i : s) cout << i << endl;
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
