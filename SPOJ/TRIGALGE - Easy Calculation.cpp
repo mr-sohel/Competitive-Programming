@@ -33,40 +33,60 @@ using ull = unsigned long long;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 
-const ld PI = acos((ld) - 1);
+const db PI = acos((db) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
-const ld EPS = 1e-9;
-const int MX = 2e5;
+const ld EPS = 1e-7;
+const int MX = 2e6;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
-    cerr << name << " = " << arg1 << endl;
+	cerr << name << " = " << arg1 << endl;
 }
 template < typename Arg1, typename... Args>
 void __f(const char* names, Arg1&& arg1, Args&&... args) {
-    const char* comma = strchr(names + 1, ',');
-    cerr.write(names, comma - names) << " = " << arg1 << " | ";
-    __f(comma + 1, args...);
+	const char* comma = strchr(names + 1, ',');
+	cerr.write(names, comma - names) << " = " << arg1 << " | ";
+	__f(comma + 1, args...);
 }
 #else
 #define debug(...)
 #endif
 
+ld calc(ld a, ld b, ld x, ld c) {
+	ld ans = (a * x) + (b * sin(x));
+	ans = ans - c;
+	return ans;
+}
+
 int main() {
 
 #ifdef LOCAL
-    clock_t tStart = clock();
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+	clock_t tStart = clock();
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
 #endif
-    unsyncIO;
-
-
+	unsyncIO;
+	int t; cin >> t;
+	while (t--) {
+		ld a, b, c;
+		cin >> a >> b >> c;
+		ld lo = 0.0, hi = c, res, mid;
+		while (lo <= hi) {
+			mid = (lo + hi) / 2.0;
+			res = calc(a, b, mid, c);
+			if (res > EPS) {
+				hi = mid - EPS;
+			} else {
+				lo = mid + EPS;
+			}
+		}
+		cout << prec(6) << mid << endl;
+	}
 #ifdef LOCAL
-    cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
+	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
-    return 0;
+	return 0;
 }

@@ -11,7 +11,7 @@
 #define lcm(x,y)      ((x/gcd(x,y)) * y)
 #define pb            push_back
 #define pf            push_front
-#define mp            make_pair
+#define mk            make_pair
 #define fi            first
 #define se            second
 #define sz(x)         (int)x.size()
@@ -37,10 +37,20 @@ const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e5;
+const int MX = 2e6;
 
 #ifdef LOCAL
-#include"debug.h"
+#define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
+template < typename Arg1 >
+void __f(const char* name, Arg1&& arg1) {
+	cerr << name << " = " << arg1 << endl;
+}
+template < typename Arg1, typename... Args>
+void __f(const char* names, Arg1&& arg1, Args&&... args) {
+	const char* comma = strchr(names + 1, ',');
+	cerr.write(names, comma - names) << " = " << arg1 << " | ";
+	__f(comma + 1, args...);
+}
 #else
 #define debug(...)
 #endif
@@ -53,13 +63,8 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	set <int, greater<int>> s; // descending order
-	s.insert(10);
-	s.insert(20);
-	s.insert(50);
-	s.insert(40);
 
-	for (auto i : s) cout << i << endl;
+
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif

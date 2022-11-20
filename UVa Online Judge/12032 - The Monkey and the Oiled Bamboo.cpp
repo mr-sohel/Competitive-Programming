@@ -37,36 +37,66 @@ const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e5;
+const int MX = 2e6;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
-    cerr << name << " = " << arg1 << endl;
+	cerr << name << " = " << arg1 << endl;
 }
 template < typename Arg1, typename... Args>
 void __f(const char* names, Arg1&& arg1, Args&&... args) {
-    const char* comma = strchr(names + 1, ',');
-    cerr.write(names, comma - names) << " = " << arg1 << " | ";
-    __f(comma + 1, args...);
+	const char* comma = strchr(names + 1, ',');
+	cerr.write(names, comma - names) << " = " << arg1 << " | ";
+	__f(comma + 1, args...);
 }
 #else
 #define debug(...)
 #endif
 
+ll check(vector<int>&v, int n, ll k) {
+	for (int i = 0; i < n; i++) {
+		if (v[i + 1] - v[i] == k) {
+			k--;
+		} else if (v[i + 1] - v[i] > k)
+			return -1;
+	}
+	return k;
+}
+
 int main() {
 
 #ifdef LOCAL
-    clock_t tStart = clock();
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+	clock_t tStart = clock();
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
 #endif
-    unsyncIO;
-
+	unsyncIO;
+	int t, tc = 1; cin >> t;
+	while (t--) {
+		int n; cin >> n;
+		//thik about ground before submit
+		vector<int> v(n + 1);
+		v[0] = 0;
+		for (int i = 1; i <= n; i++) cin >> v[i];
+		ll lo = 0, hi = 1e8, mid, ans = 0;
+		while (lo <= hi) {
+			mid = lo + ((hi - lo) / 2);
+			ll c = check(v, n, mid);
+			if (c >= 0) {
+				hi = mid - 1;
+				ans = mid;
+			} else {
+				lo = mid + 1;
+			}
+			// debug(c, mid, ans);
+		}
+		cout << "Case " << tc++ << ": " << ans << endl;
+	}
 
 #ifdef LOCAL
-    cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
+	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
-    return 0;
+	return 0;
 }
