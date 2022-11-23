@@ -2,12 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 char n[10000000];
-int main()
-{
+int main() {
     //freopen("out.txt", "w", stdout);
     int t;
     scanf("%d", &t);
-    while(t--) {
+    while (t--) {
         scanf(" %[^\n]", &n);
         char *p, *e;
         long input;

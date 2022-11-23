@@ -1,20 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 
-int main()
-{
-    int T,i,n,root;
+int main() {
+    int T, i, n, root;
     scanf("%d", &T);
-    for (i = 0; i < T; i++)
-    {
+    for (i = 0; i < T; i++) {
         scanf("%d", &n);
         root = sqrt(n);
-        if (root * root == n)
-        {
+        if (root * root == n) {
             printf("YES\n");
-        }
-        else
-        {
+        } else {
             printf("NO\n");
         }
     }
