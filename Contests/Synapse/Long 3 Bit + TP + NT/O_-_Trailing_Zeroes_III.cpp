@@ -54,7 +54,6 @@ ll TrailZeros(ll n) {
     return res;
 }
 
-
 int main() {
 #ifndef ONLINE_JUDGE
     clock_t tStart = clock();

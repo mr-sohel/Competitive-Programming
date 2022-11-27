@@ -55,6 +55,8 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
+
+
 int main() {
 
 #ifdef LOCAL
@@ -63,8 +65,28 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
-
+	int x, tc = 1;
+	int n, q;
+	while (cin >> n >> q) {
+		vector<int> a(n);
+		if (n == 0 and q == 0) return 0;
+		cout << "CASE# " << tc++ << ":" << endl;
+		for (int i = 0; i < n; i++) {
+			cin >> a[i];
+		}
+		sort(all(a));
+		// for (auto v : a) cout << v << " ";
+		// cout << endl;
+		while (q--) {
+			cin >> x;
+			auto it = lower_bound(all(a), x);
+			if (!(it == a.end()) and (*it) == x) {
+				cout << x << " found at " << it - a.begin() + 1 << endl;
+			} else {
+				cout << x << " not found" << endl;
+			}
+		}
+	}
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif

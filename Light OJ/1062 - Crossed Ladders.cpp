@@ -1,7 +1,7 @@
 /**
  *  Author  : Mr_Sohel
  *  Task    :
- *  Algo    :
+ *  Algo    : Binary Search
 **/
 #include <bits/stdc++.h>
 
@@ -54,6 +54,15 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #else
 #define debug(...)
 #endif
+double x, y, c;
+
+double calc(double mid) {
+	double h1, h2;
+	h1 = sqrt((x * x) - (mid * mid));
+	h2 = sqrt((y * y) - (mid * mid));
+
+	return (h1 * h2) / (h1 + h2);
+}
 
 int main() {
 
@@ -63,7 +72,22 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
+	int t, cs = 1; cin >> t;
+	while (t--) {
+		cin >> x >> y >> c;
+		double lo = 0, hi = min(x, y), mid, ans;
+		int cnt = 100;
+		while (cnt--) {
+			mid = (lo + hi) / 2;
+			if (calc(mid) <= c) {
+				hi = mid;
+				ans = mid;
+			} else {
+				lo = mid;
+			}
+		}
+		cout << prec(10) << "Case " << cs++ << ": " << ans << endl;
+	}
 
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;

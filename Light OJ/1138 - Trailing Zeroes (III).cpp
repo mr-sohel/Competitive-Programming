@@ -55,6 +55,14 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
+ll TrailZeros(ll n) {
+	ll res = 0;
+	for (ll i = 5; i <= n; i *= 5) {
+		res += (n / i);
+	}
+	return res;
+}
+
 int main() {
 
 #ifdef LOCAL
@@ -63,7 +71,27 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
+	int t; cin >> t;
+	for (int i = 1; i <= t; i++) {
+		int q; cin >> q;
+		ll ans = 0, lo = 1, hi = INF, mid;
+		while (lo <= hi) {
+			mid = (lo + hi) / 2;
+			ll x = TrailZeros(mid);
+			if (x < q) {
+				lo = mid + 1;
+			} else if (x > q) {
+				hi = mid - 1;
+			} else {
+				ans = mid;
+				hi = mid - 1;
+			}
+		}
+		if (ans)
+			cout << "Case " << i << ": " << ans << endl;
+		else
+			cout << "Case " << i << ": " << "impossible" << endl;
+	}
 
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
