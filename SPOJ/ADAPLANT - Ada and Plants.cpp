@@ -1,7 +1,7 @@
 /**
  *  Author  : Mr_Sohel
  *  Task    :
- *  Algo    :
+ *  Algo    : Multiset + Sliding Window
 **/
 #include <bits/stdc++.h>
 
@@ -37,7 +37,7 @@ const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e6;
+const int MX = 1e5 + 2;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -55,6 +55,8 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
+int a[MX];
+
 int main() {
 
 #ifdef LOCAL
@@ -63,8 +65,35 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
-
+	int t; cin >> t;
+	while (t--) {
+		int n, k;
+		cin >> n >> k;
+		for (int i = 0; i < n; i++) cin >> a[i];
+		int i = 0, j = k + 1, ans = 0;
+		multiset<int> mp; // i wil try with multimap later
+		for (i = 0; i <= j and i < n; i++) {
+			mp.insert(a[i]);
+		}
+		i = 0;
+		auto f = mp.begin(), l = --mp.end();
+		// l--;
+		ans = max(ans, *l - *f);
+		while (j < n) {
+			f = mp.begin(), l = --mp.end();
+			ans = max(ans, (*l - *f));
+			/*for (auto in : mp) {
+				cout << in << " ";
+			}
+			cout << "ans = " << ans << endl;*/
+			auto x = mp.find(a[i]);
+			mp.erase(x);
+			j++;
+			i++;
+			mp.insert(a[j]);
+		}
+		cout << ans << endl;
+	}
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif

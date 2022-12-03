@@ -1,58 +1,86 @@
 /**
- *	Author:  Sohel Rana
- *	Date:    2021-12-12 20:59:35
- *	Task:    Division_by_3 
+ *  Author  : Mr_Sohel
+ *  Task    :
+ *  Algo    :
 **/
 #include <bits/stdc++.h>
-#define endl				'\n'
-#define sqr(x)				(x) * (x)
-#define gcd(x, y)			__gcd(x, y)
-#define lcm(x, y)			((x/gcd(x,y)) * y)
-#define pf(x) 	  			push_front(x)
-#define pb(x)				push_back(x)
-#define eb(x)				emplace_back(x)
-#define all(x)      		(x).begin(), (x).end()
-#define rall(x)				(x).rbegin(), (x).rend()
-#define sz(x)				(int)x.size()
-#define make_unique(x) 		(x).resize(unique(all((x)))-(x).begin())
-#define debug(x)			cerr<<#x<<" = "<<(x)<< endl
-#define debug2(x,y) 		cerr<<#x<<" = "<<(x)<<","<<#y<<" = "<<(y)<< endl
-#define unsyncIO    		ios_base::sync_with_stdio(0); cin.tie(0)
+
+#define endl          '\n'
+#define sqr(x)        (x) * (x)
+#define gcd(x,y)      __gcd(x,y)
+#define lcm(x,y)      ((x/gcd(x,y)) * y)
+#define pb            push_back
+#define pf            push_front
+#define mk            make_pair
+#define fi            first
+#define se            second
+#define sz(x)         (int)x.size()
+#define all(x)        (x).begin(),(x).end()
+#define rall(x)       (x).rbegin(),(x).rend()
+#define prec(x)       fixed<<setprecision(x)
+#define min3(a,b,c)   min(a,min(b,c))
+#define max3(a,b,c)   max(a,max(b,c))
+#define min4(a,b,c,d) min(a,min(b,min(c,d)))
+#define max4(a,b,c,d) max(a,max(b,max(c,d)))
+#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
+
+using namespace std;
 
 using ll = long long;
 using db = double;
 using ld = long double;
 using ull = unsigned long long;
+using pii = pair<int, int>;
+using pll = pair<ll, ll>;
 
-const ld PI = acos((ld)-1);
-const int MOD = 1e9+7;
-const long long INF = 1e18;
-const ld EPS = 1.0e-14;
+const ld PI = acos((ld) - 1);
+const int MOD = 1e9 + 7;
+const ll INF = 2e18 + 1;
+const ld EPS = 1e-9;
+const int MX = 2e6;
 
-using namespace std;
+#ifdef LOCAL
+#define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
+template < typename Arg1 >
+void __f(const char* name, Arg1&& arg1) {
+    cerr << name << " = " << arg1 << endl;
+}
+template < typename Arg1, typename... Args>
+void __f(const char* names, Arg1&& arg1, Args&&... args) {
+    const char* comma = strchr(names + 1, ',');
+    cerr.write(names, comma - names) << " = " << arg1 << " | ";
+    __f(comma + 1, args...);
+}
+#else
+#define debug(...)
+#endif
 
+int t, tc = 1;
+ll A, B;
 ll numbers_divisible_by_3_from_1_to_n(int n) {
-    if (n == 0) return 0;
-    int subs;
-    if (n % 3 == 0)
-        subs = n / 3;
+    int cnt;
+    if (n % 3 == 0) cnt = n / 3;
     else
-        subs = (n / 3) + 1;
-    return n - subs;
+        cnt = n / 3 + 1;
+    return n - cnt;
 }
 
+int main() {
 
-int main()
-{
-    //freopen("in.txt", "r", stdin);
-    //freopen("out.txt", "w", stdout);
-    //unsyncIO;
-    int t;
+#ifdef LOCAL
+    clock_t tStart = clock();
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+    unsyncIO;
     cin >> t;
-    for (int i = 1; i <= t; i++) {
-        ll a, b;
-        cin >> a >> b;
-        cout << "Case " << i << ": " << numbers_divisible_by_3_from_1_to_n(b) - numbers_divisible_by_3_from_1_to_n(a - 1) << endl;
+    while (t--) {
+        cin >> A >> B;
+        cout << "Case " << tc++ << ": " << numbers_divisible_by_3_from_1_to_n(B) - numbers_divisible_by_3_from_1_to_n(A - 1) << endl;
     }
+
+#ifdef LOCAL
+    cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
+#endif
     return 0;
 }

@@ -1,7 +1,7 @@
 /**
  *    Author:  Sohel Rana
  *    Date:    2020-10-23 09:55:34
- *	  Link:    link
+ *    Link:    link
 **/
 #include <bits/stdc++.h>
 #define endl '\n'
@@ -20,12 +20,9 @@
 #define sz(x) (int)x.size()
 #define debug(x) cerr << #x << " = " << (x) << endl
 #define debug2(x, y) cerr << #x << " = " << (x) << "," << #y << " = " << (y) << endl
-#define unsyncIO                  \
-    ios_base::sync_with_stdio(0); \
-    cin.tie(0);                   \
-    cout.tie(0)
+#define unsyncIO ios_base::sync_with_stdio(0); cin.tie(0);
 
-const ld PI = acos((ld)-1);
+const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 

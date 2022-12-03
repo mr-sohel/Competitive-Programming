@@ -2,13 +2,10 @@
 
 using namespace std;
 
-int main() 
-{
-    int F = 1;
+int main() {
     int N, index;
     cin >> N >> index;
-    F = F << index;
-    if(F & N)
+    if (N & (1 << index))
         cout << "Set" << endl;
     else
         cout << "Not Set" << endl;
