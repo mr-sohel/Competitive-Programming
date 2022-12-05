@@ -69,4 +69,4 @@ int main() {
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
 	return 0;
-}
+}  

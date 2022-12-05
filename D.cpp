@@ -1,8 +1,7 @@
-/**
- *  Author  : Mr_Sohel
- *  Task    :
- *  Algo    :
-**/
+// Author: Mr_Sohel
+// Task: D - subarrays
+// Time: 2022-12-05 22:48:43
+
 #include <bits/stdc++.h>
 
 #define endl          '\n'
@@ -37,7 +36,7 @@ const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e6;
+const int MX = 1e5+10;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -55,37 +54,29 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
+int n,k,a[MX];
+
 int main() {
 
 #ifdef LOCAL
 	clock_t tStart = clock();
-	freopen("in.txt", "r", stdin);
-	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	int n; cin >> n;
-	int a[n];
+	cin >> n;
 	for (int i = 0; i < n; i++) cin >> a[i];
-	bool flag = false;
-	for (int i = 0; i < (1 << n); i++) {
-		int sum = 0;
-		for (int j = 0; j < n ; j++) {
-			if (i & (1 << j)) {
-				sum += a[j];
-			} else {
-				sum -= a[j];
-			}
-		}
-		if (sum % 360 == 0) {
-			flag = true;
-			// break;
-		}
-		// debug(i, sum);
+	cin>>k;
+	multiset<int> ms;
+	for(int i = 0; i < k; i++) ms.insert(a[i]);
+	auto it = --(ms.end());
+	cout<< *it <<" ";
+	int i = 0, j = k;
+	while(j < n) {
+		auto x = ms.find(a[i++]);
+		ms.erase(x);
+		ms.insert(a[j++]);
+		auto it = --ms.end();
+		cout<<*it<<" ";
 	}
-	if (flag) cout << "YES" << endl;
-	else
-		cout << "NO" << endl;
-
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif

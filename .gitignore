@@ -8,6 +8,8 @@
 .vscode/
 *.txt
 *.prob
+*.in
+*.ans
 *.code-workspace
 *.sublime-workspace
 *.tests
