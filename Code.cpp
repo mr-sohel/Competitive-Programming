@@ -63,28 +63,7 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	int n; cin >> n;
-	int a[n];
-	for (int i = 0; i < n; i++) cin >> a[i];
-	bool flag = false;
-	for (int i = 0; i < (1 << n); i++) {
-		int sum = 0;
-		for (int j = 0; j < n ; j++) {
-			if (i & (1 << j)) {
-				sum += a[j];
-			} else {
-				sum -= a[j];
-			}
-		}
-		if (sum % 360 == 0) {
-			flag = true;
-			// break;
-		}
-		// debug(i, sum);
-	}
-	if (flag) cout << "YES" << endl;
-	else
-		cout << "NO" << endl;
+
 
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;

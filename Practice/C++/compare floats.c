@@ -1,10 +1,9 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
 	float a = 0.7;
-	if (a == 0.7f)
-	printf("Yea");
+	if (a == 0.7)
+		printf("Yea");
 	else
-	printf("Nop");
+		printf("Nop");
 }
