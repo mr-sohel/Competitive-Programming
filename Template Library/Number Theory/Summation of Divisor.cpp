@@ -1,46 +1,25 @@
-#include <bits/stdc++.h>
-#define endl '\n'
-#define pb push_back
-typedef long long ll;
-typedef long double ld;
-const int MOD = 1e9 + 7;
-const int MX = 2e5 + 5;
-const ll INF = 1e18;
-const ld PI = acos((ld) - 1);
-
-using namespace std;
-
-#define M 500001
+const int MX = 5e5 + 5; // MX upto 10^8
 vector<int> primes;
-bitset<M> marked;
+bitset < MX + 5 > mark;
 
-bool isPrime(int n) {
-    if (n < 2)
-        return false;
-    if (n == 2)
-        return true;
-    if (n % 2 == 0)
-        return false;
-    return marked[n] == false;
-}
 void sieve() {
-    for (int i = 3; i * i <= M; i += 2) {
-        if (marked[i] == false) {
-            for (int j = i * i; j <= M; j += i + i) {
-                marked[j] = true;
-            }
+    int sq = sqrt(MX);
+    for (int i = 3; i <= sq; i += 2)
+        if (!mark[i] && (i * i) <= MX) {
+            for (int j = i * i; j <= MX; j += (i << 1))
+                mark[j] = true;
         }
-    }
     primes.push_back(2);
-    for (int i = 3; i <= M; i += 2) {
-        if (isPrime(i))
+    for (int i = 3; i <= MX; i += 2) {
+        if (mark[i] == false)
             primes.push_back(i);
     }
 }
-//optimized algo is
 int divisorSum(int n) {
+    int temp = n;
+    if (n < 2) return 0;
     int total = 1;
-    for (int i = 0; i < primes.size(); i++) {
+    for (int i = 0; n != 1; i++) {
         int cnt = 1;
         while (n % primes[i] == 0) {
             n /= primes[i];
@@ -48,18 +27,5 @@ int divisorSum(int n) {
         }
         total *= (pow(primes[i], cnt) - 1) / (primes[i] - 1);
     }
-    return total;
-}
-
-int main() {
-    //freopen("/home/sohel/Documents/my_codes/out.txt", "wt", stdout);
-    int n;
-    cin >> n;
-    //int sqrtN = (int)sqrt(n) + 1;
-    sieve();
-
-
-    cout << "Sum of Divisors is " << divisorSum(n) << endl;
-
-    return 0;
+    return total - temp;
 }
