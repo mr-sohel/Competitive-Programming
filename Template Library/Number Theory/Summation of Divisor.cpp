@@ -16,7 +16,6 @@ void sieve() {
     }
 }
 int divisorSum(int n) {
-    int temp = n;
     if (n < 2) return 0;
     int total = 1;
     for (int i = 0; n != 1; i++) {
@@ -27,5 +26,5 @@ int divisorSum(int n) {
         }
         total *= (pow(primes[i], cnt) - 1) / (primes[i] - 1);
     }
-    return total - temp;
+    return total;
 }
