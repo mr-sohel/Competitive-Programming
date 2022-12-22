@@ -2,7 +2,7 @@ This is a repository for uploading source codes of my solved or unsolved problem
 ```
 template<typename T>inline T POW(T B,T P){ if(P==0) return 1; if(P&1) return B*POW(B,P-1);  else return sqr(POW(B,P/2));}
 
-`ll BigMod(ll a, ll b, ll m) { a %= m; ll res = 1;while (b > 0) {if (b & 1)res = res * a % m;a = a * a % m;b >>= 1;}return res;}`
+ll BigMod(ll a, ll b, ll m) { a %= m; ll res = 1;while (b > 0) {if (b & 1)res = res * a % m;a = a * a % m;b >>= 1;}return res;}
 
 ll ModInverse(ll number, ll mod){return BigMod(number, mod-2, mod);}
 
