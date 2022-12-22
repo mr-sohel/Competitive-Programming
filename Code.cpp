@@ -37,6 +37,7 @@ const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
+const int MX = 2e6;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -54,38 +55,6 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-const int MX = 5e5 + 6; // sqrt(10^9) is enough, MX upto 10^8
-vector<int> primes;
-bitset < MX + 5 > mark;
-
-void sieve() {
-	int sq = sqrt(MX);
-	for (int i = 3; i <= sq; i += 2)
-		if (!mark[i] && (i * i) <= MX) {
-			for (int j = i * i; j <= MX; j += (i << 1))
-				mark[j] = true;
-		}
-	primes.push_back(2);
-	for (int i = 3; i <= MX; i += 2) {
-		if (mark[i] == false)
-			primes.push_back(i);
-	}
-}
-int divisorSum(int n) {
-	int temp = n;
-	if (n < 2) return 0;
-	int total = 1;
-	for (int i = 0; n != 1; i++) {
-		int cnt = 1;
-		while (n % primes[i] == 0) {
-			n /= primes[i];
-			cnt++;
-		}
-		total *= (pow(primes[i], cnt) - 1) / (primes[i] - 1);
-	}
-	return total - temp;
-}
-
 int main() {
 
 #ifdef LOCAL
@@ -94,13 +63,7 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	sieve();
-	int t; cin >> t;
-	while (t--) {
-		int a;
-		cin >> a;
-		cout << divisorSum(a) << endl;
-	}
+
 
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
