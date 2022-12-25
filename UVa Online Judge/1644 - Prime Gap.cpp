@@ -18,6 +18,7 @@
 using namespace std;
 
 using ll = long long;
+using db = double;
 using ld = long double;
 using ull = unsigned long long;
 using pii = pair<int, int>;
@@ -27,7 +28,7 @@ const ld PI = acos((ld) - 1);
 const int MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e6;
+const int MX = 1299709;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -44,6 +45,24 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #else
 #define debug(...)
 #endif
+vector<int> primes;
+bitset < MX + 2 > mark;
+
+void sieve() {
+	for (int i = 4; i <= MX; i += 2) mark[i] = true;
+	for (int i = 3; i * i <= MX; i += 2) {
+		if (!mark[i]) {
+			for (int j = i * i; j <= MX; j += i + i) {
+				mark[j] = true;
+			}
+		}
+	}
+	primes.push_back(2);
+	for (int i = 3; i <= MX; i += 2) {
+		if (!mark[i])
+			primes.push_back(i);
+	}
+}
 
 int main() {
 
@@ -53,8 +72,16 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
-
+	sieve();
+	int n;
+	while (cin >> n && n) {
+		if (!mark[n]) {
+			cout << 0 << endl;
+		} else {
+			auto it = lower_bound(all(primes), n);
+			cout << *it - *--it << endl;
+		}
+	}
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
