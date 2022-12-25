@@ -1,19 +1,10 @@
-/**
- *  Author  : Mr_Sohel
- *  Task    :
- *  Algo    :
-**/
 #include <bits/stdc++.h>
 
 #define endl          '\n'
 #define sqr(x)        (x) * (x)
 #define gcd(x,y)      __gcd(x,y)
 #define lcm(x,y)      ((x/gcd(x,y)) * y)
-#define pb            push_back
-#define pf            push_front
 #define mk            make_pair
-#define fi            first
-#define se            second
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -27,7 +18,6 @@
 using namespace std;
 
 using ll = long long;
-using db = double;
 using ld = long double;
 using ull = unsigned long long;
 using pii = pair<int, int>;
@@ -55,12 +45,12 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-ll TrailZeros(ll n) {
-	ll res = 0;
-	for (ll i = 5; i <= n; i *= 5) {
-		res += (n / i);
+int count(int n) {
+	int cnt = 0;
+	for (int i = 5; i <= n ; i *= 5) {
+		cnt += n / i;
 	}
-	return res;
+	return cnt;
 }
 
 int main() {
@@ -71,26 +61,29 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	int t; cin >> t;
-	for (int i = 1; i <= t; i++) {
-		int q; cin >> q;
-		ll ans = 0, lo = 1, hi = INF, mid;
+
+	int n, t, tc = 1;
+	cin >> t;
+	while (t--) {
+		cin >> n;
+		int lo = 0, hi = 1e9, mid, ans = 0;
 		while (lo <= hi) {
 			mid = (lo + hi) / 2;
-			ll x = TrailZeros(mid);
-			if (x < q) {
-				lo = mid + 1;
-			} else if (x > q) {
+			// debug(lo, hi, mid, count(mid));
+			int calc = count(mid);
+			if (calc > n) {
 				hi = mid - 1;
+			} else if (calc < n) {
+				lo = mid + 1;
 			} else {
 				ans = mid;
 				hi = mid - 1;
 			}
 		}
-		if (ans)
-			cout << "Case " << i << ": " << ans << endl;
-		else
-			cout << "Case " << i << ": " << "impossible" << endl;
+		if (ans == 0 ) {
+			cout << "Case " << tc++ << ": " << "impossible" << endl;
+		} else
+			cout << "Case " << tc++ << ": " << ans << endl;
 	}
 
 #ifdef LOCAL
