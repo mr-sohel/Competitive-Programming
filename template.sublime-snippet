@@ -1,3 +1,5 @@
+<snippet>
+	<content><![CDATA[
 #include <bits/stdc++.h>
 
 #define endl          '\n'
@@ -33,61 +35,36 @@ const int MX = 2e6;
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
 template < typename Arg1 >
 void __f(const char* name, Arg1&& arg1) {
-	cerr << name << " = " << arg1 << endl;
+    cerr << name << " = " << arg1 << endl;
 }
 template < typename Arg1, typename... Args>
 void __f(const char* names, Arg1&& arg1, Args&&... args) {
-	const char* comma = strchr(names + 1, ',');
-	cerr.write(names, comma - names) << " = " << arg1 << " | ";
-	__f(comma + 1, args...);
+    const char* comma = strchr(names + 1, ',');
+    cerr.write(names, comma - names) << " = " << arg1 << " | ";
+    __f(comma + 1, args...);
 }
 #else
 #define debug(...)
 #endif
 
-int count(int n) {
-	int cnt = 0;
-	for (int i = 5; i <= n; i *= 5) {
-		cnt += n / i;
-	}
-	return cnt;
-}
-
 int main() {
 
 #ifdef LOCAL
-	clock_t tStart = clock();
-	freopen("in.txt", "r", stdin);
-	freopen("out.txt", "w", stdout);
+    clock_t tStart = clock();
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
 #endif
-	unsyncIO;
-
-	int n, t, tc = 1;
-	cin >> t;
-	while (t--) {
-		cin >> n;
-		int lo = 0, hi = 1e9, mid, ans = 0;
-		while (lo <= hi) {
-			mid = lo + (hi - lo) / 2;
-			// debug(lo, hi, mid, count(mid));
-			int calc = count(mid);
-			if (calc > n) {
-				hi = mid - 1;
-			} else if (calc < n) {
-				lo = mid + 1;
-			} else {
-				ans = mid;
-				hi = mid - 1;
-			}
-		}
-		if (ans == 0 ) {
-			cout << "Case " << tc++ << ": " << "impossible" << endl;
-		} else
-			cout << "Case " << tc++ << ": " << ans << endl;
-	}
+    unsyncIO;
+    $0
 
 #ifdef LOCAL
-	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
+    cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
-	return 0;
+    return 0;
 }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>#include</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,13 @@
+{
+  "cmd":["bash", "-c", "g++ -std=gnu++17 -DLOCAL -Wall '${file}' -o '${file_path}/${file_base_name}' && timeout 6.5s '${file_path}/${file_base_name}'"],
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "working_dir": "${file_path}",
+  "selector": "source.c, source.c++",
+  "variants":
+  [
+    {
+      "name": "Run For Debug",
+      "cmd": ["bash", "-c", "g++ -std=gnu++17 -O2 -DLOCAL -Wshadow -Wall -Wextra -fsanitize=undefined -g -D_GLIBCXX_ASSERTIONS '${file}' -o '${file_path}/${file_base_name}' && timeout 60s '${file_path}/${file_base_name}'"]
+    }
+  ]
+}
