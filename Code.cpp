@@ -45,12 +45,8 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-int count(int n) {
-	int cnt = 0;
-	for (int i = 5; i <= n; i *= 5) {
-		cnt += n / i;
-	}
-	return cnt;
+void solve() {
+
 }
 
 int main() {
@@ -61,29 +57,9 @@ int main() {
 	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-
-	int n, t, tc = 1;
-	cin >> t;
+	int t = 1;  cin >> t;
 	while (t--) {
-		cin >> n;
-		int lo = 0, hi = 1e9, mid, ans = 0;
-		while (lo <= hi) {
-			mid = lo + (hi - lo) / 2;
-			// debug(lo, hi, mid, count(mid));
-			int calc = count(mid);
-			if (calc > n) {
-				hi = mid - 1;
-			} else if (calc < n) {
-				lo = mid + 1;
-			} else {
-				ans = mid;
-				hi = mid - 1;
-			}
-		}
-		if (ans == 0 ) {
-			cout << "Case " << tc++ << ": " << "impossible" << endl;
-		} else
-			cout << "Case " << tc++ << ": " << ans << endl;
+		solve();
 	}
 
 #ifdef LOCAL

@@ -1,5 +1,5 @@
 <snippet>
-	<content><![CDATA[
+    <content><![CDATA[
 #include <bits/stdc++.h>
 
 #define endl          '\n'
@@ -47,6 +47,10 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
+void solve() {
+    $0
+}
+
 int main() {
 
 #ifdef LOCAL
@@ -55,7 +59,10 @@ int main() {
     freopen("out.txt", "w", stdout);
 #endif
     unsyncIO;
-    $0
+    int t = 1;  cin >> t;
+    while (t--) {
+        solve();
+    }
 
 #ifdef LOCAL
     cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
@@ -63,8 +70,8 @@ int main() {
     return 0;
 }
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>#include</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.c++</scope>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>#include</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
 </snippet>

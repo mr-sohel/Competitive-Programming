@@ -1,19 +1,9 @@
-/**
- *  Author  : Mr_Sohel
- *  Task    :
- *  Algo    :
-**/
 #include <bits/stdc++.h>
 
 #define endl          '\n'
 #define sqr(x)        (x) * (x)
 #define gcd(x,y)      __gcd(x,y)
-#define lcm(x,y)      ((x/gcd(x,y)) * y)
-#define pb            push_back
-#define pf            push_front
-#define mk            make_pair
-#define fi            first
-#define se            second
+// #define lcm(x,y)      ((x/gcd(x,y)) * y)
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -55,18 +45,39 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
+void solve() {
+	ll n, a = 1, b = 1;    cin >> n;
+	vector <pll> v;
+
+	for (ll i = 1; (ll)i * i <= n; i++) {
+		if (n % i == 0) {
+			v.push_back({i, n / i});
+		}
+	}
+	for (auto it : v) {
+
+		if (lcm(it.first, it.second) == n) {
+			a = it.first;
+			b = it.second;
+		}
+	}
+	cout << a << " " << b << endl;
+}
+
 int main() {
 
 #ifdef LOCAL
 	clock_t tStart = clock();
-	freopen("in.txt", "r", stdin);
-	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
 
+	int t = 1;  //cin >> t;
+	while (t--) {
+		solve();
+	}
 
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
 	return 0;
-}  
+}
