@@ -23,10 +23,10 @@ using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 
 const ld PI = acos((ld) - 1);
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e6;
+const ll MX = 1e6 + 5;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -45,18 +45,33 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #endif
 
 void solve() {
-
+	int n, q;
+	cin >> n >> q;
+	int a[n + 1] = {0};
+	ll pref[n + 1] = {0};
+	for (int i = 1; i <= n; i++) {
+		cin >> a[i];
+	}
+	for (int i = 1; i <= n; i++) {
+		pref[i] = pref[i - 1] + a[i];
+	}
+	while (q--) {
+		int l, r;
+		cin >> l >> r;
+		cout << pref[r] - pref[l - 1] << endl;
+	}
 }
 
 int main() {
 
 #ifdef LOCAL
 	clock_t tStart = clock();
-	// freopen("in.txt", "r", stdin);
-	// freopen("out.txt", "w", stdout);
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	int t = 1; cin >> t;
+	int t = 1;
+	// cin >> t;
 	while (t--) {
 		solve();
 	}
