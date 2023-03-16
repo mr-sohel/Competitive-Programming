@@ -60,7 +60,7 @@ void solve() {
 	auto it = --ms.end();
 	cout << *it << " ";
 	for (int i = 1; i <= n - k; i++) {
-		auto x = ms.find(a[i]);
+		auto x = ms.find(a[i]); // to find and remove the left most element
 		ms.erase(x);
 		ms.insert(a[i + k]);
 		//debug(a[i], a[i + k]);
