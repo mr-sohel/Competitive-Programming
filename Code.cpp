@@ -44,28 +44,12 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-int a[MX], ans[MX], n;
+
+
 
 void solve() {
-	cin >> n;
-	for (int i = 1; i <= n; i++) cin >> a[i];
-	stack<pair<int, int>> st;
-	for (int i = 1; i <= n; i++) {
 
-		while (!st.empty() and st.top().first >= a[i]) {
-			st.pop();
-		}
-		if (st.empty()) {
-			ans[i] = 0;
-		} else {
-			ans[i] = st.top().second;
-		}
-		st.push({a[i], i});
-	}
-	for (int i = 1; i <= n; i++) {
-		cout << ans[i] << " ";
-	}
-	cout << endl;
+
 }
 
 int main() {
@@ -77,7 +61,7 @@ int main() {
 #endif
 	unsyncIO;
 	int t = 1;
-	// cin >> t;
+	//cin >> t;
 	while (t--) {
 		solve();
 	}

@@ -6,7 +6,6 @@
 #define sqr(x)        (x) * (x)
 #define gcd(x,y)      __gcd(x,y)
 #define lcm(x,y)      ((x/gcd(x,y)) * y)
-#define mk            make_pair
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -26,10 +25,10 @@ using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 
 const ld PI = acos((ld) - 1);
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e6;
+const ll MX = 2e5 + 5;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -48,7 +47,7 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #endif
 
 void solve() {
-    $0
+
 }
 
 int main() {
@@ -59,7 +58,8 @@ int main() {
     freopen("out.txt", "w", stdout);
 #endif
     unsyncIO;
-    int t = 1;  cin >> t;
+    int t = 1;
+    //cin >> t;
     while (t--) {
         solve();
     }
