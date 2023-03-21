@@ -26,7 +26,7 @@ const ld PI = acos((ld) - 1);
 const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const ll MX = 1e5 + 5;
+const ll MX = 1e6 + 5;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -44,22 +44,30 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-int a[MX];
+int a[MX], n, k;
+
 
 void solve() {
-	ll n, s, sum = 0, ans = 0, i = 0, j = 0;
-	cin >> n >> s;
-	for (int i = 0; i < n; i++) cin >> a[i];
-	while (j < n) {
-		sum += a[j];
-		while (sum > s) {
-			sum -= a[i];
-			i++;
-		}
-		ans = max(ans, j - i + 1);
-		j++;
+	cin >> n;
+	for (int i = 1; i <= n; i++) {
+		cin >> a[i];
 	}
-	cout << ans << endl;
+	cin >> k;
+	deque<int> dq;
+	for (int i = 1; i <= k; i++) {
+		while (!dq.empty() and a[i] >= a[dq.back()])
+			dq.pop_back();
+		dq.push_back(i);
+	}
+	// max element will be stored in the front of deque
+	for (int i = k + 1; i <= n + 1; i++) {
+		cout << a[dq.front()] << " ";
+		while (!dq.empty() and dq.front() <= i - k) // if front is not inside the range i to k we remove them.
+			dq.pop_front();
+		while (!dq.empty() and a[i] >= a[dq.back()])
+			dq.pop_back();
+		dq.push_back(i);
+	}
 }
 
 int main() {

@@ -1,18 +1,9 @@
-// Author: Mr_Sohel
-// Task: D - subarrays
-// Time: 2022-12-05 22:48:43
-
 #include <bits/stdc++.h>
 
 #define endl          '\n'
 #define sqr(x)        (x) * (x)
 #define gcd(x,y)      __gcd(x,y)
 #define lcm(x,y)      ((x/gcd(x,y)) * y)
-#define pb            push_back
-#define pf            push_front
-#define mk            make_pair
-#define fi            first
-#define se            second
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -26,17 +17,16 @@
 using namespace std;
 
 using ll = long long;
-using db = double;
 using ld = long double;
 using ull = unsigned long long;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 
 const ld PI = acos((ld) - 1);
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 1e5 + 10;
+const ll MX = 1e5 + 5;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -54,29 +44,43 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-int n, k, a[MX];
+int a[MX], b[MX], c[MX];
+void solve() {
+	int n, m;
+	cin >> n >> m;
+	for (int i = 0; i < n; i++) cin >> a[i];
+	for (int i = 0; i < m; i++) cin >> b[i];
+	int i = 0, j = 0, k = 0;
+	while (i < n and j < m) {
+		if (a[i] < b[j]) {
+			c[k++] = a[i++];
+		} else {
+			c[k++] = b[j++];
+		}
+	}
+	while (i < n) {
+		c[k++] = a[i++];
+	}
+	while (j < m) {
+		c[k++] = b[j++];
+	}
+	for (int i = 0; i < n + m; i++) cout << c[i] << " ";
+}
 
 int main() {
 
 #ifdef LOCAL
 	clock_t tStart = clock();
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
-	cin >> n;
-	for (int i = 0; i < n; i++) cin >> a[i];
-	cin >> k;
-	multiset<int> ms;
-	for (int i = 0; i < k; i++) ms.insert(a[i]);
-	auto it = --(ms.end());
-	cout << *it << " ";
-	int i = 0, j = k;
-	while (j < n) {
-		auto x = ms.find(a[i++]);
-		ms.erase(x);
-		ms.insert(a[j++]);
-		auto it = --ms.end();
-		cout << *it << " ";
+	int t = 1;
+	//cin >> t;
+	while (t--) {
+		solve();
 	}
+
 #ifdef LOCAL
 	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
 #endif
