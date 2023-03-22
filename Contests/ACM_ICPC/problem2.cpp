@@ -1,12 +1,10 @@
 #include <bits/stdc++.h>
-#define rtn return 0
+
 #define ll long long
 #define Pas printf("PASS\n")
 #define MX 1000000000
 #define ull unsigned long long
-#define pf printf
-#define sf scanf
-#define f2(i, b) for (int i = 0; i < (b); i++)
+
 using namespace std;
 
 int main()
@@ -35,5 +33,5 @@ int main()
             count++;
         pf("Case %d: %d\n", i, count);
     }
-    rtn;
+    return 0;
 }
