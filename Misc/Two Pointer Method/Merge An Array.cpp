@@ -6,7 +6,7 @@
 #define lcm(x,y)      ((x/gcd(x,y)) * y)
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
-#define rall(x)       (x).rbegin(),(x).rend()
+#define rall(x)       (xP).rbegin(),(x).rend()
 #define prec(x)       fixed<<setprecision(x)
 #define min3(a,b,c)   min(a,min(b,c))
 #define max3(a,b,c)   max(a,max(b,c))
