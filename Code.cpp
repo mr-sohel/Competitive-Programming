@@ -44,22 +44,25 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #define debug(...)
 #endif
 
-int a[MX];
-
+ll n, cnt = 0, sum = 0, s, a[MX];
 void solve() {
-	ll n, s, sum = 0, ans = 0, i = 0, j = 0;
 	cin >> n >> s;
 	for (int i = 0; i < n; i++) cin >> a[i];
+	int i = 0, j = 0;
 	while (j < n) {
 		sum += a[j];
-		while (sum > s) {
-			sum -= a[i];
-			i++;
+		cnt++;
+		while (i < n) {
+			if (sum > s) {
+				sum -= a[i];
+				i++;
+			} else break;
 		}
-		ans = max(ans, j - i + 1);
+		cnt += (j - i);
 		j++;
+		// debug(cnt, sum, i, j);
 	}
-	cout << ans << endl;
+	cout << cnt << endl;
 }
 
 int main() {
