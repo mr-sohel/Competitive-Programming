@@ -1,34 +1,17 @@
-/**
- *	Author:  Sohel Rana
- *	Date:    2022-01-03 21:36:37
- *	Task:    Fibonacci 
-**/
 #include <bits/stdc++.h>
-
 
 using namespace std;
 
-long long memo[100] = {} ;
+long long memo[10005];
 
-long long fibo(int n) {
-    long long result;
-    if (memo[n] != 0) {
-        return memo[n];
-    }
-    if (n <= 1)
-        result = n;
-    else {
-        result = fibo(n - 1) + fibo(n - 2);
-        memo[n] = result;
-    }
-    return result;
+long long fibo(long long n) {
+    if (n == 0 or n == 1) return 1;
+    if (memo[n] != -1) return memo[n];
+    return memo[n] = fibo(n - 1) + fibo(n - 2);
 }
 
-int main() 
-{
-    //freopen("in.txt", "r", stdin);
-    //freopen("out.txt", "w", stdout);
-    //unsyncIO;
+int main() {
+    memset(memo, -1, sizeof(memo));
     int n;
     cin >> n;
     cout << fibo(n) << " ";

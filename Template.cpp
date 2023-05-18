@@ -12,7 +12,6 @@
 #define max3(a,b,c)   max(a,max(b,c))
 #define min4(a,b,c,d) min(a,min(b,min(c,d)))
 #define max4(a,b,c,d) max(a,max(b,max(c,d)))
-#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using namespace std;
 
@@ -23,10 +22,10 @@ using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 
 const ld PI = acos((ld) - 1);
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const int MX = 2e6;
+const ll MX = 2e5 + 5;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -52,11 +51,10 @@ int main() {
 
 #ifdef LOCAL
 	clock_t tStart = clock();
-	// freopen("in.txt", "r", stdin);
-	// freopen("out.txt", "w", stdout);
 #endif
-	unsyncIO;
-	int t = 1; cin >> t;
+	ios_base::sync_with_stdio(false); cin.tie(nullptr);
+	int t = 1;
+	//cin >> t;
 	while (t--) {
 		solve();
 	}

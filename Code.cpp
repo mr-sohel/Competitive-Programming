@@ -26,7 +26,7 @@ const ld PI = acos((ld) - 1);
 const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
-const ll MX = 1e5 + 5;
+const ll MX = 2e5 + 5;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -43,26 +43,17 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 #else
 #define debug(...)
 #endif
+int i = 1, n;
+void f() {
+	printf("%d\n", i);
+	i++;
+	if (i == n + 1) return;
+	f();
+}
 
-ll n, cnt = 0, sum = 0, s, a[MX];
 void solve() {
-	cin >> n >> s;
-	for (int i = 0; i < n; i++) cin >> a[i];
-	int i = 0, j = 0;
-	while (j < n) {
-		sum += a[j];
-		cnt++;
-		while (i < n) {
-			if (sum > s) {
-				sum -= a[i];
-				i++;
-			} else break;
-		}
-		cnt += (j - i);
-		j++;
-		// debug(cnt, sum, i, j);
-	}
-	cout << cnt << endl;
+	cin >> n;
+	f();
 }
 
 int main() {
