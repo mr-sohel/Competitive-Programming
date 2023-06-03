@@ -15,7 +15,7 @@
 #define testcase      cout << "Case " << tc++ << ":"
 #define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
-using namespace std dsf;
+using namespace std;
 
 using ll = long long;
 using ld = long double;
