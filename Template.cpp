@@ -12,20 +12,21 @@
 #define max3(a,b,c)   max(a,max(b,c))
 #define min4(a,b,c,d) min(a,min(b,min(c,d)))
 #define max4(a,b,c,d) max(a,max(b,max(c,d)))
+#define testcase      cout << "Case " << tc++ << ":"
+#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using namespace std;
 
 using ll = long long;
 using ld = long double;
 using ull = unsigned long long;
-using pii = pair<int, int>;
-using pll = pair<ll, ll>;
 
 const ld PI = acos((ld) - 1);
 const ll MOD = 1e9 + 7;
 const ll INF = 2e18 + 1;
 const ld EPS = 1e-9;
 const ll MX = 2e5 + 5;
+int tc = 1;
 
 #ifdef LOCAL
 #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
@@ -52,9 +53,11 @@ int main() {
 #ifdef LOCAL
 	clock_t tStart = clock();
 #endif
-	ios_base::sync_with_stdio(false); cin.tie(nullptr);
+	unsyncIO;
 	int t = 1;
 	//cin >> t;
+
+	//cin.ignore();
 	while (t--) {
 		solve();
 	}
