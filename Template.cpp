@@ -12,7 +12,7 @@
 #define max3(a,b,c)   max(a,max(b,c))
 #define min4(a,b,c,d) min(a,min(b,min(c,d)))
 #define max4(a,b,c,d) max(a,max(b,max(c,d)))
-#define testcase      cout << "Case " << tc++ << ":"
+#define testcase      cout << "Case " << tc++ << ": "
 #define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using namespace std;
@@ -21,11 +21,9 @@ using ll = long long;
 using ld = long double;
 using ull = unsigned long long;
 
-const ld PI = acos((ld) - 1);
+const ld PI = acos(-1.0);
 const ll MOD = 1e9 + 7;
-const ll INF = 2e18 + 1;
-const ld EPS = 1e-9;
-const ll MX = 2e5 + 5;
+const ll N = 2e5 + 5;
 int tc = 1;
 
 #ifdef LOCAL
@@ -52,18 +50,18 @@ int main() {
 
 #ifdef LOCAL
 	clock_t tStart = clock();
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
 #endif
 	unsyncIO;
 	int t = 1;
 	//cin >> t;
-
-	//cin.ignore();
 	while (t--) {
 		solve();
 	}
 
 #ifdef LOCAL
-	cerr << "\nRuntime: " << (ld) (clock() - tStart) / CLOCKS_PER_SEC << " Seconds" << endl;
+	fprintf(stderr, "\nTime: %.5lf\n", (double) (clock() - tStart) / CLOCKS_PER_SEC);
 #endif
 	return 0;
 }
