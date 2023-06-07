@@ -100,7 +100,6 @@ void solve() {
 	ll patternHash = HashPattern.get(0, sizeP - 1);
 	RangeHash HashString(s);
 	for (int i = 0; i < sizeS - (sizeP - 1); i++) {
-		// debug(i, i + (nx - 1));
 		if ((HashString.get(i, i + (sizeP - 1))) == patternHash)
 			cnt++;
 	}
