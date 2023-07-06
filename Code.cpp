@@ -30,8 +30,36 @@ int tc = 1;
 #include "debug.h"
 #endif
 
-void solve() {
+int countOfZeros(int n) {
+	int cnt = 0;
+	for (ll i = 5; i <= n; i = i * 5) {
+		cnt += n / i;
+	}
+	return cnt;
+}
 
+int BS(int n) {
+	int lo = 1, hi = 1e9, mid, ans = -1;
+	while (lo <= hi) {
+		mid = (lo + hi) / 2;
+		int x = countOfZeros(mid);
+		if (x > n) {
+			hi = mid - 1;
+		}
+		else if (x < n) {
+			lo = mid + 1;
+		} else {
+			ans = mid;
+			hi = mid - 1 ;
+		}
+	}
+	return ans;
+}
+
+void solve() {
+	int n;
+	cin >> n;
+	cout << BS(n) << endl;
 }
 
 int main() {
