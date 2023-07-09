@@ -30,6 +30,8 @@ int tc = 1;
 
 #ifdef LOCAL
 #include "debug.h"
+#else
+#define debug(...)
 #endif
 
 void solve() {

@@ -28,17 +28,22 @@ int tc = 1;
 
 #ifdef LOCAL
 #include "debug.h"
+#else
+#define debug(...)
 #endif
 
 void solve() {
-
+	vector<int> v;
+	for (int i = 1; i <= 10; i++) {
+		v.push_back(i);
+	}
+	debug(v);
 }
-
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	cin >> t;
+	// cin >> t;
 	while (t--) {
 		solve();
 	}
