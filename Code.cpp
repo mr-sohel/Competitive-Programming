@@ -33,9 +33,8 @@ int tc = 1;
 #endif
 
 void solve() {
-	vector<int> v;
-	for (int i = 1; i <= 10; i++) {
-		v.push_back(i);
+	for (int i = 0; i < 10; i++) {
+		v[i] = i;
 	}
 	debug(v);
 }
