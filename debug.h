@@ -32,7 +32,7 @@ ostream& operator<<(ostream& out, const vector<T>& vec) {
         out << vec[i];
     }
     out << endl;
-    out << "\t]";
+    out << "]";
     return out;
 }
 

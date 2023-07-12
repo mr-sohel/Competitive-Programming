@@ -33,16 +33,18 @@ int tc = 1;
 #endif
 
 void solve() {
-	for (int i = 0; i < 10; i++) {
-		v[i] = i;
-	}
-	debug(v);
+	ll n, m;
+	cin >> n >> m;
+	vector<ll> a(m);
+	for (int i = 0; i < m; i++) cin >> a[i];
+	debug(a);
 }
+
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) {
 		solve();
 	}
