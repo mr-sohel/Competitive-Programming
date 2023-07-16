@@ -1,17 +1,44 @@
-const int MX = 1e5; //sqrt(r)+1000 is enough
-vector<int> primes;
-bitset < MX + 5 > mark;
+#include <bits/stdc++.h>
 
+#define endl          '\n'
+#define sqr(x)        (x) * (x)
+#define gcd(x,y)      __gcd(x,y)
+#define lcm(x,y)      ((x/gcd(x,y)) * y)
+#define sz(x)         (int)x.size()
+#define all(x)        (x).begin(),(x).end()
+#define rall(x)       (x).rbegin(),(x).rend()
+#define prec(x)       fixed<<setprecision(x)
+#define testcase      cout << "Case " << tc++ << ": "
+#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
+
+using namespace std;
+
+using ll = long long;
+using ld = long double;
+using ull = unsigned long long;
+
+const ld PI = acos(-1.0);
+const ll MOD = 1e9 + 7;
+int tc = 1;
+
+const ll N = 1e6 + 5;
+bitset < N + 5 > mark;
+vector<long long>primes;
 void sieve() {
-    int sq = sqrt(MX);
-    for (int i = 3; i <= sq; i += 2)
-        if (!mark[i] && (i * i) <= MX) {
-            for (int j = i * i; j <= MX; j += (i << 1))
+    int sq = sqrt(N);
+    for (int i = 4; i <= N; i += 2) {
+        mark[i] = true;
+    }
+    for (int i = 3; i <= sq; i += 2) {
+        if (!mark[i]) {
+            for (int j = i * i; j <= N; j += (i << 1)) {
                 mark[j] = true;
+            }
         }
+    }
     primes.push_back(2);
-    for (int i = 3; i <= MX; i += 2) {
-        if (mark[i] == false)
+    for (int i = 3; i <= N; i += 2) {
+        if (!mark[i])
             primes.push_back(i);
     }
 }
@@ -31,7 +58,6 @@ void segSieve(ll l, ll r) {
     for (int i = 0; i < r - l + 1; i++) {
         if (!isPrime[i]) cout << (i + l) << endl;
     }
-    cout << endl;
 }
 
 int main() {
@@ -39,7 +65,7 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        ll l, r;
+        long long l, r;
         cin >> l >> r;
         segSieve(l, r);
     }

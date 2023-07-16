@@ -8,10 +8,6 @@
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
 #define prec(x)       fixed<<setprecision(x)
-#define min3(a,b,c)   min(a,min(b,c))
-#define max3(a,b,c)   max(a,max(b,c))
-#define min4(a,b,c,d) min(a,min(b,min(c,d)))
-#define max4(a,b,c,d) max(a,max(b,max(c,d)))
 #define testcase      cout << "Case " << tc++ << ": "
 #define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
@@ -32,16 +28,15 @@ int tc = 1;
 #define debug(...)
 #endif
 
-
 void solve() {
-	cout << max({2, 4, 2, 1, 3}) << endl;
 
 }
 
 int main() {
 	unsyncIO;
+
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) {
 		solve();
 	}
