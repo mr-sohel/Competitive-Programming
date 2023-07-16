@@ -14,6 +14,6 @@ int main() {
     a.insert(5);
     a.insert(5);
     for (auto it : a) cout << it << " ";
-    // cout << (a.find_by_order(x)) << endl; // value of index x , 0 based indexing
-    // cout << (a.order_of_key(x)) << endl; //number of element strictly less than x
+    // cout << (a.find_by_order(x)) << endl; // value of index x , 0 based indexing, Takes O(log(n))
+    // cout << (a.order_of_key(x)) << endl; //number of element strictly less than x Takes O(log(n))
 }

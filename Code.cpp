@@ -1,19 +1,49 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
+
+#define endl          '\n'
+#define sqr(x)        (x) * (x)
+#define gcd(x,y)      __gcd(x,y)
+#define lcm(x,y)      ((x/gcd(x,y)) * y)
+#define sz(x)         (int)x.size()
+#define all(x)        (x).begin(),(x).end()
+#define rall(x)       (x).rbegin(),(x).rend()
+#define prec(x)       fixed<<setprecision(x)
+#define min3(a,b,c)   min(a,min(b,c))
+#define max3(a,b,c)   max(a,max(b,c))
+#define min4(a,b,c,d) min(a,min(b,min(c,d)))
+#define max4(a,b,c,d) max(a,max(b,max(c,d)))
+#define testcase      cout << "Case " << tc++ << ": "
+#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
 
 using namespace std;
-using namespace __gnu_pbds;
 
-template <class T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>; // order_of_key, find_by_order
-template <class T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+using ll = long long;
+using ld = long double;
+using ull = unsigned long long;
+
+const ld PI = acos(-1.0);
+const ll MOD = 1e9 + 7;
+const ll N = 2e5 + 5;
+int tc = 1;
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...)
+#endif
+
+
+void solve() {
+	cout << max({2, 4, 2, 1, 3}) << endl;
+
+}
 
 int main() {
-	ordered_multiset <int> a;
-	a.insert(2);
-	a.insert(5);
-	a.insert(5);
-	for (auto it : a) cout << it << " ";
-	// cout << (a.find_by_order(x)) << endl; // value of index x , 0 based indexing
-	// cout << (a.order_of_key(x)) << endl; //number of element strictly less than x
+	unsyncIO;
+	int t = 1;
+	// cin >> t;
+	while (t--) {
+		solve();
+	}
+	return 0;
 }
