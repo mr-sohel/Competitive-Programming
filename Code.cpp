@@ -27,16 +27,39 @@ int tc = 1;
 #else
 #define debug(...)
 #endif
+ll a, b;
+vector<ll>states, ans;
+void rec(ll x) {
+	if (x > b) {
+		return;
+	}
+	states.push_back(x);
+	if (x == b) {
+		ans = states;
+		exit(2);
+	}
+	rec(10 * x + 1);
+	rec(2 * x);
+	states.pop_back();
+}
 
 void solve() {
-
+	cin >> a >> b;
+	rec(a);
+	if (ans.empty()) cout << "NO" << endl;
+	else {
+		cout << "YES" << endl;
+		cout << sz(ans) << endl;
+		for (auto it : ans) cout << it << " ";
+		cout << endl;
+	}
 }
 
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	cin >> t;
+	// cin >> t;
 	while (t--) {
 		solve();
 	}
