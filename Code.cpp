@@ -27,32 +27,36 @@ int tc = 1;
 #else
 #define debug(...)
 #endif
-ll a, b;
-vector<ll>states, ans;
-void rec(ll x) {
-	if (x > b) {
+string a, b, current = "";
+bitset<25> vis;
+vector<string> ans;
+bool cmp(string a, string b) {
+	if (sz(a) > sz(b)) return true;
+	if (sz(a) == sz(b)) {
+		return a > b;
+	}
+	return false;
+}
+void rec(int pos) {
+	// if (cmp(current, b)) return;
+	if (pos == sz(a)) {
+		ans.push_back(current);
 		return;
 	}
-	states.push_back(x);
-	if (x == b) {
-		ans = states;
-		exit(2);
+	for (int i = 0; i < sz(a); i++) {
+		if (vis[i]) continue;
+		vis[i] = 1;
+		current.push_back(a[i]);
+		rec(pos + 1);
+		current.pop_back();
+		vis[i] = 0;
 	}
-	rec(10 * x + 1);
-	rec(2 * x);
-	states.pop_back();
 }
 
 void solve() {
 	cin >> a >> b;
-	rec(a);
-	if (ans.empty()) cout << "NO" << endl;
-	else {
-		cout << "YES" << endl;
-		cout << sz(ans) << endl;
-		for (auto it : ans) cout << it << " ";
-		cout << endl;
-	}
+	rec(0);
+	for (auto it : ans) cout << it << endl;
 }
 
 int main() {
