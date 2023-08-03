@@ -14,9 +14,16 @@
 
 
 //thanks to arman_ferdous
+/* Credits to SansPapyrus683
+ * https://g...content-available-to-author-only...b.com/SansPapyrus683/61b65d4d7ec223b48ebf5c3bb382ba8d
+ */
+
+#include <bits/stdc++.h>
+using namespace std;
+
 template <typename T1, typename T2>
 ostream& operator<<(ostream& out, const pair<T1, T2>& p) {
-    out << "(" << p.first << ", " << p.second << ") ";
+    out << "(" << p.first << ", " << p.second << ")";
     return out;
 }
 
@@ -26,11 +33,10 @@ ostream& operator<<(ostream& out, const vector<T>& vec) {
         out << "[]";
         return out;
     }
-    out << "[ ";
-    for (int i = 0; i < (int)vec.size(); ++i) {
-        out << vec[i];
-    }
-    out << "]";
+    out << "[";
+    for (int i = 0; i < (int)vec.size() - 1; ++i)
+        out << vec[i] << ", ";
+    out << vec.back() << "]";
     return out;
 }
 
@@ -63,11 +69,11 @@ ostream& operator<<(ostream &out, const deque<T>& deq) {
 template <typename T>
 ostream& operator<<(ostream &out, const stack<T>& S) {
     if (S.empty()) {
-        out << "[ ... ]";
+        out << "< ... ]";
         return out;
     }
     stack<T> st = S;
-    out << "[";
+    out << "<";
     while ((int)st.size() > 1) {
         out << st.top() << ", ";
         st.pop();
@@ -79,11 +85,11 @@ ostream& operator<<(ostream &out, const stack<T>& S) {
 template <typename T>
 ostream& operator<<(ostream &out, const queue<T>& Q) {
     if (Q.empty()) {
-        out << "[ ... ]";
+        out << "< ... ]";
         return out;
     }
     queue<T> q = Q;
-    out << "[";
+    out << "<";
     while ((int)q.size() > 1) {
         out << q.front() << ", ";
         q.pop();
@@ -96,12 +102,12 @@ template <typename T1, typename T2>
 ostream& operator<<(ostream& out, const unordered_map<T1, T2>& u_map) {
     out << '{';
     for (auto it = u_map.begin(); it != u_map.end(); it++) {
-        out << endl;
         pair<T1, T2> element = *it;
         out << element.first << ": " << element.second;
-
+        if (next(it) != u_map.end()) {
+            out << ", ";
+        }
     }
-    out << endl;
     return out << '}';
 }
 
@@ -109,22 +115,12 @@ template <typename T1, typename T2>
 ostream& operator<<(ostream& out, const map<T1, T2>& map) {
     out << '{';
     for (auto it = map.begin(); it != map.end(); it++) {
-        out << endl;
         pair<T1, T2> element = *it;
         out << element.first << ": " << element.second;
+        if (next(it) != map.end()) {
+            out << ", ";
+        }
     }
-    out << endl;
-    return out << '}';
-}
-template <typename T1, typename T2>
-ostream& operator<<(ostream& out, const multimap<T1, T2>& mmap) {
-    out << '{';
-    for (auto it = mmap.begin(); it != mmap.end(); it++) {
-        out << endl;
-        pair<T1, T2> element = *it;
-        out << element.first << ": " << element.second;
-    }
-    out << endl;
     return out << '}';
 }
 

@@ -29,21 +29,21 @@ int tc = 1;
 #endif
 
 void solve() {
-	int n; cin >> n;
-	vector<pair<int, int>> ms;
+	int n, k; cin >> n >> k;
+	vector<int> v;
 	for (int i = 1; i <= n; i++) {
 		int x; cin >> x;
-		debug(x);
-		ms.push_back({x, i});
+		v.push_back(x);
 	}
-	debug(ms);
+	sort(all(v));
+	debug(v);
 }
 
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	cin >> t;
+	// cin >> t;
 	while (t--) {
 		solve();
 	}
