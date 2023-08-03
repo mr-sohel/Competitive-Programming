@@ -27,43 +27,23 @@ int tc = 1;
 #else
 #define debug(...)
 #endif
-string a, b, current = "";
-bitset<25> vis;
-vector<string> ans;
-bool cmp(string a, string b) {
-	if (sz(a) > sz(b)) return true;
-	if (sz(a) == sz(b)) {
-		return a > b;
-	}
-	return false;
-}
-void rec(int pos) {
-	// if (cmp(current, b)) return;
-	if (pos == sz(a)) {
-		ans.push_back(current);
-		return;
-	}
-	for (int i = 0; i < sz(a); i++) {
-		if (vis[i]) continue;
-		vis[i] = 1;
-		current.push_back(a[i]);
-		rec(pos + 1);
-		current.pop_back();
-		vis[i] = 0;
-	}
-}
 
 void solve() {
-	cin >> a >> b;
-	rec(0);
-	for (auto it : ans) cout << it << endl;
+	int n; cin >> n;
+	vector<pair<int, int>> ms;
+	for (int i = 1; i <= n; i++) {
+		int x; cin >> x;
+		debug(x);
+		ms.push_back({x, i});
+	}
+	debug(ms);
 }
 
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) {
 		solve();
 	}

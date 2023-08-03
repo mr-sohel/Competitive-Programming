@@ -4,6 +4,7 @@
 !*.*
 *.o
 *.out
+*.exe
 #file i/o
 .vscode/
 *.txt

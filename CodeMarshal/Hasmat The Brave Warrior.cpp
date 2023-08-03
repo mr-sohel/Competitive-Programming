@@ -1,14 +1,11 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 
 int main()
 {
-    long long int a, b;
-    while(scanf("%lld %lld", &a, &b) != EOF)
+    int64_t n1,n2;
+    while(cin>>n1>>n2)
     {
-        if(a > b)
-            printf("%lld\n", a - b);
-        else
-            printf("%lld\n", b - a);
+        cout<<abs(n1 - n2)<<endl;
     }
-    return 0;
 }

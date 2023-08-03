@@ -1,22 +1,22 @@
 // Thanks to fsshakkhor
 
-#define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
-template < typename Arg1 >
-void __f(const char* name, Arg1&& arg1) {
-    cerr << name << " = " << arg1 << endl;
-}
-template < typename Arg1, typename... Args>
-void __f(const char* names, Arg1&& arg1, Args&&... args) {
-    const char* comma = strchr(names + 1, ',');
-    cerr.write(names, comma - names) << " = " << arg1 << " | ";
-    __f(comma + 1, args...);
-}
+// #define debug(...) __f(#__VA_ARGS__, __VA_ARGS__)
+// template < typename Arg1 >
+// void __f(const char* name, Arg1&& arg1) {
+//     cerr << name << " = " << arg1 << endl;
+// }
+// template < typename Arg1, typename... Args>
+// void __f(const char* names, Arg1&& arg1, Args&&... args) {
+//     const char* comma = strchr(names + 1, ',');
+//     cerr.write(names, comma - names) << " = " << arg1 << " | ";
+//     __f(comma + 1, args...);
+// }
 
 
 //thanks to arman_ferdous
 template <typename T1, typename T2>
 ostream& operator<<(ostream& out, const pair<T1, T2>& p) {
-    out << "(" << p.first << ", " << p.second << ")";
+    out << "(" << p.first << ", " << p.second << ") ";
     return out;
 }
 
@@ -26,12 +26,10 @@ ostream& operator<<(ostream& out, const vector<T>& vec) {
         out << "[]";
         return out;
     }
-    out << "[";
+    out << "[ ";
     for (int i = 0; i < (int)vec.size(); ++i) {
-        out << endl;
         out << vec[i];
     }
-    out << endl;
     out << "]";
     return out;
 }
@@ -205,4 +203,4 @@ std::ostream& operator<<(std::ostream& out, const std::tuple<Types...>& value) {
     return out << ')';
 }
 
-// #define debug(x) cerr << setw(10) << __LINE__ << ":: " << (#x) << ": " << x << "\n";
+#define debug(x) cerr << __LINE__ << " :: " << (#x) << " = " << x << "\n";
