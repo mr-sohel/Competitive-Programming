@@ -85,16 +85,31 @@ ostream& operator<<(ostream &out, const stack<T>& S) {
 template <typename T>
 ostream& operator<<(ostream &out, const queue<T>& Q) {
     if (Q.empty()) {
-        out << "< ... ]";
+        out << "[ ... ]";
         return out;
     }
     queue<T> q = Q;
-    out << "<";
+    out << "[ ";
     while ((int)q.size() > 1) {
         out << q.front() << ", ";
         q.pop();
     }
-    out << q.front() << "]";
+    out << q.front() << " ]";
+    return out;
+}
+template <typename T>
+ostream& operator<<(ostream &out, const priority_queue<T>& Q) {
+    if (Q.empty()) {
+        out << "[ ... ]";
+        return out;
+    }
+    priority_queue<T> q = Q;
+    out << "[ ";
+    while ((int)q.size() > 1) {
+        out << q.top() << ", ";
+        q.pop();
+    }
+    out << q.top() << " ]";
     return out;
 }
 

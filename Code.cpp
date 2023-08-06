@@ -29,14 +29,7 @@ int tc = 1;
 #endif
 
 void solve() {
-	int n, k; cin >> n >> k;
-	vector<int> v;
-	for (int i = 1; i <= n; i++) {
-		int x; cin >> x;
-		v.push_back(x);
-	}
-	sort(all(v));
-	debug(v);
+
 }
 
 int main() {
