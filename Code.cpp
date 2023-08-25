@@ -28,32 +28,9 @@ int tc = 1;
 #define debug(...)
 #endif
 
-bool cmp (pair<ll, ll> p, pair<ll, ll> q) {
-	if (p.first == q.first) {
-		return p.second > q.second;
-	}
-	return p.first < q.first;
-}
-
 void solve() {
 	int n; cin >> n;
-	vector<pair<ll, ll>> v;
-	for (int i = 0; i < n; i++) {
-		ll g, time;
-		cin >> g >> time;
-		v.push_back({time, g});
-	}
-	sort(all(v), cmp);
-	unordered_map<ll, bool> mp;
-	// debug(v);
-	ll ans = 0;
-	for (auto it : v) {
-		if (mp.find(it.first) == mp.end()) {
-			ans += it.second;
-			mp[it.first] = true;
-		}
-	}
-	cout << ans << endl;
+	cout << n * 10 << endl;
 }
 
 int main() {
