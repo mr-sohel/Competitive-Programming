@@ -1,37 +1,4 @@
-#include <bits/stdc++.h>
-
-#define endl          '\n'
-#define sqr(x)        (x) * (x)
-#define gcd(x,y)      __gcd(x,y)
-#define lcm(x,y)      ((x/gcd(x,y)) * y)
-#define sz(x)         (int)x.size()
-#define all(x)        (x).begin(),(x).end()
-#define rall(x)       (x).rbegin(),(x).rend()
-#define prec(x)       fixed<<setprecision(x)
-#define min3(a,b,c)   min(a,min(b,c))
-#define max3(a,b,c)   max(a,max(b,c))
-#define min4(a,b,c,d) min(a,min(b,min(c,d)))
-#define max4(a,b,c,d) max(a,max(b,max(c,d)))
-#define testcase      cout << "Case " << tc++ << ": "
-#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
-
-using namespace std;
-using ll = long long;
-using ld = long double;
-using ull = unsigned long long;
-
-const ld PI = acos(-1.0);
-const ll MOD = 1e9 + 7;
-const ll N = 1e6 + 5;
-int tc = 1;
-
-#ifdef LOCAL
-#include "debug.hpp"
-#else
-#define debug(...)
-#endif
-
-const ll P[] = {3797, 1000003};
+const ll P[] = {97, 1000003};
 
 ll bigMod (ll a, ll e) {
 	if (e == -1) e = MOD - 2;
@@ -92,36 +59,16 @@ struct RangeHash {
 };
 
 void solve() {
-	string s, p;
-	cin >> s >> p;
-	int cnt = 0, sizeS = sz(s), sizeP = sz(p);
 	initHash();
-	RangeHash HashPattern(p);
-	ll patternHash = HashPattern.get(0, sizeP - 1);
-	RangeHash HashString(s);
-	for (int i = 0; i < sizeS - (sizeP - 1); i++) {
-		if ((HashString.get(i, i + (sizeP - 1))) == patternHash)
-			cnt++;
+	string a, b; cin >> a >> b;
+	RangeHash machine(a);
+	multiset<ll>ms;
+	int lenb = b.size() - 1;
+	for (int i = 0; i + lenb < a.size(); i++) {
+		ms.insert(machine.get(i, i + lenb));
 	}
-	cout << cnt << endl;
-}
+	RangeHash key(b);
+	ll x = key.get(0, lenb);
+	cout << ms.count(x) << endl;
 
-int main() {
-
-#ifdef LOCAL
-	clock_t tStart = clock();
-	freopen("in.txt", "r", stdin);
-	freopen("out.txt", "w", stdout);
-#endif
-	unsyncIO;
-	int t = 1;
-	// cin >> t;
-	while (t--) {
-		solve();
-	}
-
-#ifdef LOCAL
-	fprintf(stderr, "\nTime: %.5lf\n", (double) (clock() - tStart) / CLOCKS_PER_SEC);
-#endif
-	return 0;
 }
