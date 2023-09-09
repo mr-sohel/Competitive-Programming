@@ -29,7 +29,7 @@ int tc = 1;
 #endif
 
 void solve() {
-
+	cout << "Hello World" << endl;
 }
 
 int main() {
