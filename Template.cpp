@@ -14,6 +14,7 @@
 using namespace std;
 
 using ll = long long;
+using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
 
@@ -36,7 +37,7 @@ int main() {
 	unsyncIO;
 
 	int t = 1;
-	cin >> t;
+	//cin >> t;
 	while (t--) {
 		solve();
 	}

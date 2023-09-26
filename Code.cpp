@@ -14,6 +14,7 @@
 using namespace std;
 
 using ll = long long;
+using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
 
@@ -29,7 +30,7 @@ int tc = 1;
 #endif
 
 void solve() {
-	cout << "Hello World" << endl;
+
 }
 
 int main() {
