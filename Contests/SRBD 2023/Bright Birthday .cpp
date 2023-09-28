@@ -17,8 +17,6 @@ using ll = long long;
 using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
-template <typename T>
-using minHeap = priority_queue<T, vector<T>, greater<T>>;
 
 const ld PI = acos(-1.0);
 const ll MOD = 1e9 + 7;
@@ -31,8 +29,33 @@ int tc = 1;
 #define debug(...)
 #endif
 
-void solve() {
+vector<string> c = {"blue", "green", "yellow", "red", "purple", "orange", "pink", "grey", "cyan", "brown", "ash", "silver", "gold", "white", "black"};
 
+void solve() {
+	string s; cin >> s;
+	unordered_map<char, int> freq, temp;
+	for (int i = 0; i < sz(s); i++) {
+		freq[s[i]]++;
+	}
+	temp = freq;
+	int ans = 0;
+	for (int mask = 0; mask < (1 << 15); mask++) {
+		set<string> st;
+		freq = temp;
+		bool neg = false;
+		for (int i = 0; i < 15; i++) {
+			if (mask & (1LL << i)) {
+				st.insert(c[i]);
+				for (char it : c[i]) {
+					freq[it]--;
+					if (freq[it] < 0) neg = true;
+				}
+			}
+		}
+		if (!neg)
+			ans = max(ans, sz(st));
+	}
+	cout << ans << endl;
 }
 
 int main() {

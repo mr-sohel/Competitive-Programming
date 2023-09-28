@@ -17,6 +17,8 @@ using ll = long long;
 using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
+template <typename T>
+using minHeap = priority_queue<T, vector<T>, greater<T>>;
 
 const ld PI = acos(-1.0);
 const ll MOD = 1e9 + 7;

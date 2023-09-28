@@ -31,17 +31,35 @@ int tc = 1;
 #define debug(...)
 #endif
 
-void solve() {
+ll budget, y;
 
+bool check(ll mid) {
+    ll cost = mid * y + sqr(mid / 2) + sqr(ceil(mid / 2.0));
+    return cost <= budget;
+}
+
+void solve() {
+    cin >> budget >> y;
+    ll lo = 0, hi = 1e9, ans = 0;
+    while (lo <= hi) {
+        ll mid = (lo + hi) / 2;
+        if (check(mid)) {
+            lo = mid + 1;
+            ans = mid;
+        } else {
+            hi = mid - 1;
+        }
+    }
+    cout << (1LL << ans) << endl;
 }
 
 int main() {
-	unsyncIO;
+    unsyncIO;
 
-	int t = 1;
-	cin >> t;
-	while (t--) {
-		solve();
-	}
-	return 0;
+    int t = 1;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
 }
