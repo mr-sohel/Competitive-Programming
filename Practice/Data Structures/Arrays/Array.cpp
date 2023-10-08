@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int i,pos,n,value;
+    int i, pos, n, value;
     printf("Enter The Size\n");
     scanf("%d", &n);
 
@@ -12,10 +12,10 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
-    sort(arr, arr+5);
+    sort(arr, arr + 5);
     printf("Enter What to check\n");
     scanf("%d", &value);
-    if (binary_search(arr,arr+5, value))
+    if (binary_search(arr, arr + 5, value))
     {
         printf("Yes");
     }

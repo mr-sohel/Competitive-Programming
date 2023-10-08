@@ -8,8 +8,8 @@ int main() {
     while (t--) {
         int n, i;
         cin >> n >> i;
-        cout << n << " left Shift " << i << " = " << (n >> i) << endl;
-        //left shift is (<<) . it shifts all bits i times to the right.
+        cout << n << " Right Shift " << i << " = " << (n >> i) << endl;
+        //right shift is (>>) . it shifts all bits i times to the right.
         // 64 32 16 8 4 2 1
     }
     return 0;

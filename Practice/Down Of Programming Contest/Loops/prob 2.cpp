@@ -7,12 +7,12 @@ using namespace std;
 
 int main()
 {
-    long n,sum = 0;
-    cin>>n;
-    for(long i = 1; i <= n; i++)
+    long n, sum = 0;
+    cin >> n;
+    for (long i = 1; i <= n; i++)
     {
-        sum += pow(i,2);
+        sum += pow(i, 2);
     }
-    cout<<sum<<endl;
+    cout << sum << endl;
     return 0;
 }
