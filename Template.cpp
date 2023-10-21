@@ -22,6 +22,7 @@ using minHeap = priority_queue<T, vector<T>, greater<T>>;
 
 const ld PI = acos(-1.0);
 const ll MOD = 1e9 + 7;
+const ld EPS = 1e-9;
 const ll N = 2e5 + 5;
 int tc = 1;
 
