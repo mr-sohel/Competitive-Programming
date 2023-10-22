@@ -33,12 +33,13 @@ int tc = 1;
 #endif
 
 void solve() {
-
+	cout << rand()  % 10000 << endl;
 }
 
 int main() {
 	unsyncIO;
-
+	srand(time(NULL));
+	freopen("input.txt", "w", stdout);
 	int t = 1;
 	//cin >> t;
 	while (t--) {
