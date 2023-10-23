@@ -1,22 +1,27 @@
-#!/bin/sh
-echo "Enter the name of first File : "
-read file
-echo "Enter the name of second File : "
-read file2
-g++ -o test_gen test_gen.cpp
-g++ -o $file $file.cpp
-g++ -o $file2 $file2.cpp
-while true
-do  
-   ./test_gen
-   ./$file <input.txt> out1.txt
-   ./$file2 <input.txt> out2.txt
-   if cmp -s "out1.txt" "out2.txt"; then
- echo "Test Case OK"
-   else
- echo "ERROR ENCOUNTERED"
-echo "$(<input.txt)"
- break
-   fi
-done
+#!/usr/bin/bash
+# To color the output text in different colours.
+green=$(tput setaf 71);
+red=$(tput setaf 1);
+blue=$(tput setaf 32);
+orange=$(tput setaf 178);
+bold=$(tput bold);
+reset=$(tput sgr0);
 
+echo "Compiling Files"
+
+g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o test_gen test_gen.cpp
+g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o sol sol.cpp
+g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o brute brute.cpp
+
+for ((i = 1; ; i++)); do
+    ./test_gen > input.txt
+    if cmp -s <(./sol < input.txt) <(./brute < input.txt); then
+      echo "${orange}test_case #$i: ${bold}${green}Accepted${reset}"
+    else
+      echo "${orange}test_case #$i: ${bold}${red}Wrong Answer${reset}"
+      echo "${blue}Input: ${reset}"
+        cat input.txt
+      echo ""
+    break
+  fi
+done

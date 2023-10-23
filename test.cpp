@@ -47,7 +47,7 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 
 void solve() {
 	int n; cin >> n;
-	int ans = 0;
+	ll ans = 0;
 	for (int i = 1; i <= n; i++) {
 		ans += i;
 	}

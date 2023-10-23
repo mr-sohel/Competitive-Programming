@@ -1,45 +1,22 @@
 #include <bits/stdc++.h>
 
-#define endl          '\n'
-#define sqr(x)        (x) * (x)
-#define gcd(x,y)      __gcd(x,y)
-#define lcm(x,y)      ((x/gcd(x,y)) * y)
-#define sz(x)         (int)x.size()
-#define all(x)        (x).begin(),(x).end()
-#define rall(x)       (x).rbegin(),(x).rend()
-#define prec(x)       fixed<<setprecision(x)
-#define testcase      cout << "Case " << tc++ << ": "
-#define unsyncIO      ios_base::sync_with_stdio(false); cin.tie(nullptr)
-
 using namespace std;
 
-using ll = long long;
-using lll = __int128_t;
-using ld = long double;
-using ull = unsigned long long;
-template <typename T>
-using minHeap = priority_queue<T, vector<T>, greater<T>>;
+const int MOD = 1e5 + 7;
 
-const ld PI = acos(-1.0);
-const ll MOD = 1e9 + 7;
-const ld EPS = 1e-9;
-const ll N = 2e5 + 5;
-int tc = 1;
-
-#ifdef LOCAL
-#include "debug.h"
-#else
-#define debug(...)
-#endif
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 void solve() {
-	cout << rand()  % 10000 << endl;
+	int n = rng() % 1000; // generate number of testcases less than 1000
+	cout << n << endl;
+	for (int i = 1; i <= n; i++) {
+		cout << rng() % MOD << endl; // generate n random number in each test case less than MOD
+	}
 }
 
 int main() {
-	unsyncIO;
-	srand(time(NULL));
-	freopen("input.txt", "w", stdout);
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
 	int t = 1;
 	//cin >> t;
 	while (t--) {
