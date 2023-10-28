@@ -7,7 +7,7 @@ orange=$(tput setaf 178);
 bold=$(tput bold);
 reset=$(tput sgr0);
 
-echo "Compiling Files"
+echo "Compiling Codes"
 
 g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o test_gen test_gen.cpp
 g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o sol sol.cpp
@@ -15,7 +15,7 @@ g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o brute brute.
 
 for ((i = 1; ; i++)); do
     ./test_gen > input.txt
-    if cmp -s <(./sol < input.txt) <(./brute < input.txt); then
+    if diff -w <(./sol < input.txt) <(./brute < input.txt); then
       echo "${orange}test_case #$i: ${bold}${green}Accepted${reset}"
     else
       echo "${orange}test_case #$i: ${bold}${red}Wrong Answer${reset}"
