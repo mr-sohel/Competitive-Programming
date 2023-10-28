@@ -18,7 +18,7 @@ public:
                 int WT = it[1];
                 if (dist[node] + WT < dist[adjNode]) {
                     dist[adjNode] = dist[node] + WT;
-                    pq.push({adjNode, WT});
+                    pq.push({adjNode, dist[adjNode]});
                 }
             }
         }
