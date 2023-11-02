@@ -5,23 +5,27 @@ public:
     //from the source vertex S.
     template <typename T>
     using minHeap = priority_queue<T, vector<T>, greater<T>>;
-    vector <int> dijkstra(int V, vector<vector<int>> adj[], int S) {
-        vector<int> dist(V, 1e9);
-        dist[S] = 0;
-        minHeap<pair<int, int>> pq;
-        pq.push({S, 0});
+    void dijkstra(int n, int s) {
+        vector<ll> dist(n + 1, 1e12);
+        vector<int> parent(n + 1, 0);
+        parent[s] = 1;
+        dist[s] = 0;
+        minHeap<pair<ll, int>> pq;
+        pq.push({0, s});
         while (!pq.empty()) {
-            int node = pq.top().first;
+            ll dis = pq.top().first;
+            int node = pq.top().second;
             pq.pop();
+            if (dis > dist[node]) continue;
             for (auto it : adj[node]) {
-                int adjNode = it[0];
-                int WT = it[1];
-                if (dist[node] + WT < dist[adjNode]) {
-                    dist[adjNode] = dist[node] + WT;
-                    pq.push({adjNode, dist[adjNode]});
+                int adjNode = it.first;
+                ll edW = it.second;
+                if ((ll)dis + edW < dist[adjNode]) {
+                    dist[adjNode] = dis + edW;
+                    parent[adjNode] = node;
+                    pq.push({dist[adjNode], adjNode});
                 }
             }
         }
-        return dist;
     }
 };
