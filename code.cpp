@@ -32,59 +32,17 @@ int tc = 1;
 #endif
 
 void solve() {
-	int n, m;
-	cin >> n >> m;
-	vector<pair<int, int>> adj[n + 1];
-	for (int i = 1; i <= m; i++) {
-		int u, v, cost;
-		cin >> u >> v >> cost;
-		adj[u].push_back({v, cost});
-		adj[v].push_back({u, cost});
-	}
-	vector<ll> dist(n + 1, 1e12 + 1);
-	vector<int> parent(n + 1, 0);
-	parent[1] = 1;
-	dist[1] = 0;
-	minHeap<pair<ll, int>> pq;
-	pq.push({0, 1});
-	while (!pq.empty()) {
-		ll dis = pq.top().first;
-		int node = pq.top().second;
-		pq.pop();
-		if (dis > dist[node]) continue;
-		for (auto it : adj[node]) {
-			int adjNode = it.first;
-			ll edW = it.second;
-			if ((ll)dis + edW < dist[adjNode]) {
-				dist[adjNode] = dis + edW;
-				parent[adjNode] = node;
-				pq.push({dist[adjNode], adjNode});
-			}
-		}
-	}
-	if (parent[n] == 0) cout << -1 << "\n";
-	else {
-		vector<int> path;
-		int node = n;
-		while (parent[node] != node) {
-			path.push_back(node);
-			node = parent[node];
-		}
-		path.push_back(1);
-		reverse(all(path));
-		for (auto it : path) {
-			cout << it << ' ';
-		}
-		cout << "\n";
-	}
-
+	int n; cin >> n;
+	vector<int> v(n);
+	for (int &it : v) cin >> it;
+	int cnt = 0;
 }
 
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	//cin >> t;
+	cin >> t;
 	while (t--) {
 		solve();
 	}

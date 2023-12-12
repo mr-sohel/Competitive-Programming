@@ -2,18 +2,14 @@
 
 using namespace std;
 
-const int MOD = 1e3 + 7;
+const int MOD = 31;
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 void solve() {
-	int n = rng() % 5 + 2; // generate number of testcases less than 1000
-	cout << n << endl;
-	for (int i = 0; i < n; i++) {
-		int N = rng() % 10 + 10;
-		int K = rng() % N + N;
-		int P = rng() % MOD;
-		cout << N << " " << K << " " << P << endl;
+	for (int i = 0; i < 30; i++) {
+		int N = rng() % MOD;
+		cout << N << " ";
 	}
 }
 
