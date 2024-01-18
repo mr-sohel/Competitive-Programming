@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 
 #define sqr(x)        (x) * (x)
-#define gcd(x,y)      __gcd(x,y)
-#define lcm(x,y)      ((x/gcd(x,y)) * y)
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -32,17 +30,14 @@ int tc = 1;
 #endif
 
 void solve() {
-	int n; cin >> n;
-	vector<int> v(n);
-	for (int &it : v) cin >> it;
-	int cnt = 0;
+
 }
 
 int main() {
 	unsyncIO;
 
 	int t = 1;
-	cin >> t;
+	//cin >> t;
 	while (t--) {
 		solve();
 	}

@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 
-#define endl          '\n'
 #define sqr(x)        (x) * (x)
 #define gcd(x,y)      __gcd(x,y)
 #define lcm(x,y)      ((x/gcd(x,y)) * y)
@@ -31,20 +30,34 @@ int tc = 1;
 #else
 #define debug(...)
 #endif
+int n;
+int v[N];
+bool check(int l, int r) {
+	if (l == 1 or v[l - 1] > v[l]) {
+		if (r == n or v[r + 1] > v[r])
+			return true;
+	}
+	return false;
+}
 
 void solve() {
-	int N, K, P;
-	cin >> N >> K >> P;
-	int ans = K - 1 + P;
-	// for (int i = K + 1; i < P; i++) {
-	// 	ans++;
-	// 	// if (ans > N) ans %= N;
-	// }
-	testcase;
-	ans %= N;
-	if (ans == 0) ans++;
-	else ans++;
-	cout << ans  << endl;
+	cin >> n;
+	for (int i = 1; i <= n; i++) {
+		cin >> v[i];
+	}
+	int cnt = 0; // valid subarray counts
+	int l = 1, r = 1;
+	while (l <= n) {
+		while (r <= n and v[l] == v[r + 1]) {
+			r++;
+		}
+		cnt += check(l, r);
+		l = r + 1;
+	}
+	if (n > 1 and v[n - 1] > v[n]) cnt++;
+	debug(cnt);
+	if (cnt == 1) cout << "YES\n";
+	else cout << "NO\n";
 }
 
 int main() {

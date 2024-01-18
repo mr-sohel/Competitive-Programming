@@ -15,10 +15,10 @@ public:
 				q.push(i);
 			}
 		}
-		vector<int> ans;
+		vector<int> order;
 		while (!q.empty()) {
 			int x = q.front();
-			ans.push_back(x);
+			order.push_back(x);
 			q.pop();
 			for (auto adjNode : adj[x]) {
 				inDegree[adjNode]--;
@@ -27,6 +27,6 @@ public:
 				}
 			}
 		}
-		return ans;
+		return order;
 	}
 };
