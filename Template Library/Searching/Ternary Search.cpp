@@ -29,15 +29,32 @@ int tc = 1;
 #define debug(...)
 #endif
 
-void solve() {
+ld b, c;
 
+ld func(ld x) {
+    return (x * x + b * x + c) / sin(x);
+}
+
+void solve() {
+    cin >> b >> c;
+    ld lo = 0, hi = PI / 2.0;
+    for (int i = 0; i < 60; i++) {
+        ld m1 = lo + (hi - lo) / 3;
+        ld m2 = hi - (hi - lo) / 3;
+        if (func(m1) < func(m2)) {
+            hi = m2;
+        } else {
+            lo = m1;
+        }
+    }
+    cout << prec(10) << func(lo) << '\n';
 }
 
 int main() {
     unsyncIO;
 
     int t = 1;
-    //cin >> t;
+    cin >> t;
     while (t--) {
         solve();
     }
