@@ -17,19 +17,13 @@ void precalc() {
     }
 }
 
-int main() {
-    precalc();
-    int T;
-    cin >> T;
-    for (int i = 1; i <= T; i++) {
-        ll n, r, ans;
-        cin >> n >> r;
-        ll u = fact[n] % MOD; // n!
-        //ll v = ((fact[r]) * (fact[n - r])) % MOD; // r!*(n-r)!
-        // ans = (u*ModInverse(fact[v], MOD))
-        ll v = ((inv[r]) * (inv[n - r])) % MOD; // inv[r!]*inv[(n-r)!]
-        ans = (u * v) % MOD;
-        cout << "Case " << i << ": " << ans << endl;
-    }
-    return 0;
+void solve() {
+    ll n, r, ans;
+    cin >> n >> r;
+    ll u = fact[n] % MOD; // n!
+    //ll v = ((fact[r]) * (fact[n - r])) % MOD; // r!*(n-r)!
+    // ans = (u*ModInverse(fact[v], MOD))
+    ll v = ((inv[r]) * (inv[n - r])) % MOD; // inv[r!]*inv[(n-r)!]
+    ans = (u * v) % MOD;
+    cout << "Case " << i << ": " << ans << endl;
 }
