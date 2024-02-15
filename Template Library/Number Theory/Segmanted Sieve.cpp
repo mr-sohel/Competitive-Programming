@@ -46,7 +46,7 @@ void sieve() {
 void segSieve(ll l, ll r) {
     if (l == 1) l = 2;
     vector<bool> isPrime(r - l + 1);
-    for (int i = 0; primes[i] * primes[i] <= r; i++) {
+    for (int i = 0; (ll)primes[i] * primes[i] <= r; i++) {
         int currentPrime = primes[i];
         ll start = (l / currentPrime) * currentPrime;
         if (start < l) start += currentPrime;
