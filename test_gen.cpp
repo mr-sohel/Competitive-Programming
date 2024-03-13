@@ -7,17 +7,9 @@ const int MOD = 2e5;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 void solve() {
-	int n = rng() % MOD;
-	int k = rng() % n;
-	cout << n << ' ' << k << '\n';
-	for (int i = 0; i < n; i++) {
-		int N = rng() % MOD;
-		cout << N << " ";
-	}
-	cout << '\n';
-	for (int i = 0; i < n; i++) {
-		int N = rng() % MOD;
-		cout << N << " ";
+	cout << 10000 << '\n';
+	for (int  i = 1; i <= 10000; i++) {
+		cout << i << ' ';
 	}
 
 }
