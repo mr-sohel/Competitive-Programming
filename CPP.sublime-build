@@ -3,7 +3,7 @@
     [
         "bash",
         "-c",
-        "g++ -std=gnu++17 -DLOCAL -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG '${file}' -o '${file_path}/${file_base_name}' && timeout 10s '${file_path}/${file_base_name}'<in.txt>out.txt"
+        "g++ -std=gnu++17 -O2 -DLOCAL -Wall '${file}' -o '${file_path}/${file_base_name}' && timeout 3s '${file_path}/${file_base_name}'<in.txt>out.txt"
     ],
     "selector": "source.c, source.c++"
 }

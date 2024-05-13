@@ -29,14 +29,31 @@ int tc = 1;
 #endif
 
 void solve() {
-
+    string s;
+    cin >> s;
+    set<char> st;
+    for (auto &it : s) {
+        st.insert(it);
+    }
+    if (sz(st) == 1) {
+        cout << "NO\n";
+    } else {
+        for (int i = 0; i < sz(s) - 1; i++) {
+            if (s[i] != s[i + 1]) {
+                swap(s[i], s[i + 1]);
+                break;
+            }
+        }
+        cout << "YES\n";
+        cout << s << '\n';
+    }
 }
 
 int main() {
     unsyncIO;
 
     int t = 1;
-    //cin >> t;
+    cin >> t;
     while (t--) {
         solve();
     }
