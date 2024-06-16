@@ -29,7 +29,9 @@ int tc = 1;
 #endif
 
 void solve() {
-
+   int a = 11;
+   a = a & (~(1 << 3));
+   cout << a << '\n';
 }
 
 int main() {
