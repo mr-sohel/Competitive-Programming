@@ -7,13 +7,15 @@ const int MOD = 2e5;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 void solve() {
-	int t = rng() % 5 + 1;
+	int t = 1;
 	cout << t << '\n';
 	for (int i = 1; i <= t; i++) {
-		long long a, b;
-		a = rng() % 100;
-		b = rng() % 100;
-		cout << a << ' ' << b << '\n';
+		long long x, c;
+		x = rng() % 10000000001;
+		c = rng() % 31;
+		if (x == 0) x++;
+		if (c == 0) c++;
+		cout << x << ' ' << c << '\n';
 	}
 
 }

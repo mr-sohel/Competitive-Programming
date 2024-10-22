@@ -9,9 +9,9 @@ reset=$(tput sgr0);
 
 echo "Compiling Codes"
 
-g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o test_gen test_gen.cpp
-g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o sol sol.cpp
-g++ -std=gnu++17 -O2 -Wall -fsanitize=undefined -D_GLIBCXX_DEBUG -o brute brute.cpp
+g++ -std=gnu++20 -O2 -DLOCAL -Wall -o test_gen test_gen.cpp
+g++ -std=gnu++20 -O2 -DLOCAL -Wall -o sol sol.cpp
+g++ -std=gnu++20 -O2 -DLOCAL -Wall -o brute brute.cpp
 
 for ((i = 1; ; i++)); do
     ./test_gen > input.txt
