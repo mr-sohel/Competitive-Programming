@@ -28,92 +28,61 @@ int tc = 1;
 #define debug(...)
 #endif
 
-#define left   (2 * node)
-#define right  (left + 1)
+int a[N];
+ll tree[4 * N];
+
+#define left   (node * 2)
+#define right   (node * 2 + 1)
 #define mid    ((lo + hi) >> 1)
 
-int arr[N];
-ll tree[4 * N], lazy[4 * N];
 
 void build(int node, int lo, int hi) {
    if (lo == hi) {
-      tree[node] = arr[lo];
+      tree[node] = a[lo];
       return;
    }
    build(left, lo, mid);
    build(right, mid + 1, hi);
    tree[node] = (tree[left] + tree[right]);
 }
-void propagate(int node, int lo, int hi) {
-   if (lazy[node] != 0) {
-      tree[node] += lazy[node] * (hi - lo + 1);
-
-      if (lo != hi) {
-         lazy[left] += lazy[node];
-         lazy[right] += lazy[node];
-      }
-      lazy[node] = 0;
-   }
-}
-void update(int node, int lo, int hi, int L, int R, int u) {
-   propagate(node, lo, hi);
-   if (R < lo or L > hi) {
-      return;
-   }
-   if (lo >= L && hi <= R) {
-      tree[node] += u * (hi - lo + 1);
-      if (lo != hi) {
-         lazy[left] += u;
-         lazy[right] += u;
-      }
-      return;
-   }
-   update(left, lo, mid, L, R, u);
-   update(right, mid + 1, hi, L, R, u);
-   tree[node] = tree[left] + tree[right];
-}
 
 ll query(int node, int lo, int hi, int L, int R) {
-   propagate(node, lo, hi);
-
-   if (R < lo or L > hi) {
-      return 0;
-   }
-
-   if (lo >= L && hi <= R) {
-      return tree[node];
-   }
-
+   if (L > hi or R < lo) return LONG_MAX;
+   if (L <= lo and hi <= R) return tree[node];
    ll leftQuery = query(left, lo, mid, L, R);
    ll rightQuery = query(right, mid + 1, hi, L, R);
 
-   return leftQuery + rightQuery;
+   return min(leftQuery, rightQuery);
+}
+
+void update(int node, int lo, int hi, int i, int val) {
+   if (i > hi or i < lo) return;
+   if (i <= lo and hi <= i) {
+      tree[node] = val;
+      return;
+   }
+   update(left, lo, mid, i, val);
+   update(right, mid + 1, hi, i, val);
+   tree[node] = (tree[left] + tree[right]);
 }
 
 void solve() {
-   int n, q;
-   cin >> n >> q;
-   for (int i = 1; i <= n; i++) {
-      cin >> arr[i];
-   }
-
+   int n, q;   cin >> n >> q;
+   for (int i = 1; i <= n; i++) cin >> a[i];
    build(1, 1, n);
-   while (q--) {
-      int type;
-      cin >> type;
 
-      if (type == 1) {
-         int a, b, u;
-         cin >> a >> b >> u;
-         update(1, 1, n, a, b, u);
-      } else if (type == 2) {
-         int k;
-         cin >> k;
-         cout << query(1, 1, n, k, k) << '\n';
+   while (q--) {
+      int tp;   cin >> tp;
+      if (tp == 1) {
+         int k, u;   cin >> k >> u;
+         update(1, 1, n, k, u);
+      }
+      else {
+         int a, b;   cin >> a >> b;
+         cout << query(1, 1, n, a, b) << endl;
       }
    }
 }
-
 int main() {
    unsyncIO;
 
