@@ -10,12 +10,24 @@ void solve() {
 	int t = 1;
 	cout << t << '\n';
 	for (int i = 1; i <= t; i++) {
-		long long x, c;
-		x = rng() % 10000000001;
-		c = rng() % 31;
-		if (x == 0) x++;
-		if (c == 0) c++;
-		cout << x << ' ' << c << '\n';
+		long long n;
+		n = rng() % 7;
+		if (n == 0) n = 1;
+		cout << n << '\n';
+		std::string result;
+		result.reserve(n);
+
+		// Use random device and uniform distribution
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_int_distribution<> dis(0, 1); // 0 or 1
+
+		for (int i = 0; i < n; ++i) {
+			char randomChar = (dis(gen) == 0) ? 'a' : 'b';
+			result += randomChar;
+		}
+
+		cout << result << '\n';
 	}
 
 }

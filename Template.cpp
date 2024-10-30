@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 
-#define endl          '\n'
 #define sqr(x)        (x) * (x)
-#define gcd(x,y)      __gcd(x,y)
-#define lcm(x,y)      ((x/gcd(x,y)) * y)
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -20,17 +17,17 @@ using ull = unsigned long long;
 template <typename T>
 using minHeap = priority_queue<T, vector<T>, greater<T>>;
 
-const ld PI = acos(-1.0);
-const ll MOD = 1e9 + 7;
-const ld EPS = 1e-9;
-const ll N = 2e5 + 5;
-int tc = 1;
-
 #ifdef LOCAL
 #include "debug.h"
 #else
 #define debug(...)
 #endif
+
+const ld PI = acos(-1.0);
+const ll MOD = 1e9 + 7;
+const ld EPS = 1e-9;
+const int N = 2e5 + 5;
+int tc = 1;
 
 void solve() {
 

@@ -11,16 +11,11 @@
 using namespace std;
 
 using ll = long long;
+using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
 template <typename T>
 using minHeap = priority_queue<T, vector<T>, greater<T>>;
-
-const ld PI = acos(-1.0);
-const ll MOD = 1e9 + 7;
-const ld EPS = 1e-9;
-const ll N = 2e5 + 5;
-int tc = 1;
 
 #ifdef LOCAL
 #include "debug.h"
@@ -28,15 +23,32 @@ int tc = 1;
 #define debug(...)
 #endif
 
-void solve() {
+const ld PI = acos(-1.0);
+const ll MOD = 1e9 + 7;
+const ld EPS = 1e-9;
+const int N = 2e5 + 5;
+int tc = 1;
 
+void solve() {
+   int n;
+   string a;
+   cin >> n >> a;
+
+   int ans = 0;
+   for (int i = 0; i < n; i++) {
+      if (a[i] == a[0])
+         ans = max(ans, i + 1);
+      if (a[i] == a[n - 1])
+         ans = max(ans, n - i);
+   }
+   cout << ans << "\n";
 }
 
 int main() {
    unsyncIO;
 
    int t = 1;
-   //cin >> t;
+   cin >> t;
    while (t--) {
       solve();
    }
