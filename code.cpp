@@ -11,16 +11,11 @@
 using namespace std;
 
 using ll = long long;
+using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
 template <typename T>
 using minHeap = priority_queue<T, vector<T>, greater<T>>;
-
-const ld PI = acos(-1.0);
-const ll MOD = 1e9 + 7;
-const ld EPS = 1e-9;
-const ll N = 4e5 + 5; //
-int tc = 1;
 
 #ifdef LOCAL
 #include "debug.h"
@@ -28,99 +23,44 @@ int tc = 1;
 #define debug(...)
 #endif
 
-#define left   (node * 2)
-#define right   (left + 1)
-
-ll n, tree[4 * N], cnt[4 * N], sorted[N];
-
-void build(int node, int lo, int hi) {
-    tree[node] = 0;
-    cnt[node] = 0;
-    if (lo == hi) return;
-    ll mid = (lo + hi) >> 1;
-    build(left, lo, mid);
-    build(right, mid + 1, hi);
+const ld PI = acos(-1.0);
+const ll MOD = 1e9 + 7;
+const ld EPS = 1e-9;
+const int N = 2e5 + 5;
+int tc = 1;
+bool isValid(string &s, int i) {
+    return i >= 0 && i + 3 < sz(s) && s.substr(i, 4) == "1100";
 }
-
-void update(int node, int lo, int hi, int i, int val) {
-
-    if (i > hi or i < lo) return;
-    if (i <= lo and hi <= i) {
-        cnt[node] = 1;
-        tree[node] = val;
-        return;
-    }
-
-    ll mid = (lo + hi) >> 1;
-    update(left, lo, mid, i, val);
-    update(right, mid + 1, hi, i, val);
-    cnt[node] = cnt[left] + cnt[right];
-    tree[node] = tree[left] + tree[right];
-}
-
-pair<ll, int> query(int node, int lo, int hi, int L, int R) {
-    if (L > hi or R < lo) return {0LL, 0};
-    if (L <= lo and hi <= R) return {tree[node], cnt[node]};
-    ll mid = (lo + hi) >> 1;
-    auto leftQuery = query(left, lo, mid, L, R);
-    auto rightQuery = query(right, mid + 1, hi, L, R);
-    leftQuery.first += rightQuery.first;
-    leftQuery.second += rightQuery.second;
-    return leftQuery;
-}
-
-bool check(ll a, ll b, ll mid) {
-    auto p = query(1, 1, n, 1, mid);
-    return (a * (p.second + 1)) >= (p.first + b);
-    // min(a1,a2,a2...am) * m >= (b1+b2+b3..+bm)
-}
-
-ll BS(int a, int b) {
-    ll lo = 1, hi = n, res = -1;
-    while (lo <= hi) {
-        ll mid = (lo + hi) / 2;
-        if (check(a, b, mid)) {
-            lo = mid + 1;
-            res = mid;
-        } else {
-            hi = mid - 1;
+void solve() {
+    string s;
+    int q;
+    cin >> s >> q;
+    int ans = 0, n = sz(s);
+    vector<bool> flag(n + 1, false);
+    for (int i = 0; i + 3 < n; ++i) {
+        if (isValid(s, i)) {
+            flag[i] = true;
+            ans++;
         }
     }
-    if (res == -1) return 0;
-    return query(1, 1, n, 1, res).second + 1;
-}
-
-
-void solve() {
-    cin >> n;
-    pair<int, int> a[n + 1];
-    vector < pair<int, int>> b(n + 1);
-    for (int i = 1; i <= n; i++) {
-        cin >> a[i].first >> a[i].second;
+    while (q--) {
+        int pos, val;
+        cin >> pos >> val;
+        pos--;
+        if (s[pos] == char(val)) {
+            cout << (ans > 0 ? "YES" : "NO") << '\n';
+            continue;
+        }
+        s[pos] = '0' + val;
+        for (int i = pos - 3; i <= pos; ++i) {
+            if (i >= 0 && i + 3 < sz(s)) {
+                if (flag[i]) ans--;
+                flag[i] = isValid(s, i);
+                if (flag[i]) ans++;
+            }
+        }
+        cout << (ans > 0 ? "YES" : "NO") << '\n';
     }
-    sort(a + 1, a + n + 1);
-    for (int i = 1 ; i <= n; i++) {
-        b[i].first = a[i].second;
-        b[i].second = i;
-    }
-    sort(all(b));
-
-    for (int i = 1; i <= n; i++) {
-        sorted[b[i].second] = i;
-    }
-    // for (int i = 1; i <= n; i++) {
-    //    cout << sorted[i] << ' ';
-    // }
-    // cout << '\n';
-    build(1, 1, n);
-    ll ans = 0;
-    for (int i = n; i >= 1; i--) {
-        int idx = sorted[i];
-        ll MaxWithFixedMin = BS(a[i].first, a[i].second);
-        ans = max(ans, MaxWithFixedMin);
-        update(1, 1, n, idx, a[i].second);
-    }
-    cout << ans << '\n';
 }
 
 int main() {

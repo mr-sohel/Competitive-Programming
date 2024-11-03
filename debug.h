@@ -73,7 +73,7 @@ ostream& operator<<(ostream &out, const stack<T>& S) {
         return out;
     }
     stack<T> st = S;
-    out << "<";
+    out << "[";
     while ((int)st.size() > 1) {
         out << st.top() << ", ";
         st.pop();

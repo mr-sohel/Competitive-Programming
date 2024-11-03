@@ -29,15 +29,32 @@ const ld EPS = 1e-9;
 const int N = 2e5 + 5;
 int tc = 1;
 
-void solve() {
+int n, a[N], Left[N], right[N];
 
+void solve() {
+   cin >> n;
+   for (int i = 1; i <= n; i++) cin >> a[i];
+   stack<int> leftStack, rightStack;
+
+   leftStack.push(0);
+   for (int i = 1; i <= n; i ++) {
+      while (!leftStack.empty() and a[leftStack.top()] >= a[i]) {
+         leftStack.pop();
+      }
+      debug(leftStack);
+      Left[i] = leftStack.top();
+      leftStack.push(i);
+   }
+   for (int i = 1; i <= n; i++) {
+      cout << Left[i] << ' ';
+   }
 }
 
 int main() {
    unsyncIO;
 
    int t = 1;
-   //cin >> t;
+   cin >> t;
    while (t--) {
       solve();
    }
