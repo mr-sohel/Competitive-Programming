@@ -1,14 +1,12 @@
 #include <bits/stdc++.h>
 
-#define sqr(x) (x) * (x)
-#define sz(x) (int)x.size()
-#define all(x) (x).begin(), (x).end()
-#define rall(x) (x).rbegin(), (x).rend()
-#define prec(x) fixed << setprecision(x)
-#define testcase cout << "Case " << tc++ << ": "
-#define unsyncIO                \
-   ios::sync_with_stdio(false); \
-   cin.tie(nullptr)
+#define sqr(x)        (x) * (x)
+#define sz(x)         (int)x.size()
+#define all(x)        (x).begin(),(x).end()
+#define rall(x)       (x).rbegin(),(x).rend()
+#define prec(x)       fixed<<setprecision(x)
+#define testcase      cout << "Case " << tc++ << ": "
+#define unsyncIO      ios::sync_with_stdio(false); cin.tie(nullptr)
 
 using namespace std;
 
@@ -32,18 +30,16 @@ const ld EPS = 1e-9;
 const int N = 2e5 + 5;
 int tc = 1;
 
-void solve()
-{
+void solve() {
+
 }
 
-int main()
-{
+int main() {
    unsyncIO;
 
    int t = 1;
-   // cin >> t;
-   while (t--)
-   {
+   //cin >> t;
+   while (t--) {
       solve();
    }
    return 0;
