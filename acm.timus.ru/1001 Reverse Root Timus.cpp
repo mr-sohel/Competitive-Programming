@@ -14,5 +14,6 @@ int main() {
     for (k = count - 1; k >= 0; k--) {
         printf("%.4lf\n", a[k]);
     }
+    
     return 0;
 }

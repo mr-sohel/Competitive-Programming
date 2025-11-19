@@ -10,7 +10,6 @@
 #define lcm(x, y)		((x/gcd(x,y)) * y)
 #define pf(x) 	  		push_front(x)
 #define pb(x)			push_back(x)
-#define eb(x)			emplace_back(x)
 #define all(x)      	(x).begin(), (x).end()
 #define rall(x)			(x).rbegin(), (x).rend()
 #define sz(x)			(int)x.size()
