@@ -32,22 +32,21 @@ const ld PI = acos(-1.0l);
 const ll MOD = 1e9 + 7;
 const ll INF = 2e18;
 const ld EPS = 1e-9;
-const ll N = 2e5;
-
-
-void solve() {
-   int k, x; cin >> k >> x;
-   for (int i = 1; i <= k; i++) {
-      if (x & 1) x = x * 2;
-      else x = x * 2;
+void solve(){
+   ll n, x = 0;
+   cin >> n;
+   for (int i = 1; i <= n; i++){
+      ll val;
+      cin >> val;
+      x ^= (val % 3);
    }
-   cout << x << '\n';
+   cout << (x ? "First\n" : "Second\n");
 }
 
 int main() {
    unsyncIO;
    int t = 1;
-   cin >> t;
+   //cin >> t;
    while (t--) {
       solve();
    }
