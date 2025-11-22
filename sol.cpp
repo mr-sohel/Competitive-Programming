@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 
 #define sqr(x)        (x) * (x)
 #define sz(x)         (int)x.size()
@@ -8,14 +10,17 @@
 #define testcase      cout << "Case " << tc++ << ": "
 #define unsyncIO      ios::sync_with_stdio(false); cin.tie(nullptr)
 
+using namespace __gnu_pbds;
 using namespace std;
+
+template <class T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
 
 using ll = long long;
 using lll = __int128_t;
 using ld = long double;
 using ull = unsigned long long;
-template <typename T>
-using minHeap = priority_queue<T, vector<T>, greater<T>>;
+
 
 #ifdef LOCAL
 #include "debug.h"
@@ -27,18 +32,22 @@ const ld PI = acos(-1.0l);
 const ll MOD = 1e9 + 7;
 const ll INF = 2e18;
 const ld EPS = 1e-9;
-const int N = 2e5 + 5;
-int tc = 1;
+const ll N = 2e5;
+
 
 void solve() {
-
+   int k, x; cin >> k >> x;
+   for (int i = 1; i <= k; i++) {
+      if (x & 1) x = x * 2;
+      else x = x * 2;
+   }
+   cout << x << '\n';
 }
 
 int main() {
    unsyncIO;
-
    int t = 1;
-   //cin >> t;
+   cin >> t;
    while (t--) {
       solve();
    }
