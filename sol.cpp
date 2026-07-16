@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
 
-#define sqr(x)        (x) * (x)
+#define sqr(x)        ((x) * (x))
 #define sz(x)         (int)x.size()
 #define all(x)        (x).begin(),(x).end()
 #define rall(x)       (x).rbegin(),(x).rend()
@@ -10,17 +8,15 @@
 #define testcase      cout << "Case " << tc++ << ": "
 #define unsyncIO      ios::sync_with_stdio(false); cin.tie(nullptr)
 
-using namespace __gnu_pbds;
 using namespace std;
 
-template <class T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
-
 using ll = long long;
-using lll = __int128_t;
+using lll = __int128;
 using ld = long double;
 using ull = unsigned long long;
 
+template <typename T>
+using minHeap = priority_queue<T, vector<T>, greater<T>>;
 
 #ifdef LOCAL
 #include "debug.h"
@@ -30,23 +26,25 @@ using ull = unsigned long long;
 
 const ld PI = acos(-1.0l);
 const ll MOD = 1e9 + 7;
-const ll INF = 2e18;
+const ll INF = 1e18;
 const ld EPS = 1e-9;
-void solve(){
-   ll n, x = 0;
-   cin >> n;
-   for (int i = 1; i <= n; i++){
-      ll val;
-      cin >> val;
-      x ^= (val % 3);
+const int N = 2e5 + 5;
+int tc = 1;
+
+void solve() {
+   int q[] = {3, 4, 9, 3, 5};
+   int r = 0;
+   for (int i = 0; i < 5; i++) {
+      r = r * 10 + q[i];
    }
-   cout << (x ? "First\n" : "Second\n");
+   cout << r << '\n';
 }
 
 int main() {
    unsyncIO;
+
    int t = 1;
-   //cin >> t;
+   // cin >> t;
    while (t--) {
       solve();
    }
