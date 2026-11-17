@@ -31,20 +31,35 @@ const ld EPS = 1e-9;
 const int N = 2e5 + 5;
 int tc = 1;
 
-void solve() {
-   int q[] = {3, 4, 9, 3, 5};
-   int r = 0;
-   for (int i = 0; i < 5; i++) {
-      r = r * 10 + q[i];
+int n;
+
+void f(int open, int close, string str) {
+
+   if (sz(str) >= 2 * n) {
+      cout << str << '\n';
+      return;
    }
-   cout << r << '\n';
+
+   if (open < n) {
+      f(open + 1, close, str + "(");
+   }
+   if (close < open) {
+      f(open, close + 1, str + ")");
+   }
 }
+
+void solve() {
+   cin >> n;
+
+   f(0, 0, "");
+}
+
 
 int main() {
    unsyncIO;
 
    int t = 1;
-   // cin >> t;
+   //cin >> t;
    while (t--) {
       solve();
    }
